@@ -164,7 +164,6 @@
           type="number"
           id="length-direct-input"
           class="length-direct-input"
-          min="{{ min_length_cm }}"
           max="{{ max_length_cm }}"
           step="{{ step_cm }}"
           value="{{ min_length_cm }}"
@@ -294,29 +293,39 @@
       });
 
       directInput.addEventListener('input', function() {
-        let value = parseFloat(this.value);
-        if (isNaN(value)) {
-          value = minLengthCm;
+        // Allow any value while typing, including empty
+        clearTimeout(directInput._debounceTimeout);
+        let value = this.value;
+        if (value === '' || isNaN(parseFloat(value))) {
+          // Don't update price if empty or invalid
+          return;
         }
-        updatePrice(value);
+        // Debounce validation: only update after 1.5s of inactivity
+        directInput._debounceTimeout = setTimeout(function() {
+          validateAndUpdate();
+        }, 1500);
       });
 
       directInput.addEventListener('blur', function() {
-        let value = parseFloat(this.value);
+        // Validate and update immediately on blur
+        validateAndUpdate();
+      });
 
-        if (isNaN(value) || value < minLengthCm) {
+      function validateAndUpdate() {
+        let value = parseFloat(directInput.value);
+        if (isNaN(value) || directInput.value === '') {
+          value = minLengthCm;
+        } else if (value < minLengthCm) {
           value = minLengthCm;
         } else if (value > maxLengthCm) {
           value = maxLengthCm;
         }
-
         // Round to nearest step
         value = Math.round(value / stepCm) * stepCm;
         value = parseFloat(value.toFixed(0));
-
-        this.value = value;
+        directInput.value = value;
         updatePrice(value);
-      });
+      }
 
       // Simplified custom option detection
       function checkForCustomOption() {
