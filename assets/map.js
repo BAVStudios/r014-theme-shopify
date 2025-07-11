@@ -581,18 +581,21 @@ class CustomMarker extends google.maps.OverlayView {
 
 			// ✅ Added BAVStudios 2025-03-25 - Google Maps directions + info toggle
 			this.div_.addEventListener('click', () => {
-				console.log('🔴 Marker clicked');
-
+				// Get the pin_type and place_id from the corresponding .thb-location input
+				const thbLocation = this.map.closest('google-map').locations[index];
+				const pinType = thbLocation?.dataset.pinType || 'coordinates';
+				const placeId = thbLocation?.dataset.placeId;
 				const lat = options.latitude;
 				const lng = options.longitude;
-				console.log(`🟡 Coordinates: ${lat}, ${lng}`);
-
-				//const directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}`;
-const directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}`;
-
-
-				console.log(`🟢 Opening directions URL: ${directionsUrl}`);
-				window.open(directionsUrl, "_blank");
+				let url;
+				if (pinType === 'place_id' && placeId) {
+					// Open Google Maps Place URL
+					url = `https://www.google.com/maps/search/?api=1&query=${lat},${lng}&query_place_id=${placeId}`;
+				} else {
+					// Fallback to directions by lat/lng
+					url = `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}`;
+				}
+				window.open(url, "_blank");
 
 				// Fix: use document instead of this.map for DOM queries
 				const container = document.querySelector('.google-map--location-data');

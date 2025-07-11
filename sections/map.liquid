@@ -39,7 +39,7 @@
 						{% capture marker_size %}[79,120]{% endcapture %}
 					{% endif %}
 					{% capture pin_json %}{"marker_image":{{ pin_image | json }},"marker_size":{{ marker_size }},"retina_marker":{{ block.settings.pin_retina | json }},"latitude":{{ block.settings.pin_lat }},"longitude":{{ block.settings.pin_long }}}{% endcapture %}
-					<input class="thb-location" type="hidden" data-option="{{ pin_json | escape }}" />
+					<input class="thb-location" type="hidden" data-option="{{ pin_json | escape }}" data-place-id="{{ block.settings.place_id | escape }}" />
 				{%- endfor -%}
 				<div class="select">
 					<select class="google-map--select">
@@ -230,6 +230,12 @@
 						"info": "Longtitude coordinate for the marker. Example: 29.0023211"
           },
           {
+            "id": "place_id",
+            "type": "text",
+            "label": "Google Maps Place ID",
+            "info": "Optional: Enter the Google Maps Place ID for this store. If set, clicking the pin will open Google Maps with your business name."
+          },
+          {
             "id": "pin_title",
             "type": "text",
             "label": "Title"
@@ -237,7 +243,7 @@
           {
             "id": "pin_desc",
             "type": "textarea",
-            "label": "Description"
+            "label": "DDescription"
           }
         ]
       }
