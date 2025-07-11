@@ -41,7 +41,7 @@
       top: 0;
       bottom: 0;
       right: 0;
-      background-color: rgba(0, 0, 0, .4);
+      background-color: rgba(40, 0, 0, .25);
       pointer-events: none;
       transition: background-color 0.25s cubic-bezier(0.104, 0.204, 0.492, 1);
       /* End BAVS Additional CSS */
