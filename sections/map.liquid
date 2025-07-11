@@ -39,7 +39,7 @@
 						{% capture marker_size %}[79,120]{% endcapture %}
 					{% endif %}
 					{% capture pin_json %}{"marker_image":{{ pin_image | json }},"marker_size":{{ marker_size }},"retina_marker":{{ block.settings.pin_retina | json }},"latitude":{{ block.settings.pin_lat }},"longitude":{{ block.settings.pin_long }}}{% endcapture %}
-					<input class="thb-location" type="hidden" data-option="{{ pin_json | escape }}" data-place-id="{{ block.settings.place_id | escape }}" />
+					<input class="thb-location" type="hidden" data-option="{{ pin_json | escape }}" data-place-id="{{ block.settings.place_id | escape }}" data-pin-type="{{ block.settings.pin_type | default: 'place_id' }}" />
 				{%- endfor -%}
 				<div class="select">
 					<select class="google-map--select">
@@ -216,24 +216,37 @@
 						"info": "You can learn how to get your marker coordinates at [https://support.google.com/maps/answer/18539?hl=en](https://support.google.com/maps/answer/18539)"
           },
           {
+            "id": "pin_type",
+            "type": "select",
+            "label": "Pin Type",
+            "options": [
+              { "value": "place_id", "label": "Google Maps Place ID" },
+              { "value": "coordinates", "label": "Latitude/Longitude" }
+            ],
+            "default": "place_id"
+          },
+          {
             "id": "pin_lat",
             "type": "text",
             "label": "Latitude",
 						"default": "33.9787261",
-						"info": "Latitude coordinate for the marker. Example: 41.40338"
+						"info": "Latitude coordinate for the marker. Example: 41.40338",
+            "hidden": "block.settings.pin_type != 'coordinates'"
           },
           {
             "id": "pin_long",
             "type": "text",
             "label": "Longtitude",
 						"default": "-118.4197832",
-						"info": "Longtitude coordinate for the marker. Example: 29.0023211"
+						"info": "Longtitude coordinate for the marker. Example: 29.0023211",
+            "hidden": "block.settings.pin_type != 'coordinates'"
           },
           {
             "id": "place_id",
             "type": "text",
             "label": "Google Maps Place ID",
-            "info": "Optional: Enter the Google Maps Place ID for this store. If set, clicking the pin will open Google Maps with your business name."
+            "info": "Optional: Enter the Google Maps Place ID for this store. If set, clicking the pin will open Google Maps with your business name.",
+            "hidden": "block.settings.pin_type != 'place_id'"
           },
           {
             "id": "pin_title",
