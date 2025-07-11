@@ -33,6 +33,16 @@
   position: relative;
   scroll-snap-align: start; }
   .collection-card--content {
+    /* BAVS Additional CSS */
+    position: absolute;
+    z-index: 99;
+    width: 100%;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, .4);
+    /* End BAVS Additional CSS */
     font-size: 0.875rem;
     line-height: 1.2;
     font-weight: var(--font-body-medium-weight, 500); }
@@ -40,39 +50,13 @@
       .collection-card--content {
         font-size: 0.9375rem; } }
   .collection-card--link {
+    height: 100%;
     display: inline-flex;
     margin: 0;
     height: auto;
     align-items: center;
     position: relative;
-    padding: 0 5px; }
-  .collection-card--image {
-    position: relative;
-    height: 0;
-    overflow: hidden;
-    z-index: 5;
-    margin-bottom: 10px; }
-    .collection-card--image--link {
-      display: block; }
-    .collection-card--image img {
-      display: block;
-      will-change: scale; }
-    .collection-card--image img,
-    .collection-card--image .thb-placeholder {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover; }
-    .collection-card--image.media-aspect-square {
-      padding-bottom: 100%; }
-    .collection-card--image.media-aspect-portrait {
-      padding-bottom: 125%; }
-    .collection-card--image.media-aspect-adapt {
-      padding-bottom: var(--var-media-aspect-ratio); }
-  .collection-card:hover img, .collection-card:focus img {
-    transform: scale(1.05); }
-
-.list-collections .pagination--wrapper {
-  margin-top: 40px; }
+    padding: 0 5px; 
+    /* BAVS Additional CSS */
+    color: #fff;
+    /* End BAVS Additional CSS */
