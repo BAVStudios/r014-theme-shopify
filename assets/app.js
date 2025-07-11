@@ -1048,7 +1048,7 @@ document.addEventListener('DOMContentLoaded', function() {
     "GEELONG": "#template--24939128848665__1652081672ff9b3c2c-pin_w4D8wD",
     "MELTON": "#template--24939128848665__1652081672ff9b3c2c-pin_bkrQM3",
     "CAROLINE SPRINGS": "#template--24939128848665__1652081672ff9b3c2c-pin_TpJjDC",
-    "BALLARAT (OPENING SOON)": "#template--24939128848665__1652081672ff9b3c2c-pin_qfbk39",
+    "BALLARAT": "#template--24939128848665__1652081672ff9b3c2c-pin_qfbk39",
     "TAYLORS LAKES": "#template--24939128848665__1652081672ff9b3c2c-pin_pBxGEi"
   };
 
@@ -1056,7 +1056,9 @@ document.addEventListener('DOMContentLoaded', function() {
     item.addEventListener('click', function() {
       const heading = item.querySelector('.gallery__item-content-heading');
       if (!heading) return;
-      const storeName = heading.textContent.trim().toUpperCase();
+      let storeName = heading.textContent.trim().toUpperCase();
+      // Remove ' (OPENING SOON)' or similar from the end
+      storeName = storeName.replace(/\s*\(OPENING SOON\)$/, '');
       const value = storeMap[storeName];
       if (!value) return;
       const select = document.querySelector('.google-map--select');

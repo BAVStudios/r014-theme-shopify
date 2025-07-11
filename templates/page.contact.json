@@ -48,7 +48,7 @@
             "pin_retina": true,
             "pin_lat": "-37.5352276",
             "pin_long": "143.822121",
-            "pin_title": "Ballarat Store (Opening Soon)",
+            "pin_title": "Ballarat Store",
             "pin_desc": "<div style=\"line-height: 5px;\">\n<p>Shop T74 \n<br>Wendouree VIC 3355\n<br>Stockland Wendouree Shopping Centre</p>\n<br>\n<table>\n<tr> \n<td style=\"width: 100px;\">Call Us</td>\n<td style=\"text-decoration: underline;\">\n<a href=\"tel:+61425531841\">0425 531 841</a>\n</td>\n</tr>\n</table>\n<br>\n<br>\n<h6>Opening Hours</h6>\n  <table>\n    <tr>\n<td style=\"width: 100px;\">Mon</td>\n<td>9:00am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Tue</td>\n<td>9:00am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Wed</td>\n<td>9:00am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Thu</td>\n<td>9:00am</td>\n<td>7:00pm</td>\n</tr>\n    <tr>\n<td>Fri</td>\n<td>9:00am</td>\n<td>7:00pm</td>\n</tr>\n    <tr>\n<td>Sat</td>\n<td>9:00am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Sun</td>\n<td>10:00am</td>\n<td>5:00pm</td>\n</tr>\n  </table>\n</div>"
           }
         },
@@ -129,7 +129,7 @@
           "settings": {
             "image": "shopify://shop_images/ballarat2-1080x607.webp",
             "subheading": "",
-            "title": "BALLARAT (Opening Soon)",
+            "title": "BALLARAT",
             "text": "Shop T74 Stockland Wendouree Shopping",
             "link_label": "",
             "link": "",
