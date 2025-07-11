@@ -1,0 +1,6 @@
+/* Store Pickup Availability Side Panel */
+.side-panel.side-availability {
+  max-height: 100vh;
+  overflow-y: auto;
+  box-sizing: border-box;
+}

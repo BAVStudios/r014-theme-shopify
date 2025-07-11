@@ -37,6 +37,7 @@
 	{% render 'social-meta-tags' %}
 
 	{{ 'app.css' | asset_url | stylesheet_tag }}
+	{{ 'bavs.css' | asset_url | stylesheet_tag }}
 
 	{% if template == nil %}
 	{{ 'no-template.css' | asset_url | stylesheet_tag }}
