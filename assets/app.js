@@ -1041,3 +1041,33 @@ document.addEventListener("DOMContentLoaded", () => {
     scrollbarWidth + "px"
   );
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Map gallery heading to dropdown value
+  const storeMap = {
+    "GEELONG": "#template--24939128848665__1652081672ff9b3c2c-pin_w4D8wD",
+    "MELTON": "#template--24939128848665__1652081672ff9b3c2c-pin_bkrQM3",
+    "CAROLINE SPRINGS": "#template--24939128848665__1652081672ff9b3c2c-pin_TpJjDC",
+    "BALLARAT (OPENING SOON)": "#template--24939128848665__1652081672ff9b3c2c-pin_qfbk39",
+    "TAYLORS LAKES": "#template--24939128848665__1652081672ff9b3c2c-pin_pBxGEi"
+  };
+
+  document.querySelectorAll('.gallery__item').forEach(function(item) {
+    item.addEventListener('click', function() {
+      const heading = item.querySelector('.gallery__item-content-heading');
+      if (!heading) return;
+      const storeName = heading.textContent.trim().toUpperCase();
+      const value = storeMap[storeName];
+      if (!value) return;
+      const select = document.querySelector('.google-map--select');
+      if (!select) return;
+      select.value = value;
+      select.dispatchEvent(new Event('change', { bubbles: true }));
+      // Scroll to the Google Maps section
+      const mapSection = document.querySelector('.google-map, .google-map--select, .google-map--container');
+      if (mapSection) {
+        mapSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+});

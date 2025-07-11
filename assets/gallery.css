@@ -29,6 +29,10 @@
   fill: var(--bg-body, #fff);
   opacity: 0.5; }
 
+.gallery__item {
+  cursor: pointer;
+}
+
 .gallery__item figure {
   position: relative;
   width: 100%;
