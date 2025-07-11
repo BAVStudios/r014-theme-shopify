@@ -25,7 +25,7 @@
             "pin_contact_enabled": true,
             "pin_contact": "0425 866 889",
             "pin_hours_enabled": true,
-            "pin_hours": "<br>\n<h6>Opening Hours</h6>\n  <table>\n    <tr>\n<td style=\"width: 100px;\">Mon</td>\n<td>9:30am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Tue</td>\n<td>9:30am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Wed</td>\n<td>9:30am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Thu</td>\n<td>9:30am</td>\n<td>7:00pm</td>\n</tr>\n    <tr>\n<td>Fri</td>\n<td>9:30am</td>\n<td>7:00pm</td>\n</tr>\n    <tr>\n<td>Sat</td>\n<td>9:30am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Sun</td>\n<td>10:00am</td>\n<td>5:00pm</td>\n</tr>\n  </table>\n"
+            "pin_hours": "<br>\n<h6>Opening Hours</h6>\n  <table>\n    <tr>\n<td style=\"width: 100px;\">Mon</td>\n<td>9:30am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Tue</td>\n<td>9:30am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Wed</td>\n<td>9:30am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Thu</td>\n<td>9:30am</td>\n<td>7:00pm</td>\n</tr>\n    <tr>\n<td>Fri</td>\n<td>9:30am</td>\n<td>7:00pm</td>\n</tr>\n    <tr>\n<td>Sat</td>\n<td>9:30am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Sun</td>\n<td>10:00am</td>\n<td>5:00pm</td>\n</tr>\n  </table>"
           }
         },
         "pin_w4D8wD": {
@@ -37,11 +37,11 @@
             "pin_long": "144.3515512",
             "place_id": "ChIJyddFtsgV1GoRQVHX3-hayU4",
             "pin_title": "Geelong Store",
-            "pin_desc": "<div style=\"line-height: 5px;\">\n<p>17 Settlement Road,\n<br>Belmont, VIC 3216</p>\n<a class=\"button get-directions-btn\" href=\"#\">Get Directions</a>\n<br>\n<table>\n<tr> \n<td style=\"width: 100px;\">Call Us</td>\n<td style=\"text-decoration: underline;\">\n<a href=\"tel:+61352222645\">03 5222 2645</a>\n</td>\n</tr>\n</table>\n<br>\n<br>\n<h6>Opening Hours</h6>\n  <table>\n    <tr>\n<td style=\"width: 100px;\">Mon</td>\n<td>9:00am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Tue</td>\n<td>9:00am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Wed</td>\n<td>9:00am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Thu</td>\n<td>9:00am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Fri</td>\n<td>9:00am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Sat</td>\n<td>9:00am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Sun</td>\n<td>10:00am</td>\n<td>4:00pm</td>\n</tr>\n  </table>\n</div>",
+            "pin_desc": "<div style=\"line-height: 5px;\">\n<p>17 Settlement Road,\n<br>Belmont, VIC 3216</p>\n<br>\n</div>",
             "pin_contact_enabled": true,
-            "pin_contact": "",
+            "pin_contact": "03 5222 2645",
             "pin_hours_enabled": true,
-            "pin_hours": ""
+            "pin_hours": "<br>\n<h6>Opening Hours</h6>\n  <table>\n    <tr>\n<td style=\"width: 100px;\">Mon</td>\n<td>9:00am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Tue</td>\n<td>9:00am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Wed</td>\n<td>9:00am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Thu</td>\n<td>9:00am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Fri</td>\n<td>9:00am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Sat</td>\n<td>9:00am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Sun</td>\n<td>10:00am</td>\n<td>4:00pm</td>\n</tr>\n  </table>\n"
           }
         },
         "pin_TpJjDC": {
