@@ -9,6 +9,36 @@
  */
 {
   "sections": {
+    "map_QQjV96": {
+      "type": "map",
+      "blocks": {
+        "pin_jETVYN": {
+          "type": "pin",
+          "settings": {
+            "pin_retina": true,
+            "pin_lat": "33.9787261",
+            "pin_long": "-118.4197832",
+            "pin_title": "",
+            "pin_desc": ""
+          }
+        }
+      },
+      "block_order": [
+        "pin_jETVYN"
+      ],
+      "name": "Map",
+      "settings": {
+        "googlemaps_api_key": "",
+        "full_width": false,
+        "desktop_height": "desktop-height-450",
+        "mobile_height": "mobile-height-350",
+        "map_type": "roadmap",
+        "map_style_select": "default",
+        "map_zoom": 0,
+        "disable_top_spacing": false,
+        "disable_bottom_spacing": false
+      }
+    },
     "1652081672ff9b3c2c": {
       "type": "map",
       "blocks": {
@@ -219,6 +249,7 @@
     }
   },
   "order": [
+    "map_QQjV96",
     "1652081672ff9b3c2c",
     "gallery_qPyVhT",
     "1652268757b7c53383",
