@@ -9,36 +9,6 @@
  */
 {
   "sections": {
-    "map_QQjV96": {
-      "type": "map",
-      "blocks": {
-        "pin_jETVYN": {
-          "type": "pin",
-          "settings": {
-            "pin_retina": true,
-            "pin_lat": "33.9787261",
-            "pin_long": "-118.4197832",
-            "pin_title": "",
-            "pin_desc": ""
-          }
-        }
-      },
-      "block_order": [
-        "pin_jETVYN"
-      ],
-      "name": "Map",
-      "settings": {
-        "googlemaps_api_key": "",
-        "full_width": false,
-        "desktop_height": "desktop-height-450",
-        "mobile_height": "mobile-height-350",
-        "map_type": "roadmap",
-        "map_style_select": "default",
-        "map_zoom": 0,
-        "disable_top_spacing": false,
-        "disable_bottom_spacing": false
-      }
-    },
     "1652081672ff9b3c2c": {
       "type": "map",
       "blocks": {
@@ -48,8 +18,8 @@
             "pin_retina": true,
             "pin_lat": "-37.6853164",
             "pin_long": "144.5641199",
-            "pin_title": "Melton Store",
             "place_id": "ChIJh2yHZpcT1GoRsQ8QHB2IZpw",
+            "pin_title": "Melton Store",
             "pin_desc": "<div style=\"line-height: 5px;\">\n<p>Shop R31 32/533 High St,\n<br>Melton West VIC 3337\n<br>Woodgrove Shopping Centre</p>\n<br>\n<table>\n<tr> \n<td style=\"width: 100px;\">Call Us</td>\n<td style=\"text-decoration: underline;\">\n<a href=\"tel:+61387164018\">03 8716 4018</a>\n</td>\n</tr>\n</table>\n<br>\n<br>\n<h6>Opening Hours</h6>\n  <table>\n    <tr>\n<td style=\"width: 100px;\">Mon</td>\n<td>9:30am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Tue</td>\n<td>9:30am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Wed</td>\n<td>9:30am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Thu</td>\n<td>9:30am</td>\n<td>7:00pm</td>\n</tr>\n    <tr>\n<td>Fri</td>\n<td>9:30am</td>\n<td>7:00pm</td>\n</tr>\n    <tr>\n<td>Sat</td>\n<td>9:30am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Sun</td>\n<td>10:00am</td>\n<td>5:00pm</td>\n</tr>\n  </table>\n</div>"
           }
         },
@@ -59,8 +29,8 @@
             "pin_retina": true,
             "pin_lat": "-38.1787837",
             "pin_long": "144.3515512",
-            "pin_title": "Geelong Store",
             "place_id": "ChIJyddFtsgV1GoRQVHX3-hayU4",
+            "pin_title": "Geelong Store",
             "pin_desc": "<div style=\"line-height: 5px;\">\n<p>17 Settlement Road,\n<br>Belmont, VIC 3216</p>\n<br>\n<table>\n<tr> \n<td style=\"width: 100px;\">Call Us</td>\n<td style=\"text-decoration: underline;\">\n<a href=\"tel:+61352222645\">03 5222 2645</a>\n</td>\n</tr>\n</table>\n<br>\n<br>\n<h6>Opening Hours</h6>\n  <table>\n    <tr>\n<td style=\"width: 100px;\">Mon</td>\n<td>9:00am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Tue</td>\n<td>9:00am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Wed</td>\n<td>9:00am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Thu</td>\n<td>9:00am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Fri</td>\n<td>9:00am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Sat</td>\n<td>9:00am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Sun</td>\n<td>10:00am</td>\n<td>4:00pm</td>\n</tr>\n  </table>\n</div>"
           }
         },
@@ -70,8 +40,8 @@
             "pin_retina": true,
             "pin_lat": "-37.7620773",
             "pin_long": "144.7462786",
-            "pin_title": "Caroline Springs Store",
             "place_id": "ChIJb5ebedqL1moRNLsWXv0kIQw",
+            "pin_title": "Caroline Springs Store",
             "pin_desc": "<div style=\"line-height: 5px;\">\n<p>32 Panamax Rd, \n<br>Caroline Springs VIC 3023</p>\n<br>\n<table>\n<tr> \n<td style=\"width: 100px;\">Call Us</td>\n<td style=\"text-decoration: underline;\">\n<a href=\"tel:+610383907638\">03 8390 7638</a>\n</td>\n</tr>\n</table>\n<br>\n<br>\n<h6>Opening Hours</h6>\n  <table>\n    <tr>\n<td style=\"width: 100px;\">Mon</td>\n<td>9:30am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Tue</td>\n<td>9:30am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Wed</td>\n<td>9:30am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Thu</td>\n<td>9:30am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Fri</td>\n<td>9:30am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Sat</td>\n<td>9:30am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Sun</td>\n<td>10:00am</td>\n<td>5:00pm</td>\n</tr>\n  </table>\n</div>"
           }
         },
@@ -81,8 +51,8 @@
             "pin_retina": true,
             "pin_lat": "-37.5352276",
             "pin_long": "143.822121",
-            "pin_title": "Ballarat Store",
             "place_id": "ChIJsba3wG1F0WoR8VONJNt_tms",
+            "pin_title": "Ballarat Store",
             "pin_desc": "<div style=\"line-height: 5px;\">\n<p>Shop T74 \n<br>Wendouree VIC 3355\n<br>Stockland Wendouree Shopping Centre</p>\n<br>\n<table>\n<tr> \n<td style=\"width: 100px;\">Call Us</td>\n<td style=\"text-decoration: underline;\">\n<a href=\"tel:+61425531841\">0425 531 841</a>\n</td>\n</tr>\n</table>\n<br>\n<br>\n<h6>Opening Hours</h6>\n  <table>\n    <tr>\n<td style=\"width: 100px;\">Mon</td>\n<td>9:00am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Tue</td>\n<td>9:00am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Wed</td>\n<td>9:00am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Thu</td>\n<td>9:00am</td>\n<td>7:00pm</td>\n</tr>\n    <tr>\n<td>Fri</td>\n<td>9:00am</td>\n<td>7:00pm</td>\n</tr>\n    <tr>\n<td>Sat</td>\n<td>9:00am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Sun</td>\n<td>10:00am</td>\n<td>5:00pm</td>\n</tr>\n  </table>\n</div>"
           }
         },
@@ -92,8 +62,8 @@
             "pin_retina": true,
             "pin_lat": "-37.6979785",
             "pin_long": "144.7754426",
-            "pin_title": "Taylors Lake Store",
             "place_id": "ChIJY_PQIxD11moRNW-pyI2pXJY",
+            "pin_title": "Taylors Lake Store",
             "pin_desc": "<div style=\"line-height: 5px;\">\n<p>41/399 Melton Hwy,\n<br>Watergardens Shopping Centre\n<br> Taylors Lakes VIC 3038</p>\n<br>\n<table>\n<tr> \n<td style=\"width: 100px;\">Call Us</td>\n<td style=\"text-decoration: underline;\">\n<a href=\"tel:+61425531841\">0425 531 841</a>\n</td>\n</tr>\n</table>\n<br>\n<br>\n<h6>Opening Hours</h6>\n  <table>\n    <tr>\n<td style=\"width: 100px;\">Mon</td>\n<td>9:00am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Tue</td>\n<td>9:00am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Wed</td>\n<td>9:00am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Thu</td>\n<td>9:00am</td>\n<td>7:00pm</td>\n</tr>\n    <tr>\n<td>Fri</td>\n<td>9:00am</td>\n<td>7:00pm</td>\n</tr>\n    <tr>\n<td>Sat</td>\n<td>9:00am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Sun</td>\n<td>10:00am</td>\n<td>5:00pm</td>\n</tr>\n  </table>\n</div>"
           }
         }
@@ -254,7 +224,6 @@
     }
   },
   "order": [
-    "map_QQjV96",
     "1652081672ff9b3c2c",
     "gallery_qPyVhT",
     "1652268757b7c53383",
