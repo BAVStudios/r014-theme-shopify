@@ -4,3 +4,45 @@
   overflow-y: auto;
   box-sizing: border-box;
 }
+
+/* Google Map Location Actions Flex Row */
+.google-map--location-actions {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  margin: 16px 0 8px 0;
+}
+
+.google-map--location-actions .button {
+  flex: 1 1 0;
+  min-width: 0;
+  text-align: center;
+}
+
+.google-map--call-btn {
+  border: 1px solid #bdbdbd;
+  background: #fff;
+  color: #333;
+}
+
+@media (max-width: 600px) {
+  .google-map--location-actions {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
+.google-map--location-hours table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 8px;
+}
+.google-map--location-hours td {
+  padding: 2px 8px;
+  font-size: 15px;
+}
+.google-map--location-hours h6 {
+  margin: 8px 0 4px 0;
+  font-size: 16px;
+  font-weight: 600;
+}
