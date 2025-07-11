@@ -559,10 +559,11 @@ renderMarker(index, location) {
 		setMarker(index, latlng, options) {
 			const markerSize = options.retina_marker && !options.rendered ? [options.marker_size[0] / 2, options.marker_size[1] / 2] : options.marker_size;
 class CustomMarker extends google.maps.OverlayView {
-	constructor(latlng, map) {
+	constructor(latlng, map, options, index, markerSize, googleMapEl) {
 		super();
 		this.latlng = latlng;
 		this.setMap(map);
+		this.googleMapEl = googleMapEl;
 	}
 
 	draw() {
@@ -581,21 +582,32 @@ class CustomMarker extends google.maps.OverlayView {
 
 			// ✅ Added BAVStudios 2025-03-25 - Google Maps directions + info toggle
 			this.div_.addEventListener('click', () => {
-				// Get the pin_type and place_id from the corresponding .thb-location input
-				const thbLocation = this.map.closest('google-map').locations[index];
+				// Use the passed-in googleMapEl to get locations
+				const thbLocation = this.googleMapEl.locations[index];
 				const pinType = thbLocation?.dataset.pinType || 'coordinates';
 				const placeId = thbLocation?.dataset.placeId;
 				const lat = options.latitude;
 				const lng = options.longitude;
 				let url;
+
 				if (pinType === 'place_id' && placeId) {
-					// Open Google Maps Place URL
+					// Use Place ID for Google Maps
 					url = `https://www.google.com/maps/search/?api=1&query=${lat},${lng}&query_place_id=${placeId}`;
 				} else {
-					// Fallback to directions by lat/lng
+					// Fallback to lat/lng directions
 					url = `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}`;
 				}
 				window.open(url, "_blank");
+
+				// Set the href of the Get Directions button in the info window
+				const infoBlocks = document.querySelectorAll('.google-map--location-data');
+				const infoBlock = infoBlocks[index];
+				if (infoBlock) {
+					const getDirectionsBtn = infoBlock.querySelector('.get-directions-btn');
+					if (getDirectionsBtn) {
+						updateGetDirectionsBtn(index, options, thbLocation);
+					}
+				}
 
 				// Fix: use document instead of this.map for DOM queries
 				const container = document.querySelector('.google-map--location-data');
@@ -687,7 +699,7 @@ class CustomMarker extends google.maps.OverlayView {
 */
 
 //			new CustomMarker(latlng, this.map);
-          new CustomMarker(latlng, this.map, options, index, markerSize);
+          new CustomMarker(latlng, this.map, options, index, markerSize, this);
 
 		}
 
@@ -697,6 +709,29 @@ class CustomMarker extends google.maps.OverlayView {
 			const latlng = new google.maps.LatLng(options.latitude, options.longitude);
 			this.map.setZoom(this.mapZoom);
 			this.map.panTo(latlng);
+		}
+	}
+
+	function updateGetDirectionsBtn(index, options, thbLocation) {
+		const infoBlocks = document.querySelectorAll('.google-map--location-data');
+		const infoBlock = infoBlocks[index];
+		if (infoBlock) {
+			const getDirectionsBtn = infoBlock.querySelector('.get-directions-btn');
+			if (getDirectionsBtn) {
+				const pinType = thbLocation?.dataset.pinType || 'coordinates';
+				const placeId = thbLocation?.dataset.placeId;
+				const lat = options.latitude;
+				const lng = options.longitude;
+				let url;
+				if (pinType === 'place_id' && placeId) {
+					url = `https://www.google.com/maps/search/?api=1&query=${lat},${lng}&query_place_id=${placeId}`;
+				} else {
+					url = `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}`;
+				}
+				getDirectionsBtn.setAttribute('href', url);
+				getDirectionsBtn.setAttribute('target', '_blank');
+				getDirectionsBtn.setAttribute('rel', 'noopener');
+			}
 		}
 	}
 

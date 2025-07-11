@@ -99,7 +99,7 @@
       height: 550px; } }
   @media only screen and (min-width: 768px) {
     .google-map .desktop-height-650 {
-      height: 650px; } }
+      height: 700px; } }
   .google-map--container {
     position: relative;
     width: 100%; }

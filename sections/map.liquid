@@ -60,9 +60,20 @@
 						echo "sections.contact.map.location" | t: index: forloop.index
 						endcapture
 					-%}
+					{%- liquid
+						assign lat = block.settings.pin_lat
+						assign lng = block.settings.pin_long
+						assign place_id = block.settings.place_id
+						if place_id != blank
+							assign directions_url = "https://www.google.com/maps/search/?api=1&query=" | append: lat | append: "," | append: lng | append: "&query_place_id=" | append: place_id
+						else
+							assign directions_url = "https://www.google.com/maps/dir/?api=1&destination=" | append: lat | append: "," | append: lng
+						endif
+					-%}
 					<div class="google-map--location-data{% if forloop.first %} google-map--location-data-active{% endif %}" id="{{ section.id }}-{{ block.id }}">
 						<div class="google-map--location-heading">{{ block.settings.pin_title | default: location_title_default }}</div>
 						{{ block.settings.pin_desc }}
+						<a class="button get-directions-btn" href="{{ directions_url }}" target="_blank" rel="noopener">Get Directions</a>
 					</div>
 				{%- endfor -%}
 			</div>
