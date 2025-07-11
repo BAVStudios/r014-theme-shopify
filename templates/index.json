@@ -171,7 +171,9 @@
     },
     "collection_list_84HMfe": {
       "type": "collection-list",
-      "custom_css": [],
+      "custom_css": [
+        ".collection-card--content {display: none; }"
+      ],
       "settings": {
         "heading": "Rugs Online",
         "collection_list": [
