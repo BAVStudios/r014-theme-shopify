@@ -213,7 +213,7 @@
           {
             "type": "header",
             "content": "Marker settings",
-						"info": "You can learn how to get your marker coordinates at [https://support.google.com/maps/answer/18539?hl=en](https://support.google.com/maps/answer/18539)"
+            "info": "You can learn how to get your marker coordinates at https://support.google.com/maps/answer/18539?hl=en"
           },
           {
             "id": "pin_type",
@@ -229,24 +229,21 @@
             "id": "pin_lat",
             "type": "text",
             "label": "Latitude",
-						"default": "33.9787261",
-						"info": "Latitude coordinate for the marker. Example: 41.40338",
-            "hidden": "block.settings.pin_type != 'coordinates'"
+            "default": "33.9787261",
+            "info": "Latitude coordinate for the marker. Example: 41.40338. Only used if Pin Type is set to Latitude/Longitude."
           },
           {
             "id": "pin_long",
             "type": "text",
             "label": "Longtitude",
-						"default": "-118.4197832",
-						"info": "Longtitude coordinate for the marker. Example: 29.0023211",
-            "hidden": "block.settings.pin_type != 'coordinates'"
+            "default": "-118.4197832",
+            "info": "Longtitude coordinate for the marker. Example: 29.0023211. Only used if Pin Type is set to Latitude/Longitude."
           },
           {
             "id": "place_id",
             "type": "text",
             "label": "Google Maps Place ID",
-            "info": "Optional: Enter the Google Maps Place ID for this store. If set, clicking the pin will open Google Maps with your business name.",
-            "hidden": "block.settings.pin_type != 'place_id'"
+            "info": "Optional: Enter the Google Maps Place ID for this store. Only used if Pin Type is set to Google Maps Place ID."
           },
           {
             "id": "pin_title",
