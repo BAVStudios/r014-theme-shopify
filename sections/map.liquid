@@ -76,8 +76,8 @@
 						{% if block.settings.pin_contact_enabled %}
 							<div class="google-map--location-actions">
 								<a class="button get-directions-btn" href="{{ directions_url }}" target="_blank" rel="noopener">Get Directions</a>
-								{% if block.settings.pin_contact != blank %}
-									<a class="button outline google-map--call-btn" href="tel:{{ block.settings.pin_contact }}">{{ block.settings.pin_contact }}</a>
+								{% if block.settings.pin_contact_link != blank and block.settings.pin_contact_label != blank %}
+									<a class="button outline google-map--call-btn" href="{{ block.settings.pin_contact_link }}">{{ block.settings.pin_contact_label }}</a>
 								{% endif %}
 							</div>
 						{% endif %}
@@ -285,10 +285,16 @@
             "default": true
           },
           {
-            "id": "pin_contact",
+            "id": "pin_contact_link",
             "type": "text",
-            "label": "Contact Phone Number",
-            "info": "Enter the phone number for the Call Us button."
+            "label": "Contact Link",
+            "info": "e.g. tel:+61425866889 or mailto:info@example.com"
+          },
+          {
+            "id": "pin_contact_label",
+            "type": "text",
+            "label": "Contact Button Label",
+            "info": "e.g. 03 8716 4018 or Email Us"
           },
           {
             "id": "pin_hours_enabled",
