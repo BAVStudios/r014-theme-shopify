@@ -23,7 +23,8 @@
             "pin_title": "Melton Store",
             "pin_desc": "<div style=\"line-height: 5px;\">\n<p>Shop R31 32/533 High St,\n<br>Melton West VIC 3337\n<br>Woodgrove Shopping Centre</p>\n<br>\n</div>",
             "pin_contact_enabled": true,
-            "pin_contact": "03 8716 4018",
+            "pin_contact_link": "tel:+61387164018",
+            "pin_contact_label": "03 8716 4018",
             "pin_hours_enabled": true,
             "pin_hours": "<br>\n<h6>Opening Hours</h6>\n  <table>\n    <tr>\n<td style=\"width: 100px;\">Mon</td>\n<td>9:30am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Tue</td>\n<td>9:30am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Wed</td>\n<td>9:30am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Thu</td>\n<td>9:30am</td>\n<td>7:00pm</td>\n</tr>\n    <tr>\n<td>Fri</td>\n<td>9:30am</td>\n<td>7:00pm</td>\n</tr>\n    <tr>\n<td>Sat</td>\n<td>9:30am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Sun</td>\n<td>10:00am</td>\n<td>5:00pm</td>\n</tr>\n  </table>"
           }
@@ -39,9 +40,10 @@
             "pin_title": "Geelong Store",
             "pin_desc": "<div style=\"line-height: 5px;\">\n<p>17 Settlement Road,\n<br>Belmont, VIC 3216</p>\n<br>\n</div>",
             "pin_contact_enabled": true,
-            "pin_contact": "03 5222 2645",
+            "pin_contact_link": "03 5222 2645",
+            "pin_contact_label": "03 5222 2645",
             "pin_hours_enabled": true,
-            "pin_hours": "<br>\n<h6>Opening Hours</h6>\n  <table>\n    <tr>\n<td style=\"width: 100px;\">Mon</td>\n<td>9:00am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Tue</td>\n<td>9:00am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Wed</td>\n<td>9:00am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Thu</td>\n<td>9:00am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Fri</td>\n<td>9:00am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Sat</td>\n<td>9:00am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Sun</td>\n<td>10:00am</td>\n<td>4:00pm</td>\n</tr>\n  </table>\n"
+            "pin_hours": "<br>\n<h6>Opening Hours</h6>\n  <table>\n    <tr>\n<td style=\"width: 100px;\">Mon</td>\n<td>9:00am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Tue</td>\n<td>9:00am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Wed</td>\n<td>9:00am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Thu</td>\n<td>9:00am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Fri</td>\n<td>9:00am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Sat</td>\n<td>9:00am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Sun</td>\n<td>10:00am</td>\n<td>4:00pm</td>\n</tr>\n  </table>"
           }
         },
         "pin_TpJjDC": {
@@ -55,9 +57,10 @@
             "pin_title": "Caroline Springs Store",
             "pin_desc": "<div style=\"line-height: 5px;\">\n<p>32 Panamax Rd, \n<br>Caroline Springs VIC 3023</p>\n<br>\n</div>",
             "pin_contact_enabled": true,
-            "pin_contact": "03 8390 7638",
+            "pin_contact_link": "tel:+61383907638",
+            "pin_contact_label": "03 8390 7638",
             "pin_hours_enabled": true,
-            "pin_hours": "<br>\n<h6>Opening Hours</h6>\n  <table>\n    <tr>\n<td style=\"width: 100px;\">Mon</td>\n<td>9:30am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Tue</td>\n<td>9:30am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Wed</td>\n<td>9:30am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Thu</td>\n<td>9:30am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Fri</td>\n<td>9:30am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Sat</td>\n<td>9:30am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Sun</td>\n<td>10:00am</td>\n<td>5:00pm</td>\n</tr>\n  </table>\n"
+            "pin_hours": "<br>\n<h6>Opening Hours</h6>\n  <table>\n    <tr>\n<td style=\"width: 100px;\">Mon</td>\n<td>9:30am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Tue</td>\n<td>9:30am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Wed</td>\n<td>9:30am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Thu</td>\n<td>9:30am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Fri</td>\n<td>9:30am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Sat</td>\n<td>9:30am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Sun</td>\n<td>10:00am</td>\n<td>5:00pm</td>\n</tr>\n  </table>"
           }
         },
         "pin_qfbk39": {
@@ -71,9 +74,10 @@
             "pin_title": "Ballarat Store",
             "pin_desc": "<div style=\"line-height: 5px;\">\n<p>Shop T74 \n<br>Wendouree VIC 3355\n<br>Stockland Wendouree Shopping Centre</p>\n<br>\n</div>",
             "pin_contact_enabled": true,
-            "pin_contact": "0425 531 841",
+            "pin_contact_link": "tel:+61425531841",
+            "pin_contact_label": "0425 531 841",
             "pin_hours_enabled": true,
-            "pin_hours": "<br>\n<h6>Opening Hours</h6>\n  <table>\n    <tr>\n<td style=\"width: 100px;\">Mon</td>\n<td>9:00am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Tue</td>\n<td>9:00am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Wed</td>\n<td>9:00am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Thu</td>\n<td>9:00am</td>\n<td>7:00pm</td>\n</tr>\n    <tr>\n<td>Fri</td>\n<td>9:00am</td>\n<td>7:00pm</td>\n</tr>\n    <tr>\n<td>Sat</td>\n<td>9:00am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Sun</td>\n<td>10:00am</td>\n<td>5:00pm</td>\n</tr>\n  </table>\n"
+            "pin_hours": "<br>\n<h6>Opening Hours</h6>\n  <table>\n    <tr>\n<td style=\"width: 100px;\">Mon</td>\n<td>9:00am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Tue</td>\n<td>9:00am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Wed</td>\n<td>9:00am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Thu</td>\n<td>9:00am</td>\n<td>7:00pm</td>\n</tr>\n    <tr>\n<td>Fri</td>\n<td>9:00am</td>\n<td>7:00pm</td>\n</tr>\n    <tr>\n<td>Sat</td>\n<td>9:00am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Sun</td>\n<td>10:00am</td>\n<td>5:00pm</td>\n</tr>\n  </table>"
           }
         },
         "pin_pBxGEi": {
@@ -87,9 +91,10 @@
             "pin_title": "Taylors Lake Store",
             "pin_desc": "<div style=\"line-height: 5px;\">\n<p>41/399 Melton Hwy,\n<br>Watergardens Shopping Centre\n<br> Taylors Lakes VIC 3038</p>\n<br>\n</div>",
             "pin_contact_enabled": true,
-            "pin_contact": "0425 531 841",
+            "pin_contact_link": "tel:+61425531841",
+            "pin_contact_label": "0425 531 841",
             "pin_hours_enabled": true,
-            "pin_hours": "<br>\n<h6>Opening Hours</h6>\n  <table>\n    <tr>\n<td style=\"width: 100px;\">Mon</td>\n<td>9:00am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Tue</td>\n<td>9:00am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Wed</td>\n<td>9:00am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Thu</td>\n<td>9:00am</td>\n<td>7:00pm</td>\n</tr>\n    <tr>\n<td>Fri</td>\n<td>9:00am</td>\n<td>7:00pm</td>\n</tr>\n    <tr>\n<td>Sat</td>\n<td>9:00am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Sun</td>\n<td>10:00am</td>\n<td>5:00pm</td>\n</tr>\n  </table>\n"
+            "pin_hours": "<br>\n<h6>Opening Hours</h6>\n  <table>\n    <tr>\n<td style=\"width: 100px;\">Mon</td>\n<td>9:00am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Tue</td>\n<td>9:00am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Wed</td>\n<td>9:00am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Thu</td>\n<td>9:00am</td>\n<td>7:00pm</td>\n</tr>\n    <tr>\n<td>Fri</td>\n<td>9:00am</td>\n<td>7:00pm</td>\n</tr>\n    <tr>\n<td>Sat</td>\n<td>9:00am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Sun</td>\n<td>10:00am</td>\n<td>5:00pm</td>\n</tr>\n  </table>"
           }
         }
       },
