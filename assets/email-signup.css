@@ -1,0 +1,60 @@
+
+
+
+.email-signup--inner {
+  padding: 0 15px;
+  max-width: var(--grid-width-row, 1430px);
+  margin-left: auto;
+  margin-right: auto; }
+  @media only screen and (min-width: 768px) {
+    .email-signup--inner {
+      padding: 0 40px; } }
+
+
+.signup-container {
+  margin-bottom: 0; }
+  .signup-container .form-notification {
+    margin-bottom: 10px; }
+  .signup-container fieldset {
+    position: relative; }
+  .signup-container input[type=email] {
+    padding-right: 40px;
+    width: 100%;
+    margin-bottom: 0; }
+  .signup-container button {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 100%;
+    max-height: 46px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+  .signup-container--terms {
+    display: inline-flex;
+    align-items: center;
+    margin-top: 10px; }
+
+.email-signup {
+  background: var(--bg-body);
+  padding: 30px 0; }
+  @media only screen and (min-width: 768px) {
+    .email-signup {
+      padding: 60px 0; } }
+  .email-signup--icon {
+    margin-bottom: 20px;
+    text-align: center; }
+  .email-signup .section-header {
+    text-align: center; }
+    .email-signup .section-header--content {
+      margin: 0 auto;
+      max-width: 610px; }
+      .email-signup .section-header--content--heading {
+        margin: 0 auto; }
+  .email-signup .signup-container {
+    max-width: 450px;
+    margin: 30px auto 0; }
+    .email-signup .signup-container--terms {
+      display: flex;
+      justify-content: center; }

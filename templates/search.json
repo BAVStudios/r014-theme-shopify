@@ -1,0 +1,29 @@
+{
+  "sections": {
+    "main-collection-banner": {
+      "type": "main-collection-banner",
+      "settings": {
+        "show_collection_image": true,
+        "show_collection_description": true,
+        "show_subcollections": true
+      }
+    },
+    "main-search": {
+      "type": "main-search",
+      "settings": {
+        "products_per_page": 12,
+        "columns_desktop": 4,
+        "pagination_type": "paginated",
+        "enable_filtering": true,
+        "enable_sorting": true,
+        "image_ratio": "square",
+        "show_date": true,
+        "show_excerpt": false
+      }
+    }
+  },
+  "order": [
+    "main-collection-banner",
+    "main-search"
+  ]
+}

@@ -1,0 +1,626 @@
+{
+  "sections": {
+    "slideshow_E6HxPD": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_MzPJF8": {
+          "type": "slide",
+          "settings": {
+            "video_background": false,
+            "badge_text": "Save 30%",
+            "subheading": "",
+            "heading": "5.0 Ah Cordless Brushless Bucket Wheelbarrow",
+            "heading_size": "h1-large",
+            "content": "Limited stock available | Only $1,969",
+            "description_size": "large",
+            "content_position": "middle-left",
+            "text_alignment": "left",
+            "content_size": "medium",
+            "color_text": "#ffffff",
+            "color_badge_bg": "#38d15c",
+            "color_badge_text": "#ffffff",
+            "overlay_color": "#616161",
+            "overlay_opacity": 0
+          }
+        },
+        "slide_mnVjLN": {
+          "type": "slide",
+          "settings": {
+            "video_background": false,
+            "badge_text": "Save 40%",
+            "subheading": "",
+            "heading": "Rail Compatible Connect Ready Circular Saw",
+            "heading_size": "h1-large",
+            "content": "Limited stock available | Only $299.90",
+            "description_size": "large",
+            "content_position": "middle-left",
+            "text_alignment": "left",
+            "content_size": "medium",
+            "color_text": "#ffffff",
+            "color_badge_bg": "#ffe1df",
+            "color_badge_text": "#652c2c",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        }
+      },
+      "block_order": [
+        "slide_MzPJF8",
+        "slide_mnVjLN"
+      ],
+      "custom_css": [],
+      "settings": {
+        "desktop_height": "desktop-height-550",
+        "mobile_height": "mobile-height-450",
+        "full_width": true,
+        "autoplay": true,
+        "autoplay_length": 5,
+        "transition": "fade",
+        "control_alignment": "center",
+        "disable_top_spacing": true,
+        "disable_bottom_spacing": false
+      }
+    },
+    "rich_text_H4cFU3": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_HBdjUj": {
+          "type": "heading",
+          "settings": {
+            "text": "Explore These Items |Picked for You|",
+            "size": "h1",
+            "marker_color": "#fdfbb8"
+          }
+        },
+        "text_3PPDnn": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>",
+            "custom_liquid": "",
+            "size": "text-size-regular"
+          }
+        }
+      },
+      "block_order": [
+        "heading_HBdjUj",
+        "text_3PPDnn"
+      ],
+      "settings": {
+        "text_width": "large",
+        "text_position": "center",
+        "text_alignment": "center",
+        "color_bg": "rgba(0,0,0,0)",
+        "color_text": "#2e2e2e",
+        "disable_top_spacing": true,
+        "disable_bottom_spacing": true
+      }
+    },
+    "featured_collection_dPj6XG": {
+      "type": "featured-collection",
+      "settings": {
+        "heading": "",
+        "description": "",
+        "collection": "circular-saws",
+        "display_type": "grid",
+        "product_limit": 10,
+        "columns_desktop": 5,
+        "show_view_all": false,
+        "mobile_swipe": true,
+        "marker_color": "#fd6262",
+        "disable_top_spacing": true,
+        "disable_bottom_spacing": true
+      }
+    },
+    "spacer_ybG6V7": {
+      "type": "spacer",
+      "settings": {
+        "spacer_mobile": 25,
+        "spacer_desktop": 35,
+        "border_separator": false,
+        "border_separator_full": false
+      }
+    },
+    "media_grid_WV7RUn": {
+      "type": "media-grid",
+      "blocks": {
+        "media_bgCByM": {
+          "type": "media",
+          "settings": {
+            "use_video": false,
+            "video_autoplay": true,
+            "column": 2,
+            "row": 2,
+            "heading": "Impact driver has triple LED worklight array<br>at the front of the tool",
+            "heading_size": "h3",
+            "text": "",
+            "button_text": "Get up to $800 off.",
+            "content_position": "bottom-center",
+            "text_alignment": "center",
+            "badge_text": "Limited Sale",
+            "color_badge_text": "#ffffff",
+            "color_badge_bg": "#e33f26",
+            "color_text": "#ffffff",
+            "color_bg": "#f1f1f1",
+            "color_bg_gradient": "",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "media_eY8bUJ": {
+          "type": "media",
+          "settings": {
+            "use_video": false,
+            "video_autoplay": true,
+            "column": 2,
+            "row": 1,
+            "heading": "Rapid Battery Charger <br>with 5.0Ah Batteries",
+            "heading_size": "h3",
+            "text": "",
+            "button_text": "Purchase Today",
+            "content_position": "middle-left",
+            "text_alignment": "left",
+            "badge_text": "",
+            "color_badge_text": "#ffffff",
+            "color_badge_bg": "#e32626",
+            "color_text": "#ffffff",
+            "color_bg": "#f1f1f1",
+            "color_bg_gradient": "",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "media_CmNUgM": {
+          "type": "media",
+          "settings": {
+            "use_video": false,
+            "video_autoplay": true,
+            "column": 1,
+            "row": 1,
+            "heading": "DCR029 XR Compact Bluetooth Jobsite Radio",
+            "heading_size": "h5",
+            "text": "",
+            "button_text": "Buy now - $172.00",
+            "content_position": "bottom-center",
+            "text_alignment": "center",
+            "badge_text": "",
+            "color_badge_text": "#ffffff",
+            "color_badge_bg": "#e32626",
+            "color_text": "#ffffff",
+            "color_bg": "#f1f1f1",
+            "color_bg_gradient": "",
+            "overlay_color": "#2f2e2d",
+            "overlay_opacity": 0
+          }
+        },
+        "media_q3EnAa": {
+          "type": "media",
+          "settings": {
+            "use_video": false,
+            "video_autoplay": true,
+            "column": 1,
+            "row": 1,
+            "heading": "18V-8 P4A 18v Cordless Multi Sander",
+            "heading_size": "h5",
+            "text": "",
+            "button_text": "Buy now - $56.00",
+            "content_position": "bottom-center",
+            "text_alignment": "center",
+            "badge_text": "",
+            "color_badge_text": "#ffffff",
+            "color_badge_bg": "#e32626",
+            "color_text": "#ffffff",
+            "color_bg": "#f1f1f1",
+            "color_bg_gradient": "",
+            "overlay_color": "#2f2e2d",
+            "overlay_opacity": 0
+          }
+        }
+      },
+      "block_order": [
+        "media_bgCByM",
+        "media_eY8bUJ",
+        "media_CmNUgM",
+        "media_q3EnAa"
+      ],
+      "settings": {
+        "desktop_height": 300,
+        "mobile_height": 250,
+        "column_spacing": "medium",
+        "mobile_swipe": true,
+        "disable_top_spacing": true,
+        "disable_bottom_spacing": false
+      }
+    },
+    "collection_list_MYE6bE": {
+      "type": "collection-list",
+      "settings": {
+        "heading": "Shop Power Tool Accessories",
+        "image_ratio": "adapt",
+        "columns_desktop": 6,
+        "columns_mobile": "3",
+        "mobile_swipe": true,
+        "text_alignment": "text-center",
+        "first_product_image": false,
+        "collection_product_count": false,
+        "marker_color": "#fdfbb8",
+        "disable_top_spacing": true,
+        "disable_bottom_spacing": false
+      }
+    },
+    "image_with_text_overlay_YJecnJ": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "subheading_PHcxYF": {
+          "type": "subheading",
+          "settings": {
+            "text": "Quality hardware"
+          }
+        },
+        "heading_6RBthg": {
+          "type": "heading",
+          "settings": {
+            "text": "Your Local Hardware Store",
+            "heading_size": "h2"
+          }
+        },
+        "text_GdHVYB": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Our friendly staff is always ready to help you find exactly what you need, whether it's advice on your next big project or a small part to fix something around the house.<\/p>"
+          }
+        },
+        "button_QnLcYj": {
+          "type": "button",
+          "settings": {
+            "button_text": "Our story",
+            "button_outline": false
+          }
+        }
+      },
+      "block_order": [
+        "subheading_PHcxYF",
+        "heading_6RBthg",
+        "text_GdHVYB",
+        "button_QnLcYj"
+      ],
+      "settings": {
+        "desktop_height": "desktop-height-550",
+        "mobile_height": "mobile-height-450",
+        "full_width": true,
+        "content_width": "small",
+        "content_position": "middle-left",
+        "text_alignment": "left",
+        "color_bg": "#ffffff",
+        "color_text": "#ed2121",
+        "overlay_color": "#000000",
+        "overlay_opacity": 0,
+        "disable_top_spacing": true,
+        "disable_bottom_spacing": true
+      }
+    },
+    "rich_text_qLLc9V": {
+      "type": "rich-text",
+      "blocks": {
+        "badge_3FnnxA": {
+          "type": "badge",
+          "settings": {
+            "text": "Durable Design",
+            "color_bg": "#fdfbb8",
+            "color_text": "#2e2e2e"
+          }
+        },
+        "heading_pTxaNt": {
+          "type": "heading",
+          "settings": {
+            "text": "Unleash the Power in Your Hands",
+            "size": "h1",
+            "marker_color": "#fdfbb8"
+          }
+        },
+        "text_BhdtVz": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Perfect for both professionals and DIY enthusiasts, our range of power tools covers everything from drilling to cutting and everything in between.<\/p>",
+            "custom_liquid": "",
+            "size": "text-size-large"
+          }
+        },
+        "button_3khDKK": {
+          "type": "button",
+          "settings": {
+            "link_label": "Shop Power Tools",
+            "button_outline": false
+          }
+        }
+      },
+      "block_order": [
+        "badge_3FnnxA",
+        "heading_pTxaNt",
+        "text_BhdtVz",
+        "button_3khDKK"
+      ],
+      "settings": {
+        "text_width": "large",
+        "text_position": "center",
+        "text_alignment": "center",
+        "color_bg": "#ffffff",
+        "color_text": "#2e2e2e",
+        "disable_top_spacing": false,
+        "disable_bottom_spacing": false
+      }
+    },
+    "image_hotspots_KPLjkd": {
+      "type": "image-hotspots",
+      "blocks": {
+        "hotspot_Kbm4pe": {
+          "type": "hotspot",
+          "settings": {
+            "heading": "Impact Drill",
+            "description": "High powered Brushless motor delivers 40Nm max. peak torque",
+            "x_position": 46,
+            "y_position": 20,
+            "x_position_mobile": 20,
+            "y_position_mobile": 20
+          }
+        },
+        "hotspot_E6UWYw": {
+          "type": "hotspot",
+          "settings": {
+            "heading": "Battery Drill",
+            "description": "Easy to use, quiet and exceptionally stable, this charger plugs directly into the wall.",
+            "x_position": 18,
+            "y_position": 45,
+            "x_position_mobile": 43,
+            "y_position_mobile": 39
+          }
+        },
+        "hotspot_pejg4m": {
+          "type": "hotspot",
+          "settings": {
+            "heading": "Cutter",
+            "description": "300rpm no load speed motor delivering smooth cutting performance",
+            "x_position": 58,
+            "y_position": 56,
+            "x_position_mobile": 62,
+            "y_position_mobile": 20
+          }
+        },
+        "hotspot_WH7K6B": {
+          "type": "hotspot",
+          "settings": {
+            "heading": "Power Drill",
+            "description": "High power to weight ratio obtained by employing a 4-pole motor",
+            "x_position": 73,
+            "y_position": 43,
+            "x_position_mobile": 77,
+            "y_position_mobile": 36
+          }
+        }
+      },
+      "block_order": [
+        "hotspot_Kbm4pe",
+        "hotspot_E6UWYw",
+        "hotspot_pejg4m",
+        "hotspot_WH7K6B"
+      ],
+      "custom_css": [
+        "@media only screen and (min-width: 1068px) {.image-hotspots {grid-gap: 0px; }}"
+      ],
+      "settings": {
+        "heading": "",
+        "heading_size": "h2",
+        "description": "",
+        "badge_text": "",
+        "image_position": "image_top",
+        "marker_color": "#fd6262",
+        "color_bg_badge": "#ffe1df",
+        "color_badge": "#652c2c",
+        "disable_top_spacing": true,
+        "disable_bottom_spacing": true
+      }
+    },
+    "collection_tabs_fWRkAi": {
+      "type": "collection-tabs",
+      "blocks": {
+        "collection_WMLQjq": {
+          "type": "collection",
+          "settings": {
+            "collection": "mixed-tool-sets",
+            "enable_promotion": false,
+            "promotion_position": 1,
+            "aspect_ratio": "square",
+            "title": "Promotion",
+            "text": "Advertise a promotion or a sale",
+            "link_label": "Explore",
+            "link": "",
+            "color_text": "#4e693d",
+            "color_bg": "#fff6df"
+          }
+        },
+        "collection_4jxLaU": {
+          "type": "collection",
+          "settings": {
+            "collection": "screwdriving",
+            "enable_promotion": false,
+            "promotion_position": 1,
+            "aspect_ratio": "square",
+            "title": "Promotion",
+            "text": "Advertise a promotion or a sale",
+            "link_label": "Explore",
+            "link": "",
+            "color_text": "#4e693d",
+            "color_bg": "#fff6df"
+          }
+        },
+        "collection_4L8kLE": {
+          "type": "collection",
+          "settings": {
+            "collection": "ratchets-sockets",
+            "enable_promotion": false,
+            "promotion_position": 1,
+            "aspect_ratio": "square",
+            "title": "Promotion",
+            "text": "Advertise a promotion or a sale",
+            "link_label": "Explore",
+            "link": "",
+            "color_text": "#4e693d",
+            "color_bg": "#fff6df"
+          }
+        }
+      },
+      "block_order": [
+        "collection_WMLQjq",
+        "collection_4jxLaU",
+        "collection_4L8kLE"
+      ],
+      "settings": {
+        "heading": "Featured Hand Tools",
+        "product_limit": 5,
+        "columns_desktop": 5,
+        "show_view_all": true,
+        "marker_color": "#fd6262",
+        "disable_top_spacing": false,
+        "disable_bottom_spacing": false
+      }
+    },
+    "link_lists_PgkTiK": {
+      "type": "link-lists",
+      "blocks": {
+        "column_a8UyGi": {
+          "type": "column",
+          "settings": {
+            "title": "",
+            "text": "",
+            "menu": "bosch",
+            "link_label": "View all"
+          }
+        },
+        "column_B6Eg39": {
+          "type": "column",
+          "settings": {
+            "title": "",
+            "text": "",
+            "menu": "dewalt",
+            "link_label": "View all"
+          }
+        },
+        "column_HhQKBY": {
+          "type": "column",
+          "settings": {
+            "title": "",
+            "text": "",
+            "menu": "milwaukee",
+            "link_label": "View all"
+          }
+        },
+        "column_FadXTE": {
+          "type": "column",
+          "settings": {
+            "title": "",
+            "text": "",
+            "menu": "black-decker",
+            "link_label": "View all"
+          }
+        },
+        "column_YTRF63": {
+          "type": "column",
+          "settings": {
+            "title": "",
+            "text": "",
+            "menu": "draper-tools",
+            "link_label": "View all"
+          }
+        }
+      },
+      "block_order": [
+        "column_a8UyGi",
+        "column_B6Eg39",
+        "column_HhQKBY",
+        "column_FadXTE",
+        "column_YTRF63"
+      ],
+      "settings": {
+        "heading": "Shop by Brand",
+        "display_type": "grid",
+        "columns_desktop": 3,
+        "text_alignment": "left",
+        "heading_size": "h5",
+        "image_ratio": "adapt",
+        "mobile_swipe": true,
+        "marker_color": "#fd6262",
+        "disable_top_spacing": true,
+        "disable_bottom_spacing": true
+      }
+    },
+    "spacer_F6QByT": {
+      "type": "spacer",
+      "settings": {
+        "spacer_mobile": 30,
+        "spacer_desktop": 10,
+        "border_separator": false,
+        "border_separator_full": false
+      }
+    },
+    "countdown_bar_caXrHL": {
+      "type": "countdown-bar",
+      "settings": {
+        "heading": "Final Clearance: Deals You Can’t Ignore!",
+        "button_text": "Shop Now",
+        "timer_year": 2025,
+        "timer_month": "06",
+        "timer_day": "01",
+        "timer_hour": "00",
+        "timer_minute": "00",
+        "color_bg": "#c72c2c",
+        "color_text": "#ffffff",
+        "disable_top_spacing": true,
+        "disable_bottom_spacing": false
+      }
+    },
+    "featured_blog_DCBRUq": {
+      "type": "featured-blog",
+      "settings": {
+        "heading": "Latest News",
+        "blog": "news",
+        "post_limit": 4,
+        "columns_desktop": 4,
+        "image_ratio": "landscape",
+        "show_date": true,
+        "show_excerpt": true,
+        "show_view_all": true,
+        "marker_color": "#fd6262",
+        "disable_top_spacing": true,
+        "disable_bottom_spacing": true
+      }
+    },
+    "text_with_max_height_qWhzd9": {
+      "type": "text-with-max-height",
+      "settings": {
+        "seo_text": "<p><strong>From timeless classics<\/strong> to modern marvels, we offer a diverse selection to suit every taste and style. Explore our collection of sofas, chairs, tables, and more, expertly crafted to elevate your home décor. With our commitment to quality and customer satisfaction, discover the perfect pieces to create your dream interior. Shop now and let us furnish your imagination.<\/p><p><strong>Revamp your living space<\/strong> with our exquisite range of handcrafted furniture. From sleek modern designs to timeless classics, our furniture shop offers something for every style and budget. Discover the perfect pieces to transform your home into a haven of comfort and style.<\/p><p>Explore our collection today and let your imagination take flight. Discover our wide range of exquisitely crafted furniture pieces designed to elevate your living spaces. From timeless classics to modern marvels, we offer something for every taste and budget. Explore our collection of sofas, tables, chairs, and more, meticulously curated to inspire your home decor journey. With our commitment to quality and customer satisfaction, we strive to make your furniture shopping experience seamless and enjoyable.Explore our collection today and let your imagination take flight. Discover our wide range of exquisitely crafted furniture pieces designed to elevate your living spaces. From timeless classics to modern marvels, we offer something for every taste and budget.<\/p>",
+        "seo_text_custom_liquid": "",
+        "seo_text_read_more": "Read more",
+        "seo_text_read_less": "Read less",
+        "seo_text_max_height": 150,
+        "disable_top_spacing": true,
+        "disable_bottom_spacing": false
+      }
+    }
+  },
+  "order": [
+    "slideshow_E6HxPD",
+    "rich_text_H4cFU3",
+    "featured_collection_dPj6XG",
+    "spacer_ybG6V7",
+    "media_grid_WV7RUn",
+    "collection_list_MYE6bE",
+    "image_with_text_overlay_YJecnJ",
+    "rich_text_qLLc9V",
+    "image_hotspots_KPLjkd",
+    "collection_tabs_fWRkAi",
+    "link_lists_PgkTiK",
+    "spacer_F6QByT",
+    "countdown_bar_caXrHL",
+    "featured_blog_DCBRUq",
+    "text_with_max_height_qWhzd9"
+  ]
+}

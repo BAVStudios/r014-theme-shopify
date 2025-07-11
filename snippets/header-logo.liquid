@@ -1,0 +1,16 @@
+{% if header_settings.logo %}
+	<a class="logolink" href="{{ routes.root_url }}">
+		<img
+			src="{{ header_settings.logo | image_url }}"
+			class="logoimg"
+			alt="{{ header_settings.logo.alt | default: shop.name | escape }}"
+			width="{{ header_settings.logo.width }}"
+			height="{{ header_settings.logo.height }}"
+			fetchpriority="high"
+		>
+	</a>
+{% else %}
+	<a class="logolink text-logo" href="{{ routes.root_url }}">
+		{{ shop.name }}
+	</a>
+{% endif %}

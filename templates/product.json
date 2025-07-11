@@ -1,0 +1,305 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "breadcrumbs": {
+      "type": "breadcrumbs",
+      "settings": {}
+    },
+    "main-product": {
+      "type": "main-product",
+      "blocks": {
+        "vendor_sku_nA797T": {
+          "type": "vendor_sku",
+          "settings": {
+            "show_vendor": true,
+            "show_vendor_link": true,
+            "show_sku": true
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {
+            "uppercase": false,
+            "show_products_rating": true,
+            "show_products_rating_average": true,
+            "show_products_rating_count": true,
+            "show_installments": true,
+            "show_title_above_gallery_mobile": false,
+            "show_custom_badges": true
+          }
+        },
+        "judge_me_reviews_preview_badge_wwwxR6": {
+          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        },
+        "955814cd-267a-4315-b47f-77f3976fbf85": {
+          "type": "siblings",
+          "settings": {
+            "siblings_collection": "",
+            "sibling_color": "",
+            "color_picker_size": "regular",
+            "margin_bottom": 16
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "variant_columns": "1",
+            "color_picker": true,
+            "color_picker_size": "large",
+            "color_picker_use_variants": true,
+            "variant_is_disabled": true,
+            "sizing_guide_variant": "",
+            "sizing_guide_text": "",
+            "sizing_guide_icon": "none",
+            "sizing_guide_page": ""
+          }
+        },
+        "inventory_level_EjD4Fn": {
+          "type": "inventory_level",
+          "settings": {
+            "show_inventory_notice": "low",
+            "show_inventory_count": "low",
+            "inventory_notice_pulse": true,
+            "inventory_notice_bar": true,
+            "inventory_notice_threshold": 10,
+            "inventory_notice_base": 200
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_quantity_selector": true,
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": true
+          }
+        },
+        "description_YwaxkQ": {
+          "type": "description",
+          "disabled": true,
+          "settings": {
+            "show_below_gallery": false
+          }
+        },
+        "95b7e00a-0453-4eb0-9cf0-1dae84d8b822": {
+          "type": "side_panel",
+          "settings": {
+            "show_below_gallery": false,
+            "block_heading": "Still deciding?",
+            "side_panel_1_label": "Free shipping on all orders",
+            "side_panel_1_icon": "truck",
+            "side_panel_1_content": "<p>No Hidden Charges - Let us Handle Freight Costs for you!</p><p>Take the stress of extra costs out of your mind with free shipping Aus wide!</p>",
+            "side_panel_1_page": "",
+            "side_panel_2_label": "Easy returns and exchanges",
+            "side_panel_2_icon": "box",
+            "side_panel_2_content": "<p>We know investing in the right rug needs to feel right. </p><p>Check out our <a href=\"/policies/refund-policy\" title=\"Refund Policy\">Refund Policy here.</a></p>",
+            "side_panel_2_page": "",
+            "side_panel_3_label": "Not Quite Sure? Contact Us!",
+            "side_panel_3_icon": "chat_bubble",
+            "side_panel_3_content": "<p>We Offer Custom Sizes And Free Consultation to find the perfect rug for your needs!</p><p>Don't worry about the right size for your home when you get in contact with one of our rug specialists.<br/><br/><a href=\"/pages/contact\" title=\"Contact\">Contact Us</a></p>",
+            "side_panel_3_page": ""
+          }
+        },
+        "49dfa368-74c4-461a-a1bd-97e29dd699ca": {
+          "type": "complementary",
+          "settings": {
+            "show_below_gallery": false,
+            "block_heading": "Pairs well with",
+            "product_list_limit": 3
+          }
+        },
+        "flash_message_h6LiF4": {
+          "type": "flash_message",
+          "disabled": true,
+          "settings": {
+            "show_below_gallery": false,
+            "icon": "box",
+            "heading": "Limited time offer",
+            "message": "<p>Save up to <strong>$1,000.00</strong> when you trade in a similar device.</p>",
+            "close_button": "close_once",
+            "color_text": "#e27510"
+          }
+        },
+        "collapsible_tab_LWUNzq": {
+          "type": "collapsible_tab",
+          "settings": {
+            "show_below_gallery": true,
+            "heading": "About this product",
+            "open": true,
+            "content": "{{ product.description }}",
+            "page": "",
+            "custom_liquid": ""
+          }
+        },
+        "specifications_tab_AtpBKe": {
+          "type": "specifications_tab",
+          "disabled": true,
+          "settings": {
+            "show_below_gallery": true,
+            "heading": "Product specifications",
+            "open": false,
+            "content": "Size:custom.product_specification\nOrigin:custom.specs_origin\nMaterial:custom.specs_material\nConstruction:custom.specs_construction\nPile Height:custom.specs_height",
+            "empty_field_label": "N/A"
+          }
+        },
+        "highlight_features_WnhhqH": {
+          "type": "highlight_features",
+          "disabled": true,
+          "settings": {
+            "show_below_gallery": true,
+            "columns": "2",
+            "highlight_1_heading": "Main Components",
+            "highlight_1_text": "The key pieces of your furniture.",
+            "highlight_1_icon": "box",
+            "highlight_2_heading": "Hardware & Fasteners",
+            "highlight_2_text": "No need to rummage through your toolbox.",
+            "highlight_2_icon": "banana",
+            "highlight_3_heading": "Assembly Instructions",
+            "highlight_3_text": "We've included detailed diagrams and illustrations.",
+            "highlight_3_icon": "clipboard",
+            "highlight_4_heading": "Tools",
+            "highlight_4_text": "We may also provide the basic tools.",
+            "highlight_4_icon": "lightning_bolt",
+            "highlight_5_heading": "Warranty",
+            "highlight_5_text": "Lifetime warranty",
+            "highlight_5_icon": "fire",
+            "highlight_6_heading": "",
+            "highlight_6_text": "",
+            "highlight_6_icon": "ruler"
+          }
+        },
+        "payment_security_wPeMQP": {
+          "type": "payment_security",
+          "settings": {
+            "show_below_gallery": false,
+            "has_background": true,
+            "heading": "Payment & Security",
+            "show_payment_icons": true,
+            "text": "Your payment information is processed securely. We do not store credit card details nor have access to your credit card information.",
+            "security_image_width": 600,
+            "security_heading": "",
+            "security_text": "",
+            "color_text": "#15888f"
+          }
+        },
+        "image_C3QNmF": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "show_below_gallery": false,
+            "position": "text-left",
+            "image_link": ""
+          }
+        },
+        "related_categories_GMM3h9": {
+          "type": "related_categories",
+          "settings": {
+            "show_below_gallery": false,
+            "heading": "Related categories",
+            "collection_list": []
+          }
+        },
+        "4fd23485-293f-46a0-8a4c-34d0e25ea41b": {
+          "type": "share",
+          "settings": {
+            "show_below_gallery": false
+          }
+        }
+      },
+      "block_order": [
+        "vendor_sku_nA797T",
+        "title",
+        "judge_me_reviews_preview_badge_wwwxR6",
+        "955814cd-267a-4315-b47f-77f3976fbf85",
+        "variant_picker",
+        "inventory_level_EjD4Fn",
+        "buy_buttons",
+        "description_YwaxkQ",
+        "95b7e00a-0453-4eb0-9cf0-1dae84d8b822",
+        "49dfa368-74c4-461a-a1bd-97e29dd699ca",
+        "flash_message_h6LiF4",
+        "collapsible_tab_LWUNzq",
+        "specifications_tab_AtpBKe",
+        "highlight_features_WnhhqH",
+        "payment_security_wPeMQP",
+        "image_C3QNmF",
+        "related_categories_GMM3h9",
+        "4fd23485-293f-46a0-8a4c-34d0e25ea41b"
+      ],
+      "settings": {
+        "enable_sticky_add_to_cart": true,
+        "outline_button": true,
+        "show_taxes_included": true,
+        "thumbnail_position": "bottom",
+        "product_media_width": "medium",
+        "media_aspect_ratio": "adapt",
+        "display_captions": true,
+        "hide_variants": true,
+        "lightbox": true,
+        "enable_video_looping": false
+      }
+    },
+    "spacer_6mjDPj": {
+      "type": "spacer",
+      "settings": {
+        "spacer_mobile": 35,
+        "spacer_desktop": 80,
+        "border_separator": true,
+        "border_separator_full": false
+      }
+    },
+    "product_recommendations_NKiVnX": {
+      "type": "product-recommendations",
+      "settings": {
+        "heading": "You may also like",
+        "description": "<p>Describe your featured collection here</p>",
+        "product_limit": 5,
+        "columns_desktop": 5,
+        "disable_top_spacing": true,
+        "disable_bottom_spacing": false
+      }
+    },
+    "17144927127391ffb0": {
+      "type": "apps",
+      "settings": {
+        "section_width": "grid",
+        "disable_top_spacing": false,
+        "disable_bottom_spacing": false
+      }
+    },
+    "17467146424a569435": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget_9hzNYM": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_9hzNYM"
+      ],
+      "settings": {
+        "section_width": "grid",
+        "disable_top_spacing": false,
+        "disable_bottom_spacing": false
+      }
+    }
+  },
+  "order": [
+    "breadcrumbs",
+    "main-product",
+    "spacer_6mjDPj",
+    "product_recommendations_NKiVnX",
+    "17144927127391ffb0",
+    "17467146424a569435"
+  ]
+}

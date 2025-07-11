@@ -1,0 +1,106 @@
+
+
+
+
+.accordion {
+  display: block;
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  margin-bottom: 25px;
+  color: var(--color-body); }
+  .accordion + .accordion:not(.accordion--has-border) {
+    border-top: 0;
+    margin-top: -25px; }
+  .accordion-container .accordion {
+    max-width: 760px;
+    margin-right: auto;
+    margin-left: auto; }
+    .accordion-container .accordion:last-child {
+      margin-bottom: 0; }
+  .accordion details[open] summary span {
+    transform: rotateX(180deg); }
+  .accordion summary {
+    width: 100%;
+    list-style: none;
+    position: relative;
+    font-weight: var(--font-body-medium-weight, 500);
+    font-size: 1rem;
+    line-height: 1.2;
+    padding: 22px 40px 22px 0;
+    cursor: pointer; }
+    [dir="rtl"] .accordion summary {
+      padding: 22px 0 22px 40px; }
+    @media only screen and (min-width: 768px) {
+      .accordion summary {
+        font-size: 1.25rem; } }
+    .accordion summary span {
+      position: absolute;
+      top: calc(50% - 4px);
+      right: 0;
+      width: 16px;
+      height: 8px;
+      display: flex; }
+      [dir="rtl"] .accordion summary span {
+        right: auto;
+        left: 0; }
+    .accordion summary::-webkit-details-marker {
+      display: none; }
+  .accordion .accordion__content {
+    padding: 0 0 15px 0; }
+    .accordion .accordion__content > *:last-child {
+      margin-bottom: 0; }
+  .accordion--small summary {
+    font-size: 1rem; }
+    .accordion--small summary span {
+      width: 12px;
+      height: 7px; }
+  .accordion--has-border {
+    border: 1px solid var(--color-border);
+    border-radius: var(--general-border-radius, 3px); }
+    .accordion--has-border summary {
+      padding-left: 15px; }
+      @media only screen and (min-width: 768px) {
+        .accordion--has-border summary {
+          padding-left: 30px; } }
+      .accordion--has-border summary span {
+        right: 15px; }
+        @media only screen and (min-width: 768px) {
+          .accordion--has-border summary span {
+            right: 30px; } }
+    .accordion--has-border + .accordion {
+      margin-top: 0; }
+    .accordion--has-border .accordion__content {
+      padding: 0 15px 15px 15px; }
+      @media only screen and (min-width: 768px) {
+        .accordion--has-border .accordion__content {
+          padding: 0 30px 30px 30px; } }
+
+.collapsible-content--inner {
+  display: grid;
+  width: 100%; }
+  .collapsible-content--inner-border-true {
+    gap: 10px; }
+  @media only screen and (min-width: 1068px) {
+    .collapsible-content--inner {
+      max-width: 900px;
+      margin-left: auto; } }
+  @media only screen and (min-width: 1068px) {
+    .collapsible-content--inner-centered {
+      margin: 0 auto; } }
+
+.collapsible-content .section-header {
+  flex: auto; }
+
+.collapsible-content--container {
+  display: flex;
+  flex-direction: column;
+  column-gap: 30px; }
+  @media only screen and (min-width: 1068px) {
+    .collapsible-content--container {
+      flex-direction: row; } }
+
+.collapsible-content .accordion {
+  margin-top: 0;
+  margin-bottom: 0; }
+  .collapsible-content .accordion + .accordion {
+    margin-top: 0; }

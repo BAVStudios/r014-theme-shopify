@@ -1,0 +1,373 @@
+{% comment %}
+  Custom Length Selector Snippet with CM as Quantity
+  File location: snippets/custom-length-selector.liquid
+  Usage: {% render 'custom-length-selector', product: product, product_form_id: product_form_id %}
+
+  This snippet uses centimeters as quantity with price per centimeter.
+  Input: cm, Price: per cm, Quantity: cm (whole numbers)
+{% endcomment %}
+
+{%- if product.metafields.custom.enable_length_selector -%}
+  {% comment %}
+    Get display price from metafield, fallback to calculated price
+  {% endcomment %}
+  {%- if product.metafields.custom.price_per_meter -%}
+    {%- assign display_price_per_meter = product.metafields.custom.price_per_meter | times: 1.0 -%}
+  {%- else -%}
+    {%- assign display_price_per_meter = product.price | divided_by: 100.0 -%}
+  {%- endif -%}
+
+  {%- assign display_price_per_cm = display_price_per_meter | divided_by: 100.0 -%}
+
+  {%- assign min_length_cm = product.metafields.custom.min_length | default: 100 | times: 1.0 -%}
+  {%- assign max_length_cm = product.metafields.custom.max_length | default: 4000 | times: 1.0 -%}
+  {%- assign step_cm = product.metafields.custom.length_step | default: 10 | times: 1.0 -%}
+
+  <style>
+    .custom-length-selector {
+      margin: 15px 0;
+      padding: 15px;
+      border: 1px solid #e8e8e8;
+      border-radius: 4px;
+      background-color: #f9f9f9;
+    }
+
+    .price-per-meter-notice {
+      background-color: #fff3cd;
+      border: 1px solid #ffeaa7;
+      border-radius: 4px;
+      padding: 10px;
+      margin-bottom: 15px;
+      font-size: 14px;
+      color: #856404;
+    }
+
+    .slider-with-indicators {
+      position: relative;
+      padding-bottom: 20px;
+      margin-top: 10px;
+    }
+
+    .length-slider {
+      width: 100%;
+      -webkit-appearance: none;
+      appearance: none;
+      height: 5px;
+      background: #ddd;
+      outline: none;
+      border-radius: 3px;
+      margin: 10px 0;
+    }
+
+    .length-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 18px;
+      height: 18px;
+      background: #4f2e83;
+      cursor: pointer;
+      border-radius: 50%;
+      border: none;
+    }
+
+    .length-slider::-moz-range-thumb {
+      width: 18px;
+      height: 18px;
+      background: #4f2e83;
+      cursor: pointer;
+      border-radius: 50%;
+      border: none;
+    }
+
+    .slider-indicators {
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      position: absolute;
+      width: 100%;
+      color: #777;
+    }
+
+    .custom-length-price {
+      font-weight: bold;
+      font-size: 16px;
+      margin-top: 15px;
+    }
+
+    .price-breakdown {
+      font-size: 14px;
+      color: #777;
+      margin-top: 5px;
+    }
+
+    .custom-length-heading {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    /* Only show for the Custom option */
+    .custom-only-box {
+      display: none;
+    }
+
+    .custom-option-selected .custom-only-box {
+      display: block;
+      animation: fadeIn 0.3s;
+    }
+
+    .length-input-container {
+      display: flex;
+      align-items: center;
+      margin-top: 15px;
+      gap: 1rem;
+    }
+
+    label {
+      margin-bottom: 0 !important;
+    }
+
+    .length-direct-input {
+      width: 100px;
+      padding: 8px;
+      margin-bottom: 0 !important;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      text-align: center;
+    }
+
+    .length-unit {
+      font-weight: bold;
+    }
+
+    .length-conversion {
+      font-size: 0.9em;
+      color: #666;
+      margin-top: 5px;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
+
+  <div class="custom-length-box">
+    <div class="custom-only-box custom-length-selector">
+      <div class="custom-length-heading">Custom Length Options</div>
+      <div class="length-input-container">
+        <label for="length-direct-input">Enter Length:</label>
+        <input
+          type="number"
+          id="length-direct-input"
+          class="length-direct-input"
+          min="{{ min_length_cm }}"
+          max="{{ max_length_cm }}"
+          step="{{ step_cm }}"
+          value="{{ min_length_cm }}"
+        >
+        <span class="length-unit">cm</span>
+      </div>
+
+      <div class="length-conversion">
+        <span id="meter-conversion">{{ min_length_cm | divided_by: 100.0 }}m</span>
+      </div>
+
+      <div class="slider-with-indicators">
+        <input
+          type="range"
+          id="length-slider"
+          min="{{ min_length_cm }}"
+          max="{{ max_length_cm }}"
+          step="{{ step_cm }}"
+          value="{{ min_length_cm }}"
+          class="length-slider"
+        >
+        <div class="slider-indicators">
+          <span class="min-indicator">{{ min_length_cm }}cm</span>
+          <span class="max-indicator">{{ max_length_cm }}cm</span>
+        </div>
+      </div>
+
+      <input
+        type="hidden"
+        name="properties[Length]"
+        id="custom-length-input"
+        value="{{ min_length_cm | divided_by: 100.0 }}m"
+        form="{{ product_form_id }}"
+      >
+
+      <div class="custom-length-price">
+        <p>
+          Total Price:
+          <span id="calculated-price">
+            {{- display_price_per_meter | times: min_length_cm | divided_by: 100.0 | money -}}
+          </span>
+        </p>
+        <div class="price-breakdown">
+          <span id="price-per-meter-display">{{ display_price_per_meter | money }}</span> per meter ×
+          <span id="length-display">{{ min_length_cm | divided_by: 100.0 }}</span>m
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Set up variables
+      const lengthSlider = document.getElementById('length-slider');
+      const directInput = document.getElementById('length-direct-input');
+      const calculatedPrice = document.getElementById('calculated-price');
+      const customLengthInput = document.getElementById('custom-length-input');
+      const customBox = document.querySelector('.custom-length-box');
+      const lengthDisplay = document.getElementById('length-display');
+      const pricePerMeterDisplay = document.getElementById('price-per-meter-display');
+      const meterConversion = document.getElementById('meter-conversion');
+
+      if (!lengthSlider || !directInput || !customBox) return;
+
+      // Get pricing data from metafield or fallback to product price
+      const displayPricePerMeter = {{ display_price_per_meter }}; // Display price per meter
+      const displayPricePerCm = {{ display_price_per_cm }}; // Display price per cm
+      const minLengthCm = {{ min_length_cm }};
+      const maxLengthCm = {{ max_length_cm }};
+      const stepCm = {{ step_cm }};
+
+      // Debug log
+      console.log('Display price per meter from metafield:', displayPricePerMeter);
+
+      function updatePrice(lengthCm) {
+        // Ensure length is within min/max range
+        lengthCm = Math.max(minLengthCm, Math.min(maxLengthCm, lengthCm));
+
+        // Round to nearest valid step
+        lengthCm = Math.round(lengthCm / stepCm) * stepCm;
+        lengthCm = parseFloat(lengthCm.toFixed(0));
+
+        // Convert cm to meters for display
+        const lengthM = lengthCm / 100;
+
+        // Calculate price using display price
+        const newPrice = (displayPricePerMeter * lengthM).toFixed(2);
+        const formattedPrice = formatMoney(newPrice);
+
+        // Update UI elements
+        calculatedPrice.textContent = formattedPrice;
+        lengthDisplay.textContent = lengthM.toFixed(2);
+        meterConversion.textContent = lengthM.toFixed(2) + 'm';
+        directInput.value = lengthCm;
+        lengthSlider.value = lengthCm;
+        customLengthInput.value = lengthM.toFixed(2) + 'm'; // Store as meters for display
+
+        // IMPORTANT: Set Shopify quantity to the length in CENTIMETERS
+        const quantityInput = document.querySelector('input[name="quantity"]');
+        if (quantityInput) {
+          quantityInput.value = lengthCm; // Use centimeters as quantity
+          quantityInput.min = minLengthCm;
+          quantityInput.max = maxLengthCm;
+          quantityInput.step = stepCm;
+          
+          // Store additional data for reference
+          quantityInput.setAttribute('data-length-cm', lengthCm);
+          quantityInput.setAttribute('data-length-m', lengthM.toFixed(2));
+          quantityInput.setAttribute('data-price-per-meter', displayPricePerMeter.toFixed(2));
+          
+          console.log(`Custom length: ${lengthCm}cm (${lengthM}m), Quantity: ${lengthCm}, Display price per meter: $${displayPricePerMeter.toFixed(2)}`);
+        }
+      }
+
+      // Format money based on store currency format
+      function formatMoney(amount) {
+        return '$' + parseFloat(amount).toFixed(2);
+      }
+
+      // Initialize
+      updatePrice(minLengthCm);
+      pricePerMeterDisplay.textContent = formatMoney(displayPricePerMeter);
+
+      // Add event listeners
+      lengthSlider.addEventListener('input', function () {
+        updatePrice(parseFloat(this.value));
+      });
+
+      directInput.addEventListener('input', function() {
+        let value = parseFloat(this.value);
+        if (isNaN(value)) {
+          value = minLengthCm;
+        }
+        updatePrice(value);
+      });
+
+      directInput.addEventListener('blur', function() {
+        let value = parseFloat(this.value);
+
+        if (isNaN(value) || value < minLengthCm) {
+          value = minLengthCm;
+        } else if (value > maxLengthCm) {
+          value = maxLengthCm;
+        }
+
+        // Round to nearest step
+        value = Math.round(value / stepCm) * stepCm;
+        value = parseFloat(value.toFixed(0));
+
+        this.value = value;
+        updatePrice(value);
+      });
+
+      // Simplified custom option detection
+      function checkForCustomOption() {
+        const isCustomSelected = 
+          sessionStorage.getItem('customLengthSelected') === 'true' ||
+          document.querySelector('input[name="Size"]:checked')?.value === 'Custom' ||
+          document.querySelector('select[name="Size"]')?.value === 'Custom';
+
+        if (isCustomSelected) {
+          customBox.classList.add('custom-option-selected');
+          sessionStorage.setItem('customLengthSelected', 'true');
+          const currentLength = parseFloat(directInput.value) || minLengthCm;
+          updatePrice(currentLength);
+        } else {
+          customBox.classList.remove('custom-option-selected');
+          sessionStorage.removeItem('customLengthSelected');
+          
+          // Reset quantity to 1 when not custom
+          const quantityInput = document.querySelector('input[name="quantity"]');
+          if (quantityInput) {
+            quantityInput.value = 1;
+            quantityInput.min = 1;
+            quantityInput.step = 1;
+          }
+        }
+      }
+
+      // Listen for variant changes
+      document.addEventListener('variant:change', function() {
+        setTimeout(checkForCustomOption, 100);
+      });
+
+      // Listen for successful cart additions
+      document.addEventListener('cart:item-added', function() {
+        setTimeout(checkForCustomOption, 100);
+      });
+
+      // Prevent manual quantity changes when custom length is active
+      document.addEventListener('click', function(e) {
+        if (e.target.matches('.quantity .plus, .quantity .minus')) {
+          const isCustomSelected = customBox.classList.contains('custom-option-selected');
+          if (isCustomSelected) {
+            e.preventDefault();
+            e.stopPropagation();
+            return false;
+          }
+        }
+      }, true);
+
+      // Run initially
+      setTimeout(checkForCustomOption, 100);
+    });
+  </script>
+{%- endif -%}

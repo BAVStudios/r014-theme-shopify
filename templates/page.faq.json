@@ -1,0 +1,492 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "breadcrumbs": {
+      "type": "breadcrumbs",
+      "settings": {}
+    },
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "show_page_title": true,
+        "description": "",
+        "show_page_content": false,
+        "page_width": "full",
+        "page_alignment": "left"
+      }
+    },
+    "collapsible_content_jFEcqV": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_tab_jAk4wW": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "How do I place an order on Rug N Roll’s website?",
+            "open": true,
+            "content": "<p>Simply browse our collections, select your rug size, and click “Add to Cart.” Follow the checkout steps to complete your purchase securely</p>",
+            "page": "",
+            "custom_liquid": ""
+          }
+        },
+        "collapsible_tab_DgRdgt": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": " Can I change or cancel my order after placing it?",
+            "open": true,
+            "content": "<p>Yes, as long as your order hasn’t been dispatched. Contact us ASAP at info@rugnroll.com.au or call us directly.</p>",
+            "page": "",
+            "custom_liquid": ""
+          }
+        },
+        "collapsible_tab_PgFfBX": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "I didn’t receive a confirmation email. What should I do?",
+            "open": false,
+            "content": "<p>Please check your spam folder. If it’s not there, contact us — we may have had a technical issue, and we’ll confirm your order manually.</p>",
+            "page": "",
+            "custom_liquid": ""
+          }
+        },
+        "collapsible_tab_QfiaDV": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Can I buy a rug online and pick it up in-store?",
+            "open": false,
+            "content": "<p>Yes! Just contact us after placing your order to arrange in-store pickup from your nearest Rug N Roll location.</p>",
+            "page": "",
+            "custom_liquid": ""
+          }
+        },
+        "collapsible_tab_cmDFNV": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Do you offer Afterpay or Zip Pay for online rug purchases?",
+            "open": false,
+            "content": "<p>Yes, you can choose Afterpay or Zip Pay at checkout to split your payment into easy interest-free instalments.</p>",
+            "page": "",
+            "custom_liquid": ""
+          }
+        },
+        "collapsible_tab_hVdbWx": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "How can I apply a discount code or promo code at checkout?",
+            "open": false,
+            "content": "<p>On the checkout page, enter your promo code in the “Discount Code” box and click “Apply.” The discount will be calculated before payment.</p>",
+            "page": "",
+            "custom_liquid": ""
+          }
+        },
+        "collapsible_tab_LPmtMa": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Can I get help choosing the right rug before I order online?",
+            "open": false,
+            "content": "<p>Yes! Contact our friendly team via live chat, WhatsApp, phone, or email — we’ll guide you to the best rug for your space, style, and budget.</p>",
+            "page": "",
+            "custom_liquid": ""
+          }
+        },
+        "collapsible_tab_WkpTcJ": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Will I be notified when my rug is shipped?",
+            "open": false,
+            "content": "<p> Yes, you’ll receive an email with tracking details once your rug has been dispatched. You can track the delivery straight to your door.</p>",
+            "page": "",
+            "custom_liquid": ""
+          }
+        },
+        "collapsible_tab_Bb4Ndb": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Are the same rugs available both online and in-store?",
+            "open": false,
+            "content": "<p>Most of our rug collections are available both online and in our stores. Some clearance or exclusive in-store items may not appear on the website.</p>",
+            "page": "",
+            "custom_liquid": ""
+          }
+        },
+        "collapsible_tab_3PJ4tA": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Is it safe to order rugs online from Rug N Roll?",
+            "open": false,
+            "content": "<p>Absolutely. Our website is secured with SSL encryption and we use trusted payment gateways like PayPal, Afterpay, and major credit cards.</p>",
+            "page": "",
+            "custom_liquid": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_tab_jAk4wW",
+        "collapsible_tab_DgRdgt",
+        "collapsible_tab_PgFfBX",
+        "collapsible_tab_QfiaDV",
+        "collapsible_tab_cmDFNV",
+        "collapsible_tab_hVdbWx",
+        "collapsible_tab_LPmtMa",
+        "collapsible_tab_WkpTcJ",
+        "collapsible_tab_Bb4Ndb",
+        "collapsible_tab_3PJ4tA"
+      ],
+      "settings": {
+        "heading": "Ordering Rugs Online                                  What You Need to Know",
+        "add_border": false,
+        "marker_color": "#fd6262",
+        "disable_top_spacing": false,
+        "disable_bottom_spacing": false
+      }
+    },
+    "collapsible_content_gMBp9F": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_tab_g9J3FF": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "How long does rug delivery take in Australia?",
+            "open": false,
+            "content": "<p> Most rugs are dispatched within 1–3 business days. Delivery time depends on your location — usually <strong>3–7 business days</strong> for metro areas and slightly longer for regional locations.</p>",
+            "page": "",
+            "custom_liquid": ""
+          }
+        },
+        "collapsible_tab_9QTA8H": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Do you offer free delivery on rugs?",
+            "open": false,
+            "content": "<p>Yes! We offer <strong>free delivery on oversized rugs</strong> across Victoria and selected areas Australia-wide. Standard-sized rugs may include a small shipping fee depending on your postcode.</p>",
+            "page": "",
+            "custom_liquid": ""
+          }
+        },
+        "collapsible_tab_zyjKB8": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": " Can I track my rug delivery?",
+            "open": false,
+            "content": "<p>Absolutely. Once your rug is shipped, you’ll receive a tracking link via email so you can follow its journey in real time.</p>",
+            "page": "",
+            "custom_liquid": ""
+          }
+        },
+        "collapsible_tab_FtDwf9": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": " Which courier companies do you use?",
+            "open": false,
+            "content": "<p>We work with trusted Australian carriers such as Australia Post, Allied Express, and Aramex to ensure fast, safe, and reliable delivery.</p>",
+            "page": "",
+            "custom_liquid": ""
+          }
+        },
+        "collapsible_tab_aEdGYG": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Do you deliver rugs to apartments or upstairs?",
+            "open": false,
+            "content": "<p>Yes, most couriers deliver to apartments and upper levels. If you have specific access instructions, please mention them at checkout or contact us after placing your order.</p>",
+            "page": "",
+            "custom_liquid": ""
+          }
+        },
+        "collapsible_tab_8PHWzQ": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Do you offer same-day or express delivery?",
+            "open": false,
+            "content": "<p>Same-day or express delivery may be available in certain metro areas. Please contact us directly to check availability and any additional costs.</p>",
+            "page": "",
+            "custom_liquid": ""
+          }
+        },
+        "collapsible_tab_4FhtnG": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "What should I do if my rug hasn’t arrived yet?",
+            "open": false,
+            "content": "<p> First, check the tracking link provided. If there’s a delay or no update, please contact us — we’re happy to follow up with the courier and assist you.</p>",
+            "page": "",
+            "custom_liquid": ""
+          }
+        },
+        "collapsible_tab_C3j7Ki": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Do you ship rugs Australia-wide?",
+            "open": false,
+            "content": "<p>Yes, we deliver to most locations across Australia, including metro cities, suburbs, and many regional towns.</p>",
+            "page": "",
+            "custom_liquid": ""
+          }
+        },
+        "collapsible_tab_CcVhmF": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Do you ship rugs to New Zealand or internationally?",
+            "open": false,
+            "content": "<p>Yes, we can arrange shipping to <strong>New Zealand and other countries</strong> on request.</p><p>Please <strong>contact us</strong> before placing your order so we can provide <strong>shipping quotes and delivery time estimates</strong> based on your location.</p>",
+            "page": "",
+            "custom_liquid": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_tab_g9J3FF",
+        "collapsible_tab_9QTA8H",
+        "collapsible_tab_zyjKB8",
+        "collapsible_tab_FtDwf9",
+        "collapsible_tab_aEdGYG",
+        "collapsible_tab_8PHWzQ",
+        "collapsible_tab_4FhtnG",
+        "collapsible_tab_C3j7Ki",
+        "collapsible_tab_CcVhmF"
+      ],
+      "settings": {
+        "heading": "Delivery & Shipping Information",
+        "add_border": false,
+        "marker_color": "#fd6262",
+        "disable_top_spacing": false,
+        "disable_bottom_spacing": false
+      }
+    },
+    "collapsible_content_WQUggg": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_tab_cQnJKt": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Why should I visit a Rug N Roll store in person?",
+            "open": false,
+            "content": "<p>Visiting one of our <strong>5 VIC mega stores</strong> means you can <strong>see, touch, and compare rugs in real life</strong>. Our friendly team offers personalised advice, helps you match colours and textures, and ensures you leave with the <strong>perfect rug for your space</strong>. Plus, you’ll find <strong>exclusive in-store specials and clearance deals</strong>.</p>",
+            "page": "",
+            "custom_liquid": ""
+          }
+        },
+        "collapsible_tab_J6pk8M": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "What’s the benefit of shopping online with Rug N Roll?",
+            "open": false,
+            "content": "<p>Shopping online is fast, secure, and gives you access to our <strong>entire range</strong>, including oversized rugs, trending styles, and weekly deals — all with <strong>nationwide delivery and expert support</strong> just a click away.</p>",
+            "page": "",
+            "custom_liquid": ""
+          }
+        },
+        "collapsible_tab_fatVUk": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Can I customise a rug or hallway runner online or in-store?",
+            "open": false,
+            "content": "<p>Yes! Whether you’re shopping online or visiting us in-store, we offer <strong>custom hallway runner lengths</strong> (professionally overlocked), and can help you find a solution tailored to your space, size, and needs. <strong>Contact us anytime for a custom quote.</strong></p>",
+            "page": "",
+            "custom_liquid": ""
+          }
+        },
+        "collapsible_tab_gT3Uqx": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Can I trust the colours and quality of rugs online?",
+            "open": false,
+            "content": "<p>Absolutely. We provide <strong>detailed images, real lifestyle photos, and material descriptions</strong>. Need extra reassurance? Reach out and we’ll send <strong>additional photos or close-ups</strong> of any rug you’re interested in.</p>",
+            "page": "",
+            "custom_liquid": ""
+          }
+        },
+        "collapsible_tab_zcqrAc": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Are prices the same online and in-store?",
+            "open": false,
+            "content": "<p>Yes, in most cases. However, some <strong>clearance, factory-direct, or local deals</strong> are only available in-store — and online-only promos may appear on our website.</p>",
+            "page": "",
+            "custom_liquid": ""
+          }
+        },
+        "collapsible_tab_WiKV47": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Can I get expert help before buying online?",
+            "open": false,
+            "content": "<p>Definitely! Our rug experts are available via <strong>live chat, WhatsApp, email, or phone</strong> to guide you through sizes, styles, and recommendations — just like we would in-store.</p>",
+            "page": "",
+            "custom_liquid": ""
+          }
+        },
+        "collapsible_tab_mMFrfW": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": " Do you offer Click & Collect?",
+            "open": false,
+            "content": "<p>Yes! If it’s more convenient, you can <strong>order online and collect</strong> from one of our stores in Geelong, Melton, Ballarat, Taylor Lakes or Caroline Springs. Just let us know after placing your order.</p>",
+            "page": "",
+            "custom_liquid": ""
+          }
+        },
+        "collapsible_tab_dhieJk": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Can I feel confident shopping with Rug N Roll?",
+            "open": false,
+            "content": "<p>Yes — we’ve been <strong>Australia’s rug specialists for over 25 years</strong>. Whether online or in-store, we offer quality you can trust, expert support, and a smooth experience backed by <strong>thousands of happy customers</strong>.</p>",
+            "page": "",
+            "custom_liquid": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_tab_cQnJKt",
+        "collapsible_tab_J6pk8M",
+        "collapsible_tab_fatVUk",
+        "collapsible_tab_gT3Uqx",
+        "collapsible_tab_zcqrAc",
+        "collapsible_tab_WiKV47",
+        "collapsible_tab_mMFrfW",
+        "collapsible_tab_dhieJk"
+      ],
+      "settings": {
+        "heading": "What to Expect When Shopping In-Store & Online at Rug N Roll",
+        "add_border": false,
+        "marker_color": "#fd6262",
+        "disable_top_spacing": false,
+        "disable_bottom_spacing": false
+      }
+    },
+    "collapsible_content_TEwThk": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_tab_KYYhXA": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Do you offer custom-size hallway runners?",
+            "open": false,
+            "content": "<p>Yes! We offer <strong>made-to-measure hallway runners</strong>. Choose your length, and we’ll professionally overlock the ends for a clean finish. Perfect for hallways, entryways, and narrow spaces.</p>",
+            "page": "",
+            "custom_liquid": ""
+          }
+        },
+        "collapsible_tab_AaCanA": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "How do I order a custom hallway runner online?",
+            "open": false,
+            "content": "<p>Contact us directly with your desired length and runner style. We’ll prepare a custom quote and help you place the order easily via email or phone.</p>",
+            "page": "",
+            "custom_liquid": ""
+          }
+        },
+        "collapsible_tab_bCJzxe": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Can I request a custom size for a rug (not just runners)?",
+            "open": false,
+            "content": "<p>While most rugs come in standard sizes, select ranges may be available in <strong>custom dimensions</strong>. Reach out and we’ll let you know if your chosen rug can be custom-cut or sourced</p>",
+            "page": "",
+            "custom_liquid": ""
+          }
+        },
+        "collapsible_tab_7C7mMk": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Are custom rugs and runners available in-store too?",
+            "open": false,
+            "content": "<p>Yes — our stores can assist you in measuring and ordering <strong>custom rugs or runners</strong> on the spot.</p>",
+            "page": "",
+            "custom_liquid": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_tab_KYYhXA",
+        "collapsible_tab_AaCanA",
+        "collapsible_tab_bCJzxe",
+        "collapsible_tab_7C7mMk"
+      ],
+      "name": "Collapsible content",
+      "settings": {
+        "heading": "Custom Rug Sizes & Hallway Runners",
+        "add_border": true,
+        "marker_color": "#FD6262",
+        "disable_top_spacing": false,
+        "disable_bottom_spacing": false
+      }
+    },
+    "promotion_blocks_UG34aY": {
+      "type": "promotion-blocks",
+      "blocks": {
+        "promotion_G7p8cL": {
+          "type": "promotion",
+          "settings": {
+            "line_1_text": "Line 1",
+            "line_2_text": "Line 2",
+            "description": "<p>Promotion description</p>",
+            "button_text": "Explore",
+            "button_link": "",
+            "block_link": "",
+            "color_bg": "#ebf7f7",
+            "color_text": "#2f5e7f"
+          }
+        },
+        "promotion_wxbY4r": {
+          "type": "promotion",
+          "settings": {
+            "line_1_text": "Line 1",
+            "line_2_text": "Line 2",
+            "description": "<p>Promotion description</p>",
+            "button_text": "Explore",
+            "button_link": "",
+            "block_link": "",
+            "color_bg": "#ebf7f7",
+            "color_text": "#2f5e7f"
+          }
+        }
+      },
+      "block_order": [
+        "promotion_G7p8cL",
+        "promotion_wxbY4r"
+      ],
+      "settings": {
+        "heading": "",
+        "mobile_swipe": true,
+        "image_ratio": "square",
+        "content_orientation": "horizontal",
+        "columns_desktop": 4,
+        "image_layout": "image_first",
+        "text_alignment": "text-left",
+        "line_1_size": "h4",
+        "line_2_size": "h5",
+        "disable_top_spacing": false,
+        "disable_bottom_spacing": false
+      }
+    },
+    "spacer_QayxAE": {
+      "type": "spacer",
+      "settings": {
+        "spacer_mobile": 15,
+        "spacer_desktop": 30,
+        "border_separator": false,
+        "border_separator_full": false
+      }
+    }
+  },
+  "order": [
+    "breadcrumbs",
+    "main",
+    "collapsible_content_jFEcqV",
+    "collapsible_content_gMBp9F",
+    "collapsible_content_WQUggg",
+    "collapsible_content_TEwThk",
+    "promotion_blocks_UG34aY",
+    "spacer_QayxAE"
+  ]
+}

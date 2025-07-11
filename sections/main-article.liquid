@@ -1,0 +1,299 @@
+{{ 'article.css' | asset_url | stylesheet_tag }}
+{%- liquid
+	assign blocks = section.blocks
+	assign title_block = blocks | where: "type", "title"
+	assign share_block = blocks | where: "type", "sharing"
+	assign tag_blocks = blocks | where: "type", "tags"
+	assign continue_blocks = blocks | where: "type", "continue"
+	assign has_sidebar = false
+
+	if share_block.size > 0 or tag_blocks.size > 0 or continue_blocks.size > 0
+		assign has_sidebar = true
+	endif
+-%}
+<div class="section-spacing">
+	<div class="row">
+		<div class="small-12 columns">
+			{%- if title_block.size -%}
+			<div class="blog-post-detail--title" {{ block.shopify_attributes }}>
+				<div class="blog-post-detail--meta">
+					{%- if title_block[0].settings.article_show_date -%}
+					<aside class="post-meta">
+						{{ article.published_at | time_tag: '%b %d, %Y' }}
+					</aside>
+					{%- endif -%}
+					{%- if title_block[0].settings.article_show_author -%}
+					<aside class="post-author">{{ article.author }}</aside>
+					{%- endif -%}
+				</div>
+				<h1 class="entry-title">{{ article.title }}</h1>
+			</div>
+			{%- endif -%}
+			<div class="blog-post-detail--wrapper blog-post-detail--wrapper-has-sidebar-{{ has_sidebar }}">
+				<div class="blog-post-detail--wrapper--inner">
+					<article class="blog-post-detail">
+						{%- for block in section.blocks -%}
+							{%- if block.type == '@app' -%}
+								{%- render block -%}
+							{%- endif -%}
+							{%- if block.type == 'featured_image' and article.image -%}
+								<div class="featured-image" {{ block.shopify_attributes }}>
+									{%- liquid
+										case block.settings.image_ratio
+											when 'adapt'
+												assign master_width = article.image.width | append: 'x' | append: article.image.height
+												assign sizes = '375x0' | append: ',' | append: master_width
+											when 'portrait'
+												assign sizes = '375x470,850x1060,1275x1594'
+											when 'landscape'
+												assign sizes = '375x235,850x530,1275x797'
+											when 'square'
+												assign sizes = '375x375,850x850,1275x1275'
+										endcase
+									-%}
+									{%- render 'responsive-image', image: article.image, sizes: sizes, priority: 'high' -%}
+								</div>
+							{%- endif -%}
+							{%- if block.type == 'content' -%}
+								<div class="post-content rte" {{ block.shopify_attributes }}>
+									{{ article.content }}
+								</div>
+							{%- endif -%}
+						{%- endfor -%}
+					</article>
+					{%- if blog.comments_enabled? -%}
+						{{ 'comments.css' | asset_url | stylesheet_tag }}
+							<div class="comments-wrapper">
+								{%- if article.comments_count > 0 -%}
+									<div class="comments-container" id="comments">
+										<h5 class="comments-title">{{ 'blogs.article.comments_html' | t: count: article.comments_count, title: article.title }}</h5>
+										<ul class="commentlist">
+											{%- paginate article.comments by 5 -%}
+												{%- for comment in article.comments -%}
+													<li class="comment">
+														<div class="comment-body">
+															<img data-src="https://www.gravatar.com/avatar/{{ comment.email | remove: ' ' | strip_newlines | downcase | md5 }}?s=200" class="avatar lazyload" alt="{{ comment.author | escape }}" width="100" height="100" />
+															<div class="comment-author">
+																<cite class="fn">{{ comment.author }}</cite> — <a href="{{ comment.url }}" class="comment-meta">{{ comment.created_at | date: "%B %d, %Y" }}</a>
+															</div>
+															{{ comment.content }}
+														</div>
+													</li>
+												{%- endfor -%}
+												{%- if paginate.pages > 1 -%}
+													{{ paginate | default_pagination }}
+												{%- endif -%}
+											{%- endpaginate -%}
+										</ul>
+									</div>
+								{%- endif -%}
+								<div class="respond-container">
+									<div class="comment-respond">
+										{%- form 'new_comment', article -%}
+											{%- liquid
+												assign post_message = 'blogs.article.success'
+												if blog.moderated? and comment.status == 'unapproved'
+													assign post_message = 'blogs.article.success_moderated'
+												endif
+											-%}
+											<div class="comment-reply-title--container">
+												<h3 id="reply-title" class="comment-reply-title">{{ 'blogs.article.comment_form_title' | t }}</h3>
+												<p class="comment-notes">{{ 'blogs.article.comment_form_note' | t }}.</p>
+											</div>
+											{%- if form.errors -%}
+												<div class="form-notification error">
+													{%- render 'svg-icons' with 'thb-error' -%} {{ form.errors | default_errors }}
+												</div>
+											{%- elsif form.posted_successfully? -%}
+												<div class="form-notification success">
+													{%- render 'svg-icons' with 'thb-success' -%} {{ post_message | t }}
+												</div>
+											{%- endif -%}
+											<div class="comment-form-fields">
+												<div class="field">
+													<label for="CommentBody">{{ 'blogs.article.message' | t }}</label>
+													<textarea name="comment[body]" class="full {%- if form.errors contains 'body' -%}invalid{%- endif -%}" id="CommentBody">{{ form.body }}</textarea>
+												</div>
+												<div class="field">
+													<label for="CommentAuthor">{{ 'blogs.article.name' | t }}</label>
+													<input type="text" class="full {%- if form.errors contains 'author' -%}invalid{%- endif -%}" name="comment[author]" id="CommentAuthor" value="{{ form.author }}" autocapitalize="words">
+												</div>
+												<div class="field">
+													<label for="CommentEmail">{{ 'blogs.article.email' | t }}</label>
+													<input type="email" class="full {%- if form.errors contains 'email' -%}invalid{%- endif -%}" name="comment[email]" id="CommentEmail" value="{{ form.email }}" autocorrect="off" autocapitalize="off">
+												</div>
+												<input class="button full" type="submit" value="{{ 'blogs.article.post' | t | escape }}">
+											</div>
+										{%- endform -%}
+									</div>
+								</div>
+							</div>
+						{%- endif -%}
+				</div>
+				{%- if has_sidebar -%}
+				<aside class="blog-post-detail--sidebar">
+					<div class="blog-post-detail--sidebar-inner">
+						{%- for block in section.blocks -%}
+							{%- if block.type == 'tags' -%}
+								{%- if article.tags.size > 0 -%}
+								<div class="widget">
+									<label>{{ 'blogs.article.tags' | t }}</label>
+									<div class="blog-post-detail--tags" {{ block.shopify_attributes }}>
+										{%- for tag in article.tags -%}
+											<a href="{{ blog.url | escape }}/tagged/{{ tag | handle }}" class="tag-button">{{ tag }}</a>
+										{%- endfor -%}
+									</div>
+								</div>
+								{%- endif -%}
+							{%- endif -%}
+							{%- if block.type == 'sharing' -%}
+								<div class="widget">
+								{%- render 'social-share', share_label: true, share_title: article.title, share_permalink: article.url, share_image: article.image -%}
+								</div>
+							{%- endif -%}
+							{%- if block.type == 'continue' -%}
+								<div class="widget">
+									<label>{{ 'blogs.article.continue_reading' | t }}</label>
+									{%- liquid
+										assign limit = block.settings.articles
+										for a in blog.articles, limit: limit
+											if a.id == article.id
+												assign limit = limit | plus: 1
+											endif
+										endfor
+									-%}
+									{%- for continue_article in blog.articles, limit: limit  -%}
+										{%- unless continue_article.id == article.id -%}
+											<div class="product-cart-item">
+												<div class="product-cart-item-image">
+													{% if continue_article.image %}
+														{%- render 'responsive-image', image: continue_article.image, sizes: '128x128' -%}
+													{% else %}
+														<div class="thb-placeholder">
+															{{ 'image' | placeholder_svg_tag }}
+														</div>
+													{% endif %}
+												</div>
+												<div>
+													<a href="{{ continue_article.url }}" title="{{ continue_article.title | escape }}" class="cart-product-link">{{ continue_article.title }}</a>
+													<span class="product-cart-item--meta">{{ continue_article.published_at | time_tag: '%b %d, %Y' }}</span>
+												</div>
+											</div>
+										{%- endunless -%}	
+									{%- endfor -%}
+								</div>
+							{%- endif -%}
+						{%- endfor -%}
+					</div>
+				</aside>
+				{%- endif -%}
+			</div>
+		</div>
+	</div>
+</div>
+<script type="application/ld+json">
+  {{ article | structured_data }}
+</script>
+{%- schema -%}
+  {
+		"name": "Blog post",
+		"class": "article-section",
+		"blocks": [
+			{
+	      "type": "@app"
+	    },
+      {
+        "type": "featured_image",
+        "name": "Featured Image",
+	      "limit": 1,
+				"settings": [
+					{
+						"type": "select",
+						"id": "image_ratio",
+						"options": [
+							{
+								"value": "adapt",
+								"label": "Adapt to image"
+							},
+							{
+								"value": "portrait",
+								"label": "Portrait"
+							},
+							{
+								"value": "square",
+								"label": "Square"
+							},
+							{
+								"value": "landscape",
+								"label": "Landscape"
+							}
+						],
+						"default": "landscape",
+						"label": "Image ratio"
+					}
+				]
+      },
+			{
+        "type": "title",
+        "name": "Title",
+	      "limit": 1,
+				"settings": [
+					{
+						"type": "checkbox",
+						"id": "article_show_date",
+						"label": "Show date",
+						"default": true
+					},
+					{
+						"type": "checkbox",
+						"id": "article_show_author",
+						"label": "Show author",
+						"default": true
+					}
+				]
+      },
+			{
+        "type": "sharing",
+        "name": "Sharing buttons",
+	      "limit": 1,
+				"settings": [
+					{
+						"type": "paragraph",
+						"content": "If you include a link in social media posts, the page’s featured image will be shown as the preview image. [Learn more](https://help.shopify.com/en/manual/online-store/images/showing-social-media-thumbnail-images)."
+					},
+					{
+						"type": "paragraph",
+						"content": "A store title and description are included with the preview image. [Learn more](https://help.shopify.com/en/manual/promoting-marketing/seo/adding-keywords#set-a-title-and-description-for-your-online-store)."
+					}
+				]
+      },
+			{
+        "type": "content",
+        "name": "Content",
+	      "limit": 1
+      },
+			{
+        "type": "tags",
+        "name": "Tags",
+	      "limit": 1
+      },
+			{
+        "type": "continue",
+        "name": "Continue reading",
+	      "limit": 1,
+				"settings": [
+					{
+						"type": "range",
+						"id": "articles",
+						"min": 0,
+						"max": 10,
+						"step": 1,
+						"unit": "x",
+						"label": "Number of articles",
+						"default": 3
+					}
+				]
+      }
+    ]
+  }
+{%- endschema -%}

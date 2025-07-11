@@ -1,0 +1,122 @@
+{%- liquid
+  assign sort_by = results.sort_by | default: results.default_sort_by
+  if results.url
+    assign results_url = results.url
+  else
+    assign terms = results.terms | escape
+    assign results_url = '?q=' | append: terms | append: '&options%5Bprefix%5D=last&sort_by=' | append: sort_by
+  endif
+-%}
+<facet-filters-form class="facets--bar">
+	<div class="facets--bar-inner">
+		<form class="facets--bar-left">
+			{%- if results.terms -%}
+				<input type="hidden" name="q" value="{{ results.terms | escape }}">
+				<input name="options[prefix]" type="hidden" value="last">
+			{%- endif -%}
+			{% if results.current_vendor or results.current_type %}
+				<input type="hidden" name="q" value="{{ results.current_vendor }}{{ results.current_type }}">
+			{% endif %}
+			{%- if enable_filtering -%}
+				{% capture toggle_text %}
+					{%- if sidebar_open_by_default -%}
+						{{ 'products.facets.hide_filters' | t }}
+					{%- else -%}
+						{{ 'products.facets.show_filters' | t }}
+					{%- endif -%}
+				{% endcapture %}
+			<button class="sidebar-toggle" id="Sidebar-Toggle">{% render 'svg-icons' with 'thb-filter' %} <span>{{ toggle_text }}</span></button>
+			{%- endif -%}
+			<div class="thb-filter-sort-count">
+				{%- if enable_sorting -%}
+					<div class="thb-filter-sort">
+						<resize-select class="select">
+							{%- assign sort_by = results.sort_by | default: results.default_sort_by -%}
+							<label for="SortByBar">{{ 'products.facets.sort_by_label' | t }}</label>
+							<select name="sort_by" class="facet-filters__sort select__select resize-select" id="SortByBar" aria-describedby="a11y-refresh-page-message">
+								{%- for option in results.sort_options -%}
+									<option value="{{ option.value | escape }}"{% if option.value == sort_by %} selected="selected"{% endif %}>{{ option.name | escape }}</option>
+								{%- endfor -%}
+							</select>
+							<div class="select-arrow">{%- render 'svg-icons' with 'thb-select' -%}</div>
+						</resize-select>
+					</div>
+				{%- endif -%}
+			</div>
+		</form>
+		{%- for filter in results.filters -%}
+			{%- if filter.param_name == 'filter.v.availability' and filter.values[0].active -%}
+				<input type="hidden"
+					name="{{ filter.values[0].param_name }}"
+					value="1"
+				>
+			{%- else -%}
+				{%- case filter.type -%}
+					{% when 'boolean' or 'list' %}
+						{%- for value in filter.values -%}
+							{%- if value.active -%}
+								<input type="hidden"
+									name="{{ value.param_name }}"
+									value="{{ value.value }}"
+								>
+							{%- endif -%}
+						{%- endfor -%}
+					{% when 'price_range' %}
+						{%- liquid
+							assign currencies_using_comma_decimals = 'ANG,ARS,BRL,BYN,BYR,CLF,CLP,COP,CRC,CZK,DKK,EUR,HRK,HUF,IDR,ISK,MZN,NOK,PLN,RON,RUB,SEK,UYU,VES,VND' | split: ','
+							assign uses_comma_decimals = false
+							if currencies_using_comma_decimals contains cart.currency.iso_code
+								assign uses_comma_decimals = true
+							endif
+						-%}
+						{%- if filter.min_value.value -%}
+							<input type="hidden"
+								name="{{ filter.min_value.param_name }}"
+								{%- if uses_comma_decimals -%}
+									value="{{ filter.min_value.value | money_without_currency | replace: '.', '' | replace: ',', '.' }}"
+								{%- else -%}
+									value="{{ filter.min_value.value | money_without_currency | replace: ',', '' }}"
+								{%- endif %}
+							/>
+						{%- endif -%}
+						{%- if filter.max_value.value -%}
+							<input type="hidden"
+								name="{{ filter.max_value.param_name }}"
+								{%- if uses_comma_decimals -%}
+									value="{{ filter.max_value.value | money_without_currency | replace: '.', '' | replace: ',', '.' }}"
+								{%- else -%}
+									value="{{ filter.max_value.value | money_without_currency | replace: ',', '' }}"
+								{%- endif %}
+							/>
+						{%- endif -%}
+				{%- endcase -%}
+			{%- endif -%}
+		{% endfor %}
+		<facet-toolbar class="facets--bar-right">
+			{%- if settings.enable_compare and settings.show_compare_toggle -%}
+			<div class="facets--bar-compare">
+				{%- assign value = filter.values[0] -%}
+				<label for="compare_toggle">{{ 'products.compare.compare' | t }}</label>
+				<input type="checkbox"
+					name="compare_toggle"
+					value="0"
+					class="custom-checkbox"
+					id="compare_toggle"
+					{% if settings.show_compare_toggle_on %}checked{% endif %}
+				>
+			</div>
+			{%- endif -%}
+			<div class="facets--bar-view-as">
+				<span class="label">{{ 'products.facets.view_as' | t }}</span>
+				<button class="facets--bar-view-as-button facets--bar-view-as-button-grid" data-value="grid" disabled>{%- render 'svg-icons' with 'thb-view-grid' -%}</button>
+				<button class="facets--bar-view-as-button facets--bar-view-as-button-list" data-value="list">{%- render 'svg-icons' with 'thb-view-list' -%}</button>
+			</div>
+		</facet-toolbar>
+		{%- if enable_filtering -%}
+			<button class="facets-toggle button outline small" id="Facets-Toggle">{% render 'svg-icons' with 'thb-filter' %} {{ 'products.facets.filter_and_sort' | t }}</button>
+		{%- endif -%}
+	</div>
+	{%- if enable_filtering -%}
+		{% render 'facets-active', results: results, results_url: results_url %}
+	{%- endif -%}
+</facet-filters-form>

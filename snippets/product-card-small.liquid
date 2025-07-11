@@ -1,0 +1,55 @@
+{%- liquid
+	assign product_aspect_ratio = settings.product_aspect_ratio
+
+	if product_aspect_ratio == 'adapt'
+		assign sizes = '160x0'
+	elsif product_aspect_ratio == 'portrait'
+		assign ratio = 1 | divided_by: 1.25
+		assign sizes = '160x200'
+	elsif product_aspect_ratio == 'landscape'
+		assign ratio = 1 | divided_by: 0.75
+		assign sizes = '160x120'
+	elsif product_aspect_ratio == 'square'
+		assign ratio = 1
+		assign sizes = '160x160'
+	endif
+-%}
+<product-card class="product-cart-item{% if class %} {{ class }}{% endif %}">
+	<div class="product-cart-item-image">
+		<a href="{{ product_small.url }}" title="{{ product_small.title | escape }}" class="cart-product-link">
+		{%- if product_small.featured_image -%}
+			{%- render 'responsive-image', image: product_small.featured_image, sizes: sizes, priority: 'low', retina: true -%}
+		{%- else -%}
+			<div class="thb-placeholder" style="height:80px;">
+				{%-
+					liquid
+					capture index
+						cycle '1', '2', '3', '4', '5', '6'
+					endcapture
+				-%}
+				{{ 'product-' | append: index | placeholder_svg_tag }}
+			</div>
+		{%- endif -%}
+		</a>
+	</div>
+	<div class="product-cart-item-info">
+		{%-
+			liquid
+			assign product_title = product_small.title
+			if predictive_search
+				assign product_title = product_title | highlight: predictive_search.terms
+			endif
+		-%}
+		<a href="{{ product_small.url }}" title="{{ product_small.title | escape }}" class="cart-product-link">{{ product_title }}</a>
+		{% render 'product-price', product: product_small %}
+		{% if quick_add %}
+		<quick-view class="product-card-quickview text-button" href="#Product-Drawer" data-product-handle="{{ product_small.handle }}" tabindex="-1">
+			<div class="loading-overlay">{% render 'svg-icons' with 'thb-loading' %}</div>
+			<span>{{ 'products.product.quick_view' | t }}</span>
+		</quick-view>
+		{% endif %}
+		{%- if show_close -%}
+			<button class="compare-remove" data-product-id="{{ product_small.id }}">{%- render 'svg-icons' with 'close' -%}</button>
+		{%- endif -%}
+	</div>
+</product-card>

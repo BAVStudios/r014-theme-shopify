@@ -1,0 +1,183 @@
+{%- liquid
+	assign section_heading = section.settings.heading
+	assign section_description = section.settings.description
+
+	assign columns_desktop = section.settings.columns_desktop
+	assign column_spacing = section.settings.column_spacing
+	assign show_product_counts = section.settings.show_product_counts
+
+	assign marker_color = section.settings.marker_color
+	assign disable_top_spacing = section.settings.disable_top_spacing
+	assign disable_bottom_spacing = section.settings.disable_bottom_spacing
+
+	assign columns_desktop = section.blocks.size | at_least: 3
+	assign columns_tablet = columns_desktop | minus: 1
+-%}
+<div class="row">
+	<div class="small-12 columns">
+		<div class="featured-collection-list section-spacing{% if disable_top_spacing %} section-spacing--disable-top{% endif %}{% if disable_bottom_spacing %} section-spacing--disable-bottom{% endif %}">
+			{% render 'section-header', section_heading: section_heading, section_description: section_description, marker_color: marker_color %}
+			<theme-scroll class="theme-scroll" data-overlayscrollbars-initialize>
+				<div class="theme-scroll--inner">
+					<div class="featured-collection-list--inner column-spacing--{{ column_spacing }}" style="--column-size-tablet: {{ columns_tablet }}; --column-size-desktop: {{ columns_desktop }};">
+						{%- for block in section.blocks -%}
+							{%- liquid
+								assign grid_collection = block.settings.collection
+								assign featured_image = grid_collection.featured_image
+								assign custom_image = block.settings.image
+
+								assign class = 'featured-collection-list--img'
+								if custom_image != blank
+									assign featured_image = custom_image
+								endif
+
+								assign master_width = image.src.width | append: 'x' | append: image.src.height
+								assign width = '375x' | append: mobile_image_height | append: ',' | append: master_width
+							-%}
+							<div class="featured-collection-list--item" {{ block.shopify_attributes }}>
+								<div class="featured-collection-list--item-bg">
+									{%- if featured_image != blank -%}
+										{%- render 'responsive-image', image: featured_image | image_url, sizes: width, class: class -%}
+									{%- else -%}
+										{%- assign index = forloop.index | modulo: 4 | plus: 1 -%}
+										{{ 'collection-apparel-' | append: index | placeholder_svg_tag: class }}
+									{%- endif -%}
+								</div>
+								<div class="featured-collection-list--item-content">
+									{%- liquid
+										assign grid_collection_title = 'onboarding.collection_title' | t 
+										assign grid_collection_count = grid_collection.all_products.count | default: '0'
+										if grid_collection != blank
+											assign grid_collection_title = grid_collection.title
+										endif
+									-%}
+									<div>
+										<div class="h4 featured-collection-list--item-heading">{{ grid_collection_title }}</div>
+										{%- if show_product_counts -%}<span class="featured-collection-list--item-counts">{{ 'sections.featured_collection_list.product_count_simple' | t: count: grid_collection_count }}</span>{%- endif -%}
+									</div>
+								</div>
+								<a href="{{ grid_collection.url }}" class="featured-collection-list--item-link" aria-label="{{ grid_collection_title | escape }}"></a>
+							</div>
+						{%- endfor -%}
+					</div>
+				</div>
+			</theme-scroll>
+		</div>
+	</div>
+</div>
+{{ 'featured-collection-list.css' | asset_url | stylesheet_tag }}
+{% schema %}
+  {
+    "name": "Featured collection list",
+		"class": "section-featured-collection-list",
+		"max_blocks": 5,
+    "settings": [
+			{
+				"type": "text",
+				"id": "heading",
+				"label": "Heading",
+				"default": "Featured collection list",
+				"info": "Wrap your text between | to add highlight markers. For example: Highlight |marker| will highlight the marker text."
+			},
+			{
+				"type": "richtext",
+				"id": "description",
+				"label": "Description",
+				"default": "<p>Describe your featured collection list here</p>"
+			},
+			{
+	      "type": "select",
+	      "id": "column_spacing",
+	      "options": [
+	        {
+	          "value": "small",
+	          "label": "Small"
+	        },
+					{
+	          "value": "medium",
+	          "label": "Medium"
+	        },
+	        {
+	          "value": "large",
+	          "label": "Large"
+	        }
+	      ],
+	      "default": "medium",
+	      "label": "Column spacing"
+	    },
+			{
+	      "type": "checkbox",
+	      "id": "show_product_counts",
+	      "default": true,
+	      "label": "Show product counts"
+	    },
+			{
+				"type": "header",
+				"content": "Colors"
+			},
+			{
+				"type": "color",
+				"id": "marker_color",
+				"label": "Highlight",
+				"default": "#FD6262"
+			},
+			{
+        "type": "header",
+        "content": "Spacing"
+      },
+			{
+				"type": "checkbox",
+				"id": "disable_top_spacing",
+				"default": false,
+				"label": "Remove top spacing"
+			},
+			{
+				"type": "checkbox",
+				"id": "disable_bottom_spacing",
+				"default": false,
+				"label": "Remove bottom spacing"
+			}
+    ],
+		"blocks": [
+      {
+        "type": "collection",
+        "name": "Collection",
+        "settings": [
+          {
+            "type": "collection",
+            "id": "collection",
+            "label": "Collection"
+          },
+					{
+						"type": "image_picker",
+						"id": "image",
+						"label": "Custom image",
+						"info": "Optional image to use for this collection."
+					}
+				]
+			}
+		],
+    "presets": [
+      {
+        "name": "Featured collection list",
+				"blocks": [
+					{
+						"type": "collection"
+					},
+					{
+						"type": "collection"
+					},
+					{
+						"type": "collection"
+					},
+					{
+						"type": "collection"
+					},
+					{
+						"type": "collection"
+					}
+				]
+      }
+    ]
+  }
+{% endschema %}

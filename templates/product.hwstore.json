@@ -1,0 +1,351 @@
+{
+  "sections": {
+    "breadcrumbs": {
+      "type": "breadcrumbs",
+      "settings": {}
+    },
+    "main-product": {
+      "type": "main-product",
+      "blocks": {
+        "vendor_sku_nA797T": {
+          "type": "vendor_sku",
+          "settings": {
+            "show_vendor": true,
+            "show_vendor_link": true,
+            "show_sku": true
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {
+            "uppercase": false,
+            "show_products_rating": true,
+            "show_products_rating_average": true,
+            "show_products_rating_count": true,
+            "show_installments": true,
+            "show_title_above_gallery_mobile": true,
+            "show_custom_badges": true
+          }
+        },
+        "955814cd-267a-4315-b47f-77f3976fbf85": {
+          "type": "siblings",
+          "settings": {
+            "siblings_collection": "",
+            "sibling_color": "",
+            "color_picker_size": "regular",
+            "margin_bottom": 16
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "color_picker": true,
+            "color_picker_size": "large",
+            "color_picker_use_variants": true,
+            "variant_is_disabled": true,
+            "sizing_guide_variant": "",
+            "sizing_guide_text": "",
+            "sizing_guide_icon": "none",
+            "sizing_guide_page": ""
+          }
+        },
+        "inventory_level_EjD4Fn": {
+          "type": "inventory_level",
+          "settings": {
+            "show_inventory_notice": "always",
+            "show_inventory_count": "always",
+            "inventory_notice_pulse": true,
+            "inventory_notice_bar": true,
+            "inventory_notice_threshold": 10,
+            "inventory_notice_base": 200
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_quantity_selector": true,
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        },
+        "number_count_emrkAT": {
+          "type": "number_count",
+          "settings": {
+            "show_below_gallery": true,
+            "has_border": false,
+            "block_heading": "",
+            "number_count_1": 1,
+            "number_text_1": "Single sleeve keyless chuck for quick and easy bit changes",
+            "number_count_2": 20,
+            "number_text_2": "Torque settings for maximum precision when driving screws"
+          }
+        },
+        "text_pVr3pf": {
+          "type": "text",
+          "settings": {
+            "show_below_gallery": true,
+            "text": "<p>This powerful, lightweight, and compact combi drill provides the ideal mix of power and versatility. <strong>The sleek ergonomic design offers comfortable handling<\/strong>. Always using the right amount of power on every task is simple thanks to 20 different torque settings along with drilling and hammer drilling settings. Its high-performance 2-speed planetary gear box.<\/p>"
+          }
+        },
+        "flash_message_h6LiF4": {
+          "type": "flash_message",
+          "settings": {
+            "show_below_gallery": true,
+            "icon": "box",
+            "heading": "Limited time offer",
+            "message": "<p>Save up to <strong>$1,000.00<\/strong> when you trade in a similar device.<\/p>",
+            "close_button": "close_once",
+            "color_text": "#e27510"
+          }
+        },
+        "flash_message_RViVWA": {
+          "type": "flash_message",
+          "settings": {
+            "show_below_gallery": true,
+            "icon": "check_mark",
+            "heading": "Click & Collect in store",
+            "message": "<p>Get Your Free 18v Power For All Battery<\/p>",
+            "close_button": "close_forever",
+            "color_text": "#713981"
+          }
+        },
+        "pros_cons_tW3UJF": {
+          "type": "pros_cons",
+          "settings": {
+            "show_below_gallery": true,
+            "has_border": true,
+            "heading": "Pros and cons",
+            "pros": "Power drills can complete tasks much faster than manual tools.\nMost power drills are designed to be lightweight and ergonomic, reducing hand strain during long projects.\nPower drills often come with depth gauges or clutch settings, allowing users to control the depth and torque of each application.",
+            "cons": "Cordless models also require regular investment in batteries and chargers, which adds to the cost.\nWhile cordless drills offer great convenience, their battery life can be a limitation."
+          }
+        },
+        "payment_security_wPeMQP": {
+          "type": "payment_security",
+          "settings": {
+            "show_below_gallery": false,
+            "has_background": true,
+            "heading": "Payment & Security",
+            "show_payment_icons": true,
+            "text": "Your payment information is processed securely. We do not store credit card details nor have access to your credit card information.",
+            "security_image_width": 30,
+            "security_heading": "",
+            "security_text": "",
+            "color_text": "#1c6ad6"
+          }
+        },
+        "49dfa368-74c4-461a-a1bd-97e29dd699ca": {
+          "type": "complementary",
+          "settings": {
+            "show_below_gallery": false,
+            "block_heading": "Pairs well with",
+            "product_list_limit": 3
+          }
+        },
+        "related_categories_GMM3h9": {
+          "type": "related_categories",
+          "settings": {
+            "show_below_gallery": false,
+            "heading": "Related categories",
+            "collection_list": [
+              "routing-products",
+              "screwdriving",
+              "knives-blades"
+            ]
+          }
+        },
+        "4fd23485-293f-46a0-8a4c-34d0e25ea41b": {
+          "type": "share",
+          "settings": {
+            "show_below_gallery": false
+          }
+        }
+      },
+      "block_order": [
+        "vendor_sku_nA797T",
+        "title",
+        "955814cd-267a-4315-b47f-77f3976fbf85",
+        "variant_picker",
+        "inventory_level_EjD4Fn",
+        "buy_buttons",
+        "number_count_emrkAT",
+        "text_pVr3pf",
+        "flash_message_h6LiF4",
+        "flash_message_RViVWA",
+        "pros_cons_tW3UJF",
+        "payment_security_wPeMQP",
+        "49dfa368-74c4-461a-a1bd-97e29dd699ca",
+        "related_categories_GMM3h9",
+        "4fd23485-293f-46a0-8a4c-34d0e25ea41b"
+      ],
+      "settings": {
+        "enable_sticky_add_to_cart": true,
+        "outline_button": true,
+        "show_taxes_included": true,
+        "thumbnail_position": "left",
+        "product_media_width": "medium",
+        "media_aspect_ratio": "adapt",
+        "display_captions": true,
+        "hide_variants": true,
+        "lightbox": true,
+        "enable_video_looping": false
+      }
+    },
+    "single_image_XraFaj": {
+      "type": "single-image",
+      "settings": {
+        "full_width": false,
+        "disable_top_spacing": false,
+        "disable_bottom_spacing": true
+      }
+    },
+    "collapsible_content_xCJRzR": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_tab_DfVcNY": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Product overview",
+            "open": false,
+            "content": "<h4>The compact open-cart design and the practical folding side table make it fit even on small spaces. And with 6 tool hooks, you have all the basics you need to get familiar with gas grilling. So invite a couple of friends over, push the ignition and enjoy the special atmosphere that surrounds the grill.<\/h4><ul><li>Porcelain-Enameled, Cast-Iron Cooking Grates offers superior heat retention, flavor infusion, and an attractive appearance as you elevate your grilling experience with these high-quality cooking grates.<\/li><\/ul><p><\/p><ul><li>Elevate your grilling experience with our porcelain-enameled FLAVORIZER BARS, enhancing the taste and tenderness of your favorite dishes.<\/li><\/ul><p><\/p><ul><li>Stainless steel high performance burners engineered for optimal performance, these burners provide even heat distribution across your grill surface, ensuring consistent and reliable cooking results.<\/li><\/ul><p><\/p><ul><li>Porcelain-enameled lid retains heat, and the high quality material protects your grill from the elements.<\/li><\/ul><p><\/p><ul><li>Elevate your grilling precision and convenience with our porcelain-enameled lid featuring an integrated thermometer, providing a host of advantages for a superior cooking experience.<\/li><\/ul><p><\/p><ul><li>Maximize your grilling experience with the convenience and versatility of our fold-down stainless steel side tables, providing an array of benefits for a seamless and enjoyable outdoor cooking adventure.<\/li><\/ul>",
+            "page": "",
+            "custom_liquid": ""
+          }
+        },
+        "specification_TwTV6q": {
+          "type": "specification",
+          "settings": {
+            "heading": "Specifications",
+            "empty_field_label": "N\/A"
+          }
+        },
+        "collapsible_tab_WjVAzz": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Delivery & Returns",
+            "open": false,
+            "content": "<p>Most orders are processed and shipped within [1-2 business days], with expected delivery times of [3-7 business days], depending on your location. You’ll receive a tracking number to monitor your shipment from the moment it leaves our warehouse until it arrives.<\/p>",
+            "page": "",
+            "custom_liquid": ""
+          }
+        },
+        "collapsible_tab_qHQHyK": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Warranty",
+            "open": false,
+            "content": "<p>Many of the tools we sell come with a <strong>manufacturer’s warranty<\/strong> that covers defects in materials or workmanship. Depending on the brand, the warranty period can range from <strong>1 year<\/strong> to <strong>lifetime coverage<\/strong>. Please check the individual product pages for specific warranty information.<\/p>",
+            "page": "",
+            "custom_liquid": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_tab_DfVcNY",
+        "specification_TwTV6q",
+        "collapsible_tab_WjVAzz",
+        "collapsible_tab_qHQHyK"
+      ],
+      "settings": {
+        "heading": "",
+        "add_border": false,
+        "marker_color": "#fd6262",
+        "disable_top_spacing": false,
+        "disable_bottom_spacing": false
+      }
+    },
+    "promotion_blocks_TipHNg": {
+      "type": "promotion-blocks",
+      "blocks": {
+        "promotion_QGeWKA": {
+          "type": "promotion",
+          "settings": {
+            "line_1_text": "FIND A LOCAL RETAILER",
+            "line_2_text": "",
+            "description": "<p>Visit our <strong>Store Locator<\/strong> page and enter your <strong>zip code<\/strong> or <strong>city<\/strong> to find nearby retailers that stock our tools. <\/p>",
+            "button_text": "Contact us",
+            "color_bg": "#fef7d8",
+            "color_text": "#453d3a"
+          }
+        },
+        "promotion_zw3UfX": {
+          "type": "promotion",
+          "settings": {
+            "line_1_text": "INSTALLATION CONSULTATION",
+            "line_2_text": "",
+            "description": "<p>Our customer service team to schedule your installation consultation.<\/p>",
+            "button_text": "Learn more",
+            "color_bg": "#fef7d8",
+            "color_text": "#453d3a"
+          }
+        },
+        "promotion_AQ7j4B": {
+          "type": "promotion",
+          "settings": {
+            "line_1_text": "DOWNLOAD THE APP",
+            "line_2_text": "",
+            "description": "<p>Get access to <strong>app-only discounts<\/strong> and promotions that aren’t available anywhere else.<\/p>",
+            "button_text": "Download",
+            "color_bg": "#fef7d8",
+            "color_text": "#453d3a"
+          }
+        }
+      },
+      "block_order": [
+        "promotion_QGeWKA",
+        "promotion_zw3UfX",
+        "promotion_AQ7j4B"
+      ],
+      "settings": {
+        "heading": "",
+        "mobile_swipe": true,
+        "image_ratio": "adapt",
+        "content_orientation": "vertical",
+        "columns_desktop": 3,
+        "image_layout": "image_first",
+        "text_alignment": "text-left",
+        "line_1_size": "h4",
+        "line_2_size": "h5",
+        "disable_top_spacing": true,
+        "disable_bottom_spacing": false
+      }
+    },
+    "product_recommendations_NKiVnX": {
+      "type": "product-recommendations",
+      "settings": {
+        "heading": "You may also like",
+        "description": "<p>Describe your featured collection here<\/p>",
+        "product_limit": 5,
+        "columns_desktop": 5,
+        "disable_top_spacing": true,
+        "disable_bottom_spacing": false
+      }
+    },
+    "recently_viewed_products_e4BTRt": {
+      "type": "recently-viewed-products",
+      "settings": {
+        "heading": "Recently viewed products",
+        "description": "<p>Describe your recently viewed products here<\/p>",
+        "product_limit": 4,
+        "columns_desktop": 5,
+        "marker_color": "#fd6262",
+        "disable_top_spacing": true,
+        "disable_bottom_spacing": false
+      }
+    },
+    "17144927127391ffb0": {
+      "type": "apps",
+      "settings": {}
+    }
+  },
+  "order": [
+    "breadcrumbs",
+    "main-product",
+    "single_image_XraFaj",
+    "collapsible_content_xCJRzR",
+    "promotion_blocks_TipHNg",
+    "product_recommendations_NKiVnX",
+    "recently_viewed_products_e4BTRt",
+    "17144927127391ffb0"
+  ]
+}

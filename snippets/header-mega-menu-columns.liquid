@@ -1,0 +1,62 @@
+<ul class="mega-menu-columns" tabindex="-1">
+  {% if link.links.size > 0 %}
+    {%- for l in link.links -%}
+      {% if l.type == 'collection_link' %}
+        {% assign linked_collection = collections[l.object.handle] %}
+      {% endif %}
+
+      <li class="{% if l.active %} active{% endif %}" role="none">
+        <a
+          href="{{ l.url }}"
+          class="mega-menu-columns__heading"
+          role="menuitem"
+          style="display:flex; flex-direction:column; gap:1rem; align-items:center;"
+        >
+          {% if l.type == 'collection_link' and linked_collection.featured_image %}
+            <div class="mega-menu-columns__image">
+              <img
+                src="{{ linked_collection.featured_image | img_url: '250x250', crop: 'center' }}"
+                alt="{{ l.title | escape }}"
+                loading="lazy"
+                width="250"
+                height="250"
+              >
+            </div>
+          {% endif %}
+          {{ l.title }}
+        </a>
+
+        {%- if l.links.size > 0 -%}
+          <ul role="menu">
+            {%- for sub_link in l.links -%}
+              {% if sub_link.type == 'collection_link' %}
+                {% assign sub_linked_collection = collections[sub_link.object.handle] %}
+              {% endif %}
+
+              <li class="{% if sub_link.active %} active{% endif %}" role="none">
+                <a
+                  href="{{ sub_link.url }}"
+                  role="menuitem"
+                  style="display:flex; flex-direction:column; gap:1rem; align-items:center;"
+                >
+                  {% if sub_link.type == 'collection_link' and sub_linked_collection.featured_image %}
+                    <div class="mega-menu-columns__sub-image">
+                      <img
+                        src="{{ sub_linked_collection.featured_image | img_url: '50x50', crop: 'center' }}"
+                        alt="{{ sub_link.title | escape }}"
+                        loading="lazy"
+                        width="500"
+                        height="500"
+                      >
+                    </div>
+                  {% endif %}
+                  {{ sub_link.title }}
+                </a>
+              </li>
+            {%- endfor -%}
+          </ul>
+        {%- endif -%}
+      </li>
+    {%- endfor -%}
+  {% endif %}
+</ul>

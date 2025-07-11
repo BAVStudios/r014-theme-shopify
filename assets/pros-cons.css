@@ -1,0 +1,23 @@
+
+
+
+.product--pros-cons {
+  margin-bottom: 20px; }
+  .product--pros-cons-section {
+    display: grid;
+    gap: 10px; }
+    .product--pros-cons-section:empty {
+      display: none; }
+    .product--pros-cons-section:not(:empty) + div {
+      margin-top: 15px;
+      padding-top: 15px;
+      border-top: 1px solid var(--color-border); }
+  .product--pros-cons-item {
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 15px;
+    font-size: 0.875rem; }
+    .product--pros-cons-item svg {
+      width: 18px;
+      flex-shrink: 0;
+      margin-top: 2px; }

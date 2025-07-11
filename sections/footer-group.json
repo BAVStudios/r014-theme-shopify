@@ -1,0 +1,199 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "type": "header",
+  "name": "Footer group",
+  "sections": {
+    "text_with_icons_AEEP7K": {
+      "type": "text-with-icons",
+      "blocks": {
+        "icon_fnBxr3": {
+          "type": "icon",
+          "settings": {
+            "icon": "box",
+            "heading": "Heading",
+            "text": "",
+            "link": ""
+          }
+        },
+        "icon_7DYtgi": {
+          "type": "icon",
+          "settings": {
+            "icon": "recycle",
+            "heading": "Heading",
+            "text": "",
+            "link": ""
+          }
+        },
+        "icon_yYB3Wt": {
+          "type": "icon",
+          "settings": {
+            "icon": "serving_dish",
+            "heading": "Heading",
+            "text": "",
+            "link": ""
+          }
+        },
+        "icon_a7kRkw": {
+          "type": "icon",
+          "settings": {
+            "icon": "shirt",
+            "heading": "Heading",
+            "text": "",
+            "link": ""
+          }
+        },
+        "icon_Hfd9EU": {
+          "type": "icon",
+          "settings": {
+            "icon": "ruler",
+            "heading": "Heading",
+            "text": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "icon_fnBxr3",
+        "icon_7DYtgi",
+        "icon_yYB3Wt",
+        "icon_a7kRkw",
+        "icon_Hfd9EU"
+      ],
+      "disabled": true,
+      "settings": {
+        "text_alignment": "center",
+        "icon_position": "top",
+        "icon_size": "medium",
+        "heading_size": "small",
+        "mobile_swipe": true,
+        "add_border": false,
+        "color_bg": "#f6f6f6",
+        "color_text": "#252525",
+        "disable_top_spacing": true,
+        "disable_bottom_spacing": true
+      }
+    },
+    "spacer_zyiTCJ": {
+      "type": "spacer",
+      "settings": {
+        "spacer_mobile": 0,
+        "spacer_desktop": 0,
+        "border_separator": true,
+        "border_separator_full": true
+      }
+    },
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "401e3886-6cb7-4742-8fda-45a0d97a26a3": {
+          "type": "menu",
+          "settings": {
+            "column_size": "small",
+            "title": "Information",
+            "menu": "footer-info"
+          }
+        },
+        "00a364e5-af4e-4073-871b-4d533bd4da06": {
+          "type": "menu",
+          "settings": {
+            "column_size": "small",
+            "title": "Care",
+            "menu": "footer-care"
+          }
+        },
+        "a09a8a35-bedc-4119-aa04-3ce886faba9d": {
+          "type": "menu",
+          "disabled": true,
+          "settings": {
+            "column_size": "small",
+            "title": "Support",
+            "menu": "footer"
+          }
+        },
+        "menu_qz7gFk": {
+          "type": "menu",
+          "disabled": true,
+          "settings": {
+            "column_size": "small",
+            "title": "Legal",
+            "menu": "footer"
+          }
+        },
+        "signup_xcHez6": {
+          "type": "signup",
+          "disabled": true,
+          "settings": {
+            "column_size": "large",
+            "title": "",
+            "text": "<p>Add a text to attract more customers to <strong>sign up!</strong></p>"
+          }
+        },
+        "help_z8qUgC": {
+          "type": "help",
+          "settings": {
+            "column_size": "large",
+            "title": "",
+            "button_1_label": "Customer support",
+            "button_1_content": "We're available to help in anyway. <br>\nVisit our Main Store, call or email us",
+            "button_1_icon": "chat_bubble",
+            "button_1_link": "shopify://policies/contact-information",
+            "button_2_label": "",
+            "button_2_content": "",
+            "button_2_icon": "ruler",
+            "button_2_link": "",
+            "button_3_label": "",
+            "button_3_content": "",
+            "button_3_icon": "ruler",
+            "button_3_link": "",
+            "button_4_label": "",
+            "button_4_content": "",
+            "button_4_icon": "ruler",
+            "button_4_link": ""
+          }
+        },
+        "social_MNMmy9": {
+          "type": "social",
+          "disabled": true,
+          "settings": {
+            "column_size": "small",
+            "title": ""
+          }
+        }
+      },
+      "block_order": [
+        "401e3886-6cb7-4742-8fda-45a0d97a26a3",
+        "00a364e5-af4e-4073-871b-4d533bd4da06",
+        "a09a8a35-bedc-4119-aa04-3ce886faba9d",
+        "menu_qz7gFk",
+        "signup_xcHez6",
+        "help_z8qUgC",
+        "social_MNMmy9"
+      ],
+      "custom_css": [
+        ".social-links li a {width: 40px;}",
+        ".social-links svg {width: 25px;}"
+      ],
+      "settings": {
+        "copyright_text": "All rights reserved.",
+        "show_language_switcher": false,
+        "show_currency_switcher": false,
+        "show_payment_icons": true,
+        "show_social_links": true,
+        "enable_follow_on_shop": false
+      }
+    }
+  },
+  "order": [
+    "text_with_icons_AEEP7K",
+    "spacer_zyiTCJ",
+    "footer"
+  ]
+}

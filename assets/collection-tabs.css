@@ -1,0 +1,22 @@
+
+
+
+.collection-tabs {
+  overflow: hidden; }
+  .collection-tabs__list {
+    display: flex;
+    overflow-x: auto;
+    text-align: left;
+    white-space: nowrap;
+    width: 100%;
+    scrollbar-width: none;
+    margin-top: 15px;
+    gap: 10px; }
+    [dir="rtl"] .collection-tabs__list {
+      text-align: right; }
+
+.section-collection-tabs .products.carousel .collection-tabs--product {
+  display: none; }
+  .section-collection-tabs .products.carousel .collection-tabs--product.carousel__slide {
+    display: flex;
+    scroll-snap-align: start; }

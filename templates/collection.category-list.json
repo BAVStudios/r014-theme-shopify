@@ -1,0 +1,92 @@
+{
+  "sections": {
+    "breadcrumbs": {
+      "type": "breadcrumbs",
+      "settings": {}
+    },
+    "main-collection-banner": {
+      "type": "main-collection-banner",
+      "settings": {
+        "show_collection_image": false,
+        "collection_image_ratio": "adapt",
+        "collection_image_width": "standard",
+        "show_collection_description": true,
+        "show_subcollections": false
+      }
+    },
+    "collection_list_RjRYWP": {
+      "type": "collection-list",
+      "custom_css": [
+        "@media only screen and (min-width: 768px) {.collection-card--content {font-size: 14px; }}"
+      ],
+      "settings": {
+        "heading": "",
+        "image_ratio": "adapt",
+        "columns_desktop": 8,
+        "columns_mobile": "3",
+        "mobile_swipe": true,
+        "text_alignment": "text-center",
+        "first_product_image": false,
+        "collection_product_count": false,
+        "marker_color": "#fdfbb8",
+        "disable_top_spacing": true,
+        "disable_bottom_spacing": false
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "blocks": {
+        "card_promotion_NEE8qC": {
+          "type": "card-promotion",
+          "settings": {
+            "promotion_collection": "",
+            "promotion_hide_filtered": true,
+            "promotion_position": 6,
+            "visibility": "hide-on-list",
+            "aspect_ratio": "square",
+            "text": "",
+            "link_label": "Shop today",
+            "link": "",
+            "color_text": "#4e693d",
+            "color_bg": "#fff6df"
+          }
+        },
+        "wide_promotion_nmyEqg": {
+          "type": "wide-promotion",
+          "settings": {
+            "promotion_collection": "",
+            "promotion_hide_filtered": true,
+            "promotion_position": "bottom",
+            "layout": "text_first",
+            "visibility": "grid-list",
+            "aspect_ratio": "adapt",
+            "link": "",
+            "color_text": "#473552",
+            "color_bg": "#fff5ee"
+          }
+        }
+      },
+      "block_order": [
+        "card_promotion_NEE8qC",
+        "wide_promotion_nmyEqg"
+      ],
+      "settings": {
+        "products_per_page": 15,
+        "columns_desktop": 4,
+        "pagination_type": "paginated",
+        "enable_filtering": true,
+        "enable_sorting": true,
+        "show_counts": true,
+        "seo_text_custom_liquid": "",
+        "seo_text_read_more": "Read more",
+        "seo_text_max_height": 150
+      }
+    }
+  },
+  "order": [
+    "breadcrumbs",
+    "main-collection-banner",
+    "collection_list_RjRYWP",
+    "product-grid"
+  ]
+}

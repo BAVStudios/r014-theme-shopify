@@ -1,0 +1,151 @@
+{{ 'shop-the-look.css' | asset_url | stylesheet_tag }}
+{%- liquid
+	assign image = section.settings.image
+	assign image_mobile = section.settings.image_mobile
+	assign disable_top_spacing = section.settings.disable_top_spacing
+	assign disable_bottom_spacing = section.settings.disable_bottom_spacing
+
+	unless image_mobile
+		assign image_mobile = image
+	endunless
+-%}
+<shop-the-look class="shop-the-look section-spacing{% if disable_top_spacing %} section-spacing--disable-top{% endif %}{% if disable_bottom_spacing %} section-spacing--disable-bottom{% endif %}">
+	<div class="row">
+		<div class="small-12 columns">
+			<figure class="shop-the-look--area">
+				{%- if image -%}
+					{%- liquid
+						assign master_width = image.src.width | append: 'x' | append: image.src.height
+						assign sizes = '375x0' | append: ',' | append: master_width
+
+						assign class = ''
+						if image_mobile
+							assign class = 'shop-the-look--desktop'
+						endif
+						-%}
+						{%- render 'responsive-image', image: image, class: class, sizes: sizes -%}
+				{%- else -%}
+					{{ 'hero-apparel-2' | placeholder_svg_tag: 'placeholder_svg_tag' }}
+				{%- endif -%}
+				{%- if image_mobile -%}
+					{%- render 'responsive-image', image: image_mobile, class: 'shop-the-look--mobile' -%}
+				{%- endif -%}
+        {% for block in section.blocks %}
+					{%- assign hotspot_product = all_products[block.settings.product_handle] -%}
+					{%- render 'hotspot', hotspot_product: hotspot_product, x_position_mobile: block.settings.x_position_mobile, y_position_mobile: block.settings.y_position_mobile, x_position: block.settings.x_position, y_position: block.settings.y_position -%}
+        {% endfor %}
+			</figure>
+		</div>
+	</div>
+</shop-the-look>
+<script src="{{ 'shop-the-look.js' | asset_url }}" defer="defer"></script>
+{% schema %}
+  {
+    "name": "Shop the look",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image",
+        "info": "1680 x 700 px .jpg recommended."
+      },
+			{
+        "type": "image_picker",
+        "id": "image_mobile",
+        "label": "Mobile image",
+        "info": "750 x 800 px .jpg recommended. Default image is used if none is selected. To position the hotspots precisely, switch to mobile mode."
+      },
+			{
+        "type": "header",
+        "content": "Spacing"
+      },
+			{
+				"type": "checkbox",
+				"id": "disable_top_spacing",
+				"default": false,
+				"label": "Remove top spacing"
+			},
+			{
+				"type": "checkbox",
+				"id": "disable_bottom_spacing",
+				"default": false,
+				"label": "Remove bottom spacing"
+			}
+    ],
+    "blocks": [
+      {
+        "type": "product",
+        "name": "Product",
+        "settings": [
+          {
+            "type": "product",
+            "id": "product_handle",
+            "label": "Product"
+          },
+					{
+						"type": "header",
+						"content": "Position"
+					},
+					{
+						"type": "range",
+						"id": "x_position",
+						"min": 0,
+						"max": 100,
+						"step": 1,
+						"unit": "%",
+						"label": "Horizontal",
+						"default": 20,
+						"info": "Horizontal position of the hot spot"
+					},
+					{
+						"type": "range",
+						"id": "y_position",
+						"min": 0,
+						"max": 100,
+						"step": 1,
+						"unit": "%",
+						"label": "Vertical",
+						"default": 20,
+						"info": "Vertical position of the hot spot"
+					},
+					{
+						"type": "header",
+						"content": "Mobile position"
+					},
+					{
+						"type": "range",
+						"id": "x_position_mobile",
+						"min": 0,
+						"max": 100,
+						"step": 1,
+						"unit": "%",
+						"label": "Horizontal",
+						"default": 20,
+						"info": "Horizontal position of the hot spot on mobile screens"
+					},
+					{
+						"type": "range",
+						"id": "y_position_mobile",
+						"min": 0,
+						"max": 100,
+						"step": 1,
+						"unit": "%",
+						"label": "Vertical",
+						"default": 20,
+						"info": "Vertical position of the hot spot on mobile screens"
+					}
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Shop the look",
+				"blocks": [
+					{
+						"type": "product"
+					}
+				]
+      }
+    ]
+  }
+{% endschema %}

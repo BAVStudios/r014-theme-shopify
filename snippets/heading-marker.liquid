@@ -1,0 +1,4 @@
+{%- capture span_start -%}
+<mark class="heading-marker" style="--marker-color: {{ color | default: '#FDFBB8' }}">
+{%- endcapture -%}
+{{ heading | replace_first: '|', span_start | replace: '|', '</mark>' }}

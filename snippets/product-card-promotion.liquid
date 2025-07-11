@@ -1,0 +1,37 @@
+{%- liquid
+	assign visibility = block.settings.visibility
+	assign block_image = block.settings.image
+	assign aspect_ratio = block.settings.aspect_ratio
+	
+	assign title = block.settings.title
+	assign text = block.settings.text
+	assign link_label = block.settings.link_label
+	assign link = block.settings.link
+
+	assign color_text = block.settings.color_text
+	assign color_bg = block.settings.color_bg
+	assign color_button_hover = color_text | color_darken: 7
+-%}
+<div class="product-card-promotion {{ block.type }}" {{ block.shopify_attributes }} style="--color-body: {{ color_text }}; --bg-body: {{ color_bg }}; --solid-button-background: {{ color_text }}; --solid-button-background-hover: {{ color_button_hover }}">
+	{%- if block_image -%}
+		<figure class="aspect-ratio aspect-ratio--{{ aspect_ratio }}" style="--ratio-percent: {{ 1 | divided_by: block_image.aspect_ratio | times: 100 }}%;">
+		{%- render 'responsive-image', image: block.settings.image -%}
+		</figure>
+	{%- endif -%}
+	<div class="product-card-promotion--content">
+		{% if title != blank %}
+			<div class="product-card-promotion--heading h5">{{ title }}</div>
+		{% endif %}
+		{% if text != blank %}
+			<p>{{ text }}</p>
+		{% endif %}
+		{% if link_label != blank %}
+		<div class="product-card-promotion--button">
+			<a class="button small"{% if link == blank %} role="link" aria-disabled="true"{% else %} href="{{ link }}"{% endif %}>{{ link_label }}</a>
+		</div>
+		{% endif %}
+		{% if link != blank and link_label == blank %}
+			<a href="{{ link }}" class="product-card-promotion--link" target="_blank"></a>
+		{% endif %}
+	</div>
+</div>

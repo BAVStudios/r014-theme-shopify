@@ -1,0 +1,162 @@
+{
+  "sections": {
+    "breadcrumbs": {
+      "type": "breadcrumbs",
+      "settings": {}
+    },
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "show_page_title": true,
+        "show_page_content": false,
+        "page_width": "full",
+        "page_alignment": "left"
+      }
+    },
+    "featured_collection_trXbgG": {
+      "type": "featured-collection",
+      "blocks": {
+        "card_promotion_dURGdT": {
+          "type": "card-promotion",
+          "settings": {
+            "promotion_position": 1,
+            "aspect_ratio": "adapt",
+            "color_text": "#3d5969",
+            "color_bg": "#ecf2fd"
+          }
+        }
+      },
+      "block_order": [
+        "card_promotion_dURGdT"
+      ],
+      "settings": {
+        "heading": "",
+        "description": "",
+        "display_type": "carousel",
+        "product_limit": 5,
+        "columns_desktop": 5,
+        "show_view_all": true,
+        "mobile_swipe": true,
+        "marker_color": "#fd6262",
+        "disable_top_spacing": true,
+        "disable_bottom_spacing": false
+      }
+    },
+    "featured_collection_YfdYQk": {
+      "type": "featured-collection",
+      "blocks": {
+        "card_promotion_p9JpEn": {
+          "type": "card-promotion",
+          "settings": {
+            "promotion_position": 1,
+            "aspect_ratio": "square",
+            "color_text": "#745448",
+            "color_bg": "#f9f0ec"
+          }
+        }
+      },
+      "block_order": [
+        "card_promotion_p9JpEn"
+      ],
+      "settings": {
+        "heading": "",
+        "description": "",
+        "display_type": "carousel",
+        "product_limit": 5,
+        "columns_desktop": 5,
+        "show_view_all": true,
+        "mobile_swipe": true,
+        "marker_color": "#FD6262",
+        "disable_top_spacing": false,
+        "disable_bottom_spacing": false
+      }
+    },
+    "featured_collection_PjK73c": {
+      "type": "featured-collection",
+      "blocks": {
+        "card_promotion_KLMadL": {
+          "type": "card-promotion",
+          "settings": {
+            "promotion_position": 1,
+            "aspect_ratio": "square",
+            "color_text": "#C33C3C",
+            "color_bg": "#fff2f2"
+          }
+        }
+      },
+      "block_order": [
+        "card_promotion_KLMadL"
+      ],
+      "settings": {
+        "heading": "",
+        "description": "",
+        "display_type": "carousel",
+        "product_limit": 5,
+        "columns_desktop": 5,
+        "show_view_all": true,
+        "mobile_swipe": true,
+        "marker_color": "#FD6262",
+        "disable_top_spacing": false,
+        "disable_bottom_spacing": false
+      }
+    },
+    "featured_collection_bA8dNq": {
+      "type": "featured-collection",
+      "blocks": {
+        "card_promotion_zickUg": {
+          "type": "card-promotion",
+          "settings": {
+            "promotion_position": 1,
+            "aspect_ratio": "adapt",
+            "color_text": "#4E693D",
+            "color_bg": "#eff7ee"
+          }
+        }
+      },
+      "block_order": [
+        "card_promotion_zickUg"
+      ],
+      "settings": {
+        "heading": "",
+        "description": "",
+        "display_type": "carousel",
+        "product_limit": 5,
+        "columns_desktop": 5,
+        "show_view_all": true,
+        "mobile_swipe": true,
+        "marker_color": "#FD6262",
+        "disable_top_spacing": false,
+        "disable_bottom_spacing": true
+      }
+    },
+    "text_with_max_height_ak7zA8": {
+      "type": "text-with-max-height",
+      "settings": {
+        "seo_text_custom_liquid": "",
+        "seo_text_read_more": "Read more",
+        "seo_text_max_height": 150,
+        "disable_top_spacing": true,
+        "disable_bottom_spacing": false
+      }
+    },
+    "spacer_W8xkKC": {
+      "type": "spacer",
+      "settings": {
+        "spacer_mobile": 0,
+        "spacer_desktop": 30,
+        "border_separator": false,
+        "border_separator_full": false
+      }
+    }
+  },
+  "order": [
+    "breadcrumbs",
+    "main",
+    "featured_collection_trXbgG",
+    "featured_collection_YfdYQk",
+    "featured_collection_PjK73c",
+    "featured_collection_bA8dNq",
+    "text_with_max_height_ak7zA8",
+    "spacer_W8xkKC"
+  ]
+}

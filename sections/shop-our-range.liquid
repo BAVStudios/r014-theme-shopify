@@ -1,0 +1,565 @@
+{{- 'shop-our-range.css' | asset_url | stylesheet_tag -}}
+{%- liquid
+	assign desktop_image = section.settings.image
+	assign mobile_image = section.settings.mobile_image
+
+	assign desktop_height = section.settings.desktop_height
+	assign mobile_height = section.settings.mobile_height
+	assign full_width = section.settings.full_width
+
+	assign content_width = section.settings.content_width
+	assign content_position = section.settings.content_position
+	assign text_alignment = section.settings.text_alignment
+
+	assign color_text = section.settings.color_text
+	assign overlay_color = section.settings.overlay_color
+	assign overlay_opacity = section.settings.overlay_opacity
+
+	assign disable_top_spacing = section.settings.disable_top_spacing
+	assign disable_bottom_spacing = section.settings.disable_bottom_spacing
+
+	case mobile_height
+		when 'mobile-height-350'
+			assign mobile_image_height = 350
+		when 'mobile-height-400'
+			assign mobile_image_height = 400
+		when 'mobile-height-450'
+			assign mobile_image_height = 450
+		when 'mobile-height-500'
+			assign mobile_image_height = 500
+		else
+			assign mobile_image_height = 500
+	endcase
+
+	assign range_blocks = section.blocks | where: "type", "range"
+
+	assign priority = false
+	assign heading_tag = 'div'
+
+	if section.index <= 2
+		assign priority = 'high'
+		assign heading_tag = 'h1'
+	endif
+-%}
+<div class="row {% if full_width %}full-width-row-full{% endif %}">
+	<div class="small-12 columns">
+		<div class="shop-our-range text-{{ text_alignment }} {{ mobile_height }} {{ desktop_height }} section-spacing{% if disable_top_spacing %} section-spacing--disable-top{% endif %}{% if disable_bottom_spacing %} section-spacing--disable-bottom{% endif %}" style="--color-overlay-rgb: {{ overlay_color.rgb | replace: ' ' , ',' }}; --overlay-opacity: {{ overlay_opacity | divided_by: 100.0 }};">
+			<div class="shop-our-range--bg">
+				{%- if mobile_image -%}
+					{%- liquid
+						assign image = mobile_image
+						assign master_width = image.src.width | append: 'x' | append: image.src.height
+						assign width = '375x' | append: mobile_image_height | append: ',' | append: master_width
+
+						assign class = 'shop-our-range--mobile'
+						render 'responsive-image', image: image, sizes: width, class: class, priority: priority
+					-%}
+				{%- endif -%}
+				{%- if desktop_image -%}
+					{%- liquid
+						assign image = desktop_image
+						assign small_width = image.src.height | times: '375' | divided_by: image.src.width
+						assign master_width = image.src.width | append: 'x' | append: image.src.height
+						assign width = '375x' | append: small_width | append: ',' | append: master_width
+
+						assign class = ''
+
+						if mobile_image
+							assign class = 'shop-our-range--desktop'
+						endif
+					-%}
+					{%- render 'responsive-image', image: image, sizes: width, class: class, priority: priority -%}
+				{%- else -%}
+					{{ 'hero-apparel-1' | placeholder_svg_tag: 'placeholder_svg_tag' }}
+				{%- endif -%}
+			</div>
+			<div class="shop-our-range--content content-{{ content_position }}" style="--color-body: {{ color_text }};">
+				<div class="shop-our-range--content-inner content-width-{{ content_width }}">
+					                      <div class="shop-our-range--content-inner--container">
+                  {% for block in section.blocks %}
+
+                      {%- case block.type -%}
+							{%- when 'badge' -%}
+								<div {{ block.shopify_attributes }}>
+									<span class="inline-badge" style="--badge-bg: {{ block.settings.color_bg }}; --badge-text: {{ block.settings.color_text }}">{{ block.settings.text }}</span>
+								</div>
+							{%- when 'subheading' -%}
+								<p class="subheading" {{ block.shopify_attributes }}>{{ block.settings.text }}</p>
+							{%- when 'heading' -%}
+								<{{ heading_tag }} class="shop-our-range--heading {{ block.settings.heading_size }}" {{ block.shopify_attributes }}>{{ block.settings.text | newline_to_br }}</{{ heading_tag }}>
+							{%- when 'text' -%}
+								<div class="rte" {{ block.shopify_attributes }}>{{ block.settings.text }}</div>
+							{%- when 'button' -%}
+								{% if block.settings.button_text != blank %}
+									<a class="button {% if block.settings.button_outline %} outline{%- endif %}" href="{{ block.settings.button_link }}" role="button" title="{{ block.settings.button_text | escape }}" {{ block.shopify_attributes }}>{{ block.settings.button_text }}</a>
+								{% endif %}
+                            {% when 'space' %}
+		            <div style="height: {{ block.settings.height | append: 'px' }}" {{ block.shopify_attributes }}></div>
+						{%- endcase -%}
+                            
+					{% endfor %}
+         </div>
+				</div>
+			</div>
+			{%- if range_blocks.size > 0 -%}
+			{%- liquid 
+				assign block = range_blocks[0]
+				assign navigation_menu = block.settings.menu
+			-%}
+			<shop-our-range class="shop-our-range--range">
+				<div class="shop-our-range--range-inner">
+					<div class="shop-our-range--range-select">
+						{%- for i in (1..navigation_menu.levels) -%}
+						{%- liquid
+						assign select_label = block.settings.heading_1
+						case i
+							when 2
+								assign select_label = block.settings.heading_2
+							when 3
+								assign select_label = block.settings.heading_3
+						endcase
+						-%}
+						<div class="select shop-our-range--select-group">
+							<label for="shop-our-range--select-{{ i }}-{{ section.id }}" class="visually-hidden">{{ select_label }}</label>
+							<select id="shop-our-range--select-{{ i }}-{{ section.id }}" class="shop-our-range--select"{% if i > 1 %} disabled {% endif %} data-index="{{ i }}">
+								{%- if i == 1 %}
+									<option value="">{{ block.settings.heading_1 }}</option>
+									{%- for parent_link in navigation_menu.links -%}
+									<option value="{{ parent_link.url }}">{{ parent_link.title }}</option>
+									{%- endfor -%}
+								{%- elsif i == 2 %}
+									<option value="">{{ block.settings.heading_2 }}</option>
+									{%- for parent_link in navigation_menu.links -%}
+										{%- assign index = forloop.index -%}
+										{%- for child_link in parent_link.links -%}
+											<option value="{{ child_link.url }}" data-index="{{ index }}">{{ child_link.title }}</option>
+										{%- endfor -%}
+									{%- endfor -%}
+								{%- elsif i == 3 %}
+									<option value="">{{ block.settings.heading_3 }}</option>
+									{%- for parent_link in navigation_menu.links -%}
+										{%- assign parent_index = forloop.index -%}
+										{%- for child_link in parent_link.links -%}
+											{%- assign index = forloop.index -%}
+											{%- for grand_child_link in child_link.links -%}
+											<option value="{{ grand_child_link.url }}" data-parent-index="{{ parent_index }}" data-index="{{ index }}">{{ grand_child_link.title }}</option>
+											{%- endfor -%}
+										{%- endfor -%}
+									{%- endfor -%}
+								{%- endif -%}
+							</select>
+							<div class="select-arrow">{%- render 'svg-icons' with 'thb-select' -%}</div>
+							<label for="shop-our-range--select-{{ i }}-{{ section.id }}--hidden" class="visually-hidden">{{ select_label }}</label>
+							<select for="shop-our-range--select-{{ i }}-{{ section.id }}--hidden" class="shop-our-range--hidden visually-hidden"></select>
+						</div>
+						{%- endfor -%}
+					</div>
+					<button class="button shop-our-range--button" disabled>{{ block.settings.button_label }}</button>
+				</div>
+			</shop-our-range>
+			{%- endif -%}
+		</div>
+		<div class="shop-our-range--range-spacer"></div>
+	</div>
+</div>
+{%- if range_blocks.size > 0 -%}
+<script src="{{ 'shop-our-range.js' | asset_url }}" defer="defer"></script>
+{%- endif -%}
+{% schema %}
+  {
+    "name": "Shop our range",
+		"class": "section-shop-our-range",
+    "settings": [
+			{
+        "type": "paragraph",
+				"content": "Learn more about how to set up the [shop our range section](https://documentation.fuelthemes.net/kb/how-to-set-up-shop-our-range-section-in-pinnacle-theme/)"
+      },
+			{
+				"type": "image_picker",
+				"id": "image",
+				"label": "Image",
+				"info": "2800 x 650 .jpg recommended."
+			},
+			{
+				"type": "image_picker",
+				"id": "mobile_image",
+				"label": "Mobile image (optional)",
+				"info": "375 x 650 .jpg recommended."
+			},
+			{
+	      "type": "header",
+	      "content": "Layout"
+	    },
+			{
+				"type": "select",
+				"id": "desktop_height",
+				"label": "Desktop height",
+				"options": [
+					{
+						"value": "desktop-height-450",
+						"label": "450px"
+					},
+					{
+						"value": "desktop-height-550",
+						"label": "550px"
+					},
+					{
+						"value": "desktop-height-650",
+						"label": "650px"
+					},
+					{
+						"value": "desktop-height-750",
+						"label": "750px"
+					},
+					{
+						"value": "desktop-height-full",
+						"label": "Full screen"
+					}
+				],
+				"default": "desktop-height-550"
+			},
+			{
+				"type": "select",
+				"id": "mobile_height",
+				"label": "Mobile height",
+				"options": [
+					{
+						"value": "mobile-height-auto",
+						"label": "Adapt to content"
+					},
+					{
+						"value": "mobile-height-350",
+						"label": "350px"
+					},
+					{
+						"value": "mobile-height-400",
+						"label": "400px"
+					},
+					{
+						"value": "mobile-height-450",
+						"label": "450px"
+					},
+					{
+						"value": "mobile-height-500",
+						"label": "500px"
+					},
+					{
+						"value": "mobile-height-full",
+						"label": "Full screen"
+					}
+				],
+				"default": "mobile-height-450"
+			},
+			{
+				"type": "checkbox",
+				"id": "full_width",
+				"label": "Make section full width",
+				"default": false
+			},
+			{
+				"type": "select",
+				"id": "content_width",
+				"label": "Content width",
+				"options": [
+					{
+						"value": "small",
+						"label": "Small"
+					},
+					{
+						"value": "medium",
+						"label": "Medium"
+					},
+					{
+						"value": "large",
+						"label": "Large"
+					},
+					{
+						"value": "full",
+						"label": "Full"
+					}
+				],
+				"default": "small"
+			},
+			{
+				"type": "select",
+				"id": "content_position",
+				"label": "Content position",
+				"options": [
+					{ "value": "top-left", "label": "Top left" },
+					{ "value": "top-center", "label": "Top center" },
+					{ "value": "top-right", "label": "Top right" },
+					{ "value": "middle-left", "label": "Middle left" },
+					{ "value": "middle-center", "label": "Middle center" },
+					{ "value": "middle-right", "label": "Middle right" },
+					{ "value": "bottom-left", "label": "Bottom left" },
+					{ "value": "bottom-center", "label": "Bottom center" },
+					{ "value": "bottom-right", "label": "Bottom right" }
+				],
+				"default": "middle-left"
+			},
+			{
+				"type": "select",
+				"id": "text_alignment",
+				"options": [
+					{
+						"value": "left",
+						"label": "Left"
+					},
+					{
+						"value": "center",
+						"label": "Center"
+					},
+					{
+						"value": "right",
+						"label": "Right"
+					}
+				],
+				"default": "left",
+				"label": "Content alignment"
+			},
+			{
+	      "type": "header",
+	      "content": "Colors"
+	    },
+			{
+        "type": "color",
+        "id": "color_text",
+        "label": "Text",
+        "default": "#FFFFFF"
+      },
+			{
+				"type": "color",
+				"id": "overlay_color",
+				"label": "Overlay",
+				"default": "#000000"
+			},
+			{
+				"type": "range",
+				"id": "overlay_opacity",
+				"min": 0,
+				"max": 100,
+				"step": 1,
+				"unit": "%",
+				"label": "Overlay opacity",
+				"default": 10
+			},
+			{
+	      "type": "header",
+	      "content": "Spacing"
+	    },
+			{
+				"type": "checkbox",
+				"id": "disable_top_spacing",
+				"default": false,
+				"label": "Remove top spacing"
+			},
+			{
+				"type": "checkbox",
+				"id": "disable_bottom_spacing",
+				"default": false,
+				"label": "Remove bottom spacing"
+			}
+    ],
+    "blocks": [
+			{
+				"type": "badge",
+				"name": "Badge",
+				"limit": 1,
+				"settings": [
+					{
+						"type": "text",
+						"id": "text",
+						"label": "Text",
+						"default": "Badge heading"
+					},
+					{
+						"type": "color",
+						"id": "color_bg",
+						"label": "Background",
+						"default": "#FFE1DF"
+					},
+					{
+						"type": "color",
+						"id": "color_text",
+						"label": "Text",
+						"default": "#652C2C"
+					}
+				]
+			},
+			{
+				"type": "subheading",
+				"name": "Subheading",
+				"limit": 1,
+				"settings": [
+					{
+						"type": "text",
+						"id": "text",
+						"label": "Text",
+						"default": "Add a tagline"
+					}
+				]
+			},
+			{
+				"type": "heading",
+				"name": "Heading",
+				"limit": 1,
+				"settings": [
+					{
+						"type": "text",
+						"id": "text",
+						"label": "Text",
+						"default": "Shop our range"
+					},
+					{
+						"type": "select",
+						"id": "heading_size",
+						"label": "Size",
+						"options": [
+							{
+								"value": "h1-large",
+								"label": "Extra large"
+							},
+							{
+								"value": "h1",
+								"label": "Large"
+							},
+							{
+								"value": "h2",
+								"label": "Medium"
+							},
+							{
+								"value": "h3",
+								"label": "Small"
+							},
+							{
+								"value": "h4",
+								"label": "Very small"
+							}
+						],
+						"default": "h1"
+					}
+				]
+			},
+			{
+        "type": "text",
+        "name": "Text",
+				"limit": 1,
+        "settings": [
+          {
+            "type": "richtext",
+            "id": "text",
+            "label": "Content",
+            "default": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>"
+          }
+        ]
+      },
+      {
+        "type": "space",
+        "name": "Empty space",
+        "settings": [
+          {
+            "type": "range",
+            "id": "height",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "px",
+            "label": "Height",
+            "default": 50
+          }
+        ]
+      },
+      {
+        "type": "button",
+        "name": "Button",
+				"limit": 2,
+        "settings": [
+					{
+						"id": "button_text",
+						"type": "text",
+						"label": "Button label",
+						"default": "Shop Now",
+						"info": "Leave the label blank to hide the button."
+					},
+					{
+						"id": "button_link",
+						"type": "url",
+						"label": "Button link"
+					},
+					{
+						"type": "checkbox",
+						"id": "button_outline",
+						"label": "Use outline button style",
+						"default": false
+					}
+        ]
+      },
+			{
+        "type": "range",
+        "name": "Range search",
+				"limit": 1,
+        "settings": [
+          {
+						"type": "link_list",
+						"id": "menu",
+						"default": "main-menu",
+						"label": "Menu"
+					},
+					{
+						"type": "text",
+						"id": "button_label",
+						"label": "Button label",
+						"default": "Search"
+					},
+					{
+						"type": "header",
+						"content": "Select - 1"
+					},
+					{
+						"type": "text",
+						"id": "heading_1",
+						"label": "Text",
+						"default": "Level - 1"
+					},
+					{
+						"type": "header",
+						"content": "Select - 2"
+					},
+					{
+						"type": "text",
+						"id": "heading_2",
+						"label": "Text",
+						"default": "Level - 2"
+					},
+					{
+						"type": "header",
+						"content": "Select - 3"
+					},
+					{
+						"type": "text",
+						"id": "heading_3",
+						"label": "Text",
+						"default": "Level - 3"
+					}
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Shop our range",
+				"blocks": [
+					{
+						"type": "subheading"
+					},
+					{
+						"type": "heading"
+					},
+					{
+						"type": "text"
+					}
+				]
+      }
+    ]
+  }
+
+{% endschema %}

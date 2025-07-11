@@ -1,0 +1,240 @@
+{
+  "sections": {
+    "breadcrumbs": {
+      "type": "breadcrumbs",
+      "settings": {}
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "show_page_title": false,
+        "description": "",
+        "show_page_content": false,
+        "page_width": "full",
+        "page_alignment": "left"
+      }
+    },
+    "spacer_i4j7Uf": {
+      "type": "spacer",
+      "settings": {
+        "spacer_mobile": 25,
+        "spacer_desktop": 30,
+        "border_separator": false,
+        "border_separator_full": false
+      }
+    },
+    "single_image_yFqggG": {
+      "type": "single-image",
+      "settings": {
+        "full_width": false,
+        "image_link": "",
+        "disable_top_spacing": true,
+        "disable_bottom_spacing": true
+      }
+    },
+    "product_list_WhJywP": {
+      "type": "product-list",
+      "blocks": {
+        "collection_g7mByF": {
+          "type": "collection",
+          "settings": {
+            "heading": ""
+          }
+        },
+        "collection_RKVLya": {
+          "type": "collection",
+          "settings": {
+            "heading": ""
+          }
+        },
+        "collection_6K9fj4": {
+          "type": "collection",
+          "settings": {
+            "heading": ""
+          }
+        },
+        "collection_dKwwdM": {
+          "type": "collection",
+          "settings": {
+            "heading": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection_g7mByF",
+        "collection_RKVLya",
+        "collection_6K9fj4",
+        "collection_dKwwdM"
+      ],
+      "settings": {
+        "heading": "",
+        "product_count": 4,
+        "marker_color": "#fdfbb8",
+        "disable_top_spacing": true,
+        "disable_bottom_spacing": false
+      }
+    },
+    "shop_the_look_grid_cyDKVK": {
+      "type": "shop-the-look-grid",
+      "blocks": {
+        "media_FnwKY8": {
+          "type": "media",
+          "settings": {
+            "column": 2,
+            "row": 2,
+            "product_open_1": true,
+            "x_position_1": 53,
+            "y_position_1": 80,
+            "x_position_mobile_1": 44,
+            "y_position_mobile_1": 77,
+            "product_handle_2": "",
+            "product_open_2": false,
+            "x_position_2": 20,
+            "y_position_2": 20,
+            "x_position_mobile_2": 20,
+            "y_position_mobile_2": 20,
+            "product_handle_3": "",
+            "product_open_3": false,
+            "x_position_3": 20,
+            "y_position_3": 20,
+            "x_position_mobile_3": 20,
+            "y_position_mobile_3": 20
+          }
+        },
+        "media_TW3y8d": {
+          "type": "media",
+          "settings": {
+            "column": 2,
+            "row": 1,
+            "product_open_1": false,
+            "x_position_1": 36,
+            "y_position_1": 51,
+            "x_position_mobile_1": 35,
+            "y_position_mobile_1": 51,
+            "product_handle_2": "",
+            "product_open_2": false,
+            "x_position_2": 20,
+            "y_position_2": 20,
+            "x_position_mobile_2": 20,
+            "y_position_mobile_2": 20,
+            "product_handle_3": "",
+            "product_open_3": false,
+            "x_position_3": 20,
+            "y_position_3": 20,
+            "x_position_mobile_3": 20,
+            "y_position_mobile_3": 20
+          }
+        },
+        "media_FqXHiD": {
+          "type": "media",
+          "settings": {
+            "column": 1,
+            "row": 1,
+            "product_open_1": false,
+            "x_position_1": 23,
+            "y_position_1": 58,
+            "x_position_mobile_1": 20,
+            "y_position_mobile_1": 58,
+            "product_handle_2": "",
+            "product_open_2": false,
+            "x_position_2": 20,
+            "y_position_2": 20,
+            "x_position_mobile_2": 20,
+            "y_position_mobile_2": 20,
+            "product_handle_3": "",
+            "product_open_3": false,
+            "x_position_3": 20,
+            "y_position_3": 20,
+            "x_position_mobile_3": 20,
+            "y_position_mobile_3": 20
+          }
+        },
+        "media_zT7LXf": {
+          "type": "media",
+          "settings": {
+            "column": 1,
+            "row": 1,
+            "product_open_1": false,
+            "x_position_1": 47,
+            "y_position_1": 65,
+            "x_position_mobile_1": 46,
+            "y_position_mobile_1": 66,
+            "product_handle_2": "",
+            "product_open_2": false,
+            "x_position_2": 20,
+            "y_position_2": 20,
+            "x_position_mobile_2": 20,
+            "y_position_mobile_2": 20,
+            "product_handle_3": "",
+            "product_open_3": false,
+            "x_position_3": 20,
+            "y_position_3": 20,
+            "x_position_mobile_3": 20,
+            "y_position_mobile_3": 20
+          }
+        }
+      },
+      "block_order": [
+        "media_FnwKY8",
+        "media_TW3y8d",
+        "media_FqXHiD",
+        "media_zT7LXf"
+      ],
+      "settings": {
+        "desktop_height": 300,
+        "mobile_height": 250,
+        "column_spacing": "medium",
+        "disable_top_spacing": true,
+        "disable_bottom_spacing": false
+      }
+    },
+    "product_list_rcjDaq": {
+      "type": "product-list",
+      "blocks": {
+        "collection_deetEC": {
+          "type": "collection",
+          "settings": {
+            "heading": "",
+            "collection": "cordless-drills"
+          }
+        },
+        "collection_pCqG8W": {
+          "type": "collection",
+          "settings": {
+            "heading": "",
+            "collection": "screwdriving"
+          }
+        },
+        "collection_kzAUUC": {
+          "type": "collection",
+          "settings": {
+            "heading": "",
+            "collection": "sanding-grinding"
+          }
+        }
+      },
+      "block_order": [
+        "collection_deetEC",
+        "collection_pCqG8W",
+        "collection_kzAUUC"
+      ],
+      "settings": {
+        "heading": "",
+        "product_count": 3,
+        "marker_color": "#fdfbb8",
+        "disable_top_spacing": true,
+        "disable_bottom_spacing": false
+      }
+    }
+  },
+  "order": [
+    "breadcrumbs",
+    "main",
+    "spacer_i4j7Uf",
+    "single_image_yFqggG",
+    "product_list_WhJywP",
+    "shop_the_look_grid_cyDKVK",
+    "product_list_rcjDaq"
+  ]
+}

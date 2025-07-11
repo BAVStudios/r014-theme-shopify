@@ -1,0 +1,205 @@
+{
+  "sections": {
+    "breadcrumbs": {
+      "type": "breadcrumbs",
+      "settings": {}
+    },
+    "main-product": {
+      "type": "main-product",
+      "blocks": {
+        "vendor_sku_nA797T": {
+          "type": "vendor_sku",
+          "settings": {
+            "show_vendor": true,
+            "show_vendor_link": true,
+            "show_sku": true
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {
+            "uppercase": false,
+            "show_products_rating": true,
+            "show_products_rating_average": true,
+            "show_products_rating_count": true,
+            "show_installments": true,
+            "show_title_above_gallery_mobile": true,
+            "show_custom_badges": true
+          }
+        },
+        "955814cd-267a-4315-b47f-77f3976fbf85": {
+          "type": "siblings",
+          "settings": {
+            "siblings_collection": "",
+            "sibling_color": "",
+            "color_picker_size": "regular",
+            "margin_bottom": 16
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "dropdown",
+            "variant_columns": "2",
+            "color_picker": false,
+            "color_picker_size": "large",
+            "color_picker_use_variants": true,
+            "variant_is_disabled": true,
+            "sizing_guide_variant": "",
+            "sizing_guide_text": "",
+            "sizing_guide_icon": "none",
+            "sizing_guide_page": ""
+          }
+        },
+        "inventory_level_EjD4Fn": {
+          "type": "inventory_level",
+          "settings": {
+            "show_inventory_notice": "always",
+            "show_inventory_count": "always",
+            "inventory_notice_pulse": true,
+            "inventory_notice_bar": true,
+            "inventory_notice_threshold": 16,
+            "inventory_notice_base": 200
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_quantity_selector": true,
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        },
+        "flash_message_h6LiF4": {
+          "type": "flash_message",
+          "settings": {
+            "show_below_gallery": false,
+            "icon": "lightning_bolt",
+            "heading": "Limited time offer",
+            "message": "<p>Save up to <strong>$1,000.00</strong> when you trade in a similar device.</p>",
+            "close_button": "close_once",
+            "color_text": "#fb605b"
+          }
+        },
+        "tabbed_content_WWPaLQ": {
+          "type": "tabbed_content",
+          "settings": {
+            "show_below_gallery": true,
+            "show_specifications_tab": true,
+            "tab_label_specifications": "Specifications",
+            "empty_field_label": "N/A",
+            "tab_label_1": "Description",
+            "text_1": "<p>Explore our wide range of premium pet products designed to enhance the life of your furry friends. From nutritious food and tasty treats to comfortable beds, durable toys, and essential grooming tools, we have everything your pet needs to thrive. <strong>Our carefully curated selection features trusted brands that prioritize quality, safety, and your pet's well-being.</strong> Whether you’re shopping for a playful pup, a curious cat, or a feathered friend, we have the perfect products to keep them happy, healthy, and loved.</p><p>Made from high-quality, natural ingredients, our food options are carefully formulated to support your pet’s health at every stage of life. Whether your pet prefers dry kibble, wet food, or grain-free formulas, we offer a variety of options to suit their tastes and dietary needs. </p>",
+            "page_1": "",
+            "custom_liquid_1": "",
+            "tab_label_2": "",
+            "text_2": "",
+            "page_2": "",
+            "custom_liquid_2": "",
+            "tab_label_3": "",
+            "text_3": "",
+            "page_3": "",
+            "custom_liquid_3": ""
+          }
+        },
+        "number_count_AkLcjn": {
+          "type": "number_count",
+          "settings": {
+            "show_below_gallery": false,
+            "has_border": true,
+            "block_heading": "",
+            "number_count_1": 1.5,
+            "number_text_1": "Eicosapentaenoic <br>Acid (EPA)",
+            "number_count_2": 0.1,
+            "number_text_2": "Docosahexaenoic <br>Acid (DHA)"
+          }
+        },
+        "49dfa368-74c4-461a-a1bd-97e29dd699ca": {
+          "type": "complementary",
+          "settings": {
+            "show_below_gallery": false,
+            "block_heading": "Pairs well with",
+            "product_list_limit": 3
+          }
+        },
+        "payment_security_wPeMQP": {
+          "type": "payment_security",
+          "settings": {
+            "show_below_gallery": true,
+            "has_background": true,
+            "heading": "Payment & Security",
+            "show_payment_icons": true,
+            "text": "Your payment information is processed securely. We do not store credit card details nor have access to your credit card information.",
+            "security_image_width": 30,
+            "security_heading": "",
+            "security_text": "",
+            "color_text": "#4f2e83"
+          }
+        },
+        "4fd23485-293f-46a0-8a4c-34d0e25ea41b": {
+          "type": "share",
+          "settings": {
+            "show_below_gallery": false
+          }
+        }
+      },
+      "block_order": [
+        "vendor_sku_nA797T",
+        "title",
+        "955814cd-267a-4315-b47f-77f3976fbf85",
+        "variant_picker",
+        "inventory_level_EjD4Fn",
+        "buy_buttons",
+        "flash_message_h6LiF4",
+        "tabbed_content_WWPaLQ",
+        "number_count_AkLcjn",
+        "49dfa368-74c4-461a-a1bd-97e29dd699ca",
+        "payment_security_wPeMQP",
+        "4fd23485-293f-46a0-8a4c-34d0e25ea41b"
+      ],
+      "settings": {
+        "enable_sticky_add_to_cart": true,
+        "outline_button": true,
+        "show_taxes_included": true,
+        "thumbnail_position": "left",
+        "product_media_width": "medium",
+        "media_aspect_ratio": "square",
+        "display_captions": true,
+        "hide_variants": true,
+        "lightbox": true,
+        "enable_video_looping": false
+      }
+    },
+    "spacer_6mjDPj": {
+      "type": "spacer",
+      "settings": {
+        "spacer_mobile": 35,
+        "spacer_desktop": 80,
+        "border_separator": true,
+        "border_separator_full": false
+      }
+    },
+    "product_recommendations_NKiVnX": {
+      "type": "product-recommendations",
+      "settings": {
+        "heading": "You may also like",
+        "description": "<p>Describe your featured collection here</p>",
+        "product_limit": 5,
+        "columns_desktop": 5,
+        "disable_top_spacing": true,
+        "disable_bottom_spacing": false
+      }
+    },
+    "17144927127391ffb0": {
+      "type": "apps",
+      "settings": {}
+    }
+  },
+  "order": [
+    "breadcrumbs",
+    "main-product",
+    "spacer_6mjDPj",
+    "product_recommendations_NKiVnX",
+    "17144927127391ffb0"
+  ]
+}

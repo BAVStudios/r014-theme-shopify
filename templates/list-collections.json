@@ -1,0 +1,243 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-list-collections",
+      "disabled": true,
+      "settings": {
+        "sort": "date",
+        "image_ratio": "square",
+        "columns_desktop": 3,
+        "collection_list_pagination_num": 12,
+        "disable_top_spacing": false,
+        "disable_bottom_spacing": false
+      }
+    },
+    "rich_text_jQXGhM": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_XUbRay": {
+          "type": "heading",
+          "settings": {
+            "size": "h2",
+            "marker_color": "#FDFBB8"
+          }
+        },
+        "text_Rkfxne": {
+          "type": "text",
+          "settings": {
+            "custom_liquid": "",
+            "size": "text-size-regular"
+          }
+        }
+      },
+      "block_order": [
+        "heading_XUbRay",
+        "text_Rkfxne"
+      ],
+      "custom_css": [
+        ".rich-text--inner {padding: 0px;}"
+      ],
+      "settings": {
+        "text_width": "large",
+        "text_position": "left",
+        "text_alignment": "left",
+        "color_bg": "transparent",
+        "color_text": "#252525",
+        "disable_top_spacing": false,
+        "disable_bottom_spacing": true
+      }
+    },
+    "promotion_blocks_8d4mLc": {
+      "type": "promotion-blocks",
+      "blocks": {
+        "promotion_fpz4th": {
+          "type": "promotion",
+          "settings": {
+          }
+        },
+        "promotion_BaViAV": {
+          "type": "promotion",
+          "settings": {
+          }
+        },
+        "promotion_yxdBa8": {
+          "type": "promotion",
+          "settings": {
+          }
+        },
+        "promotion_k7qFix": {
+          "type": "promotion",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "promotion_fpz4th",
+        "promotion_BaViAV",
+        "promotion_yxdBa8",
+        "promotion_k7qFix"
+      ],
+      "settings": {
+        "heading": "",
+        "mobile_swipe": true,
+        "image_ratio": "adapt",
+        "content_orientation": "vertical",
+        "columns_desktop": 4,
+        "image_layout": "image_first",
+        "text_alignment": "text-left",
+        "line_1_size": "h4",
+        "line_2_size": "h3",
+        "disable_top_spacing": true,
+        "disable_bottom_spacing": true
+      }
+    },
+    "spacer_Pi3Nhi": {
+      "type": "spacer",
+      "settings": {
+        "spacer_mobile": 0,
+        "spacer_desktop": 5,
+        "border_separator": false,
+        "border_separator_full": false
+      }
+    },
+    "image_with_text_overlay_XMqF39": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "heading_GANTmn": {
+          "type": "heading",
+          "settings": {
+            "heading_size": "h2"
+          }
+        },
+        "text_MQdT68": {
+          "type": "text",
+          "settings": {
+          }
+        },
+        "button_PWKQpB": {
+          "type": "button",
+          "settings": {
+            "button_outline": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_GANTmn",
+        "text_MQdT68",
+        "button_PWKQpB"
+      ],
+      "settings": {
+        "desktop_height": "desktop-height-550",
+        "mobile_height": "mobile-height-450",
+        "full_width": false,
+        "content_width": "small",
+        "content_position": "middle-center",
+        "text_alignment": "center",
+        "color_bg": "#ffffff",
+        "color_text": "#333333",
+        "overlay_color": "#000000",
+        "overlay_opacity": 0,
+        "disable_top_spacing": false,
+        "disable_bottom_spacing": false
+      }
+    },
+    "rich_text_p87zY4": {
+      "type": "rich-text",
+      "blocks": {
+        "subheading_tjTXBY": {
+          "type": "subheading",
+          "settings": {
+          }
+        },
+        "heading_DDAEFk": {
+          "type": "heading",
+          "settings": {
+            "size": "h2",
+            "marker_color": "#FDFBB8"
+          }
+        },
+        "text_pReiqT": {
+          "type": "text",
+          "settings": {
+            "custom_liquid": "",
+            "size": "text-size-regular"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_tjTXBY",
+        "heading_DDAEFk",
+        "text_pReiqT"
+      ],
+      "settings": {
+        "text_width": "large",
+        "text_position": "center",
+        "text_alignment": "center",
+        "color_bg": "transparent",
+        "color_text": "#252525",
+        "disable_top_spacing": false,
+        "disable_bottom_spacing": true
+      }
+    },
+    "collection_list_LXFWYC": {
+      "type": "collection-list",
+      "settings": {
+        "heading": "",
+        "collection_list": [
+          "wall-decor",
+          "vases",
+          "side-tables",
+          "serving-bowls",
+          "pots-pans-sets",
+          "ottomans",
+          "knives-cutlery",
+          "food-storage",
+          "dinner-plates"
+        ],
+        "image_ratio": "adapt",
+        "columns_desktop": 6,
+        "columns_mobile": "2",
+        "mobile_swipe": true,
+        "text_alignment": "text-center",
+        "first_product_image": true,
+        "collection_product_count": false,
+        "marker_color": "#FDFBB8",
+        "disable_top_spacing": true,
+        "disable_bottom_spacing": true
+      }
+    },
+    "text_with_max_height_ErhUjz": {
+      "type": "text-with-max-height",
+      "custom_css": [
+
+      ],
+      "settings": {
+        "seo_text_custom_liquid": "",
+        "seo_text_read_more": "Read more",
+        "seo_text_max_height": 150,
+        "disable_top_spacing": true,
+        "disable_bottom_spacing": false
+      }
+    },
+    "spacer_acidMt": {
+      "type": "spacer",
+      "settings": {
+        "spacer_mobile": 10,
+        "spacer_desktop": 25,
+        "border_separator": false,
+        "border_separator_full": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich_text_jQXGhM",
+    "promotion_blocks_8d4mLc",
+    "spacer_Pi3Nhi",
+    "image_with_text_overlay_XMqF39",
+    "rich_text_p87zY4",
+    "collection_list_LXFWYC",
+    "text_with_max_height_ErhUjz",
+    "spacer_acidMt"
+  ]
+}

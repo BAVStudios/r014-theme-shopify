@@ -1,0 +1,16 @@
+{%- liquid
+	assign image_size = '325x' | append: 'promotions_min_height'
+	assign info_spacing = true
+	if promotions_bg_opacity == 0
+		assign info_spacing = false
+	endif
+-%}
+<div class="mega-menu-promotion {{ text_alignment }}" style="--promotion-bg-color: {{ promotion_bg_color.rgb | replace: ' ' , ',' }}; --promotion-bg-opacity: {{ promotions_bg_opacity | append: '%' }}; --promotion-text-color: {{ promotion_text_color }}; --promotion-min-height: {{ promotions_min_height | append: 'px' }}">
+	{%- if promotion_link != null -%}<a href="{{ promotion_link }}" class="mega-menu-promotion--link"></a>{%- endif -%}
+	<div class="mega-menu-promotion--image">
+	{%- render 'responsive-image', image: promotion_image, sizes: image_size, priority: 'low', defer: true  -%}
+	</div>
+	<div class="mega-menu-promotion--cover mega-menu-promotion--cover-spacing-{{ info_spacing }}">
+		{%- if promotion_heading -%}<p class="heading-font">{{ promotion_heading }}</p>{%- endif -%}
+	</div>
+</div>

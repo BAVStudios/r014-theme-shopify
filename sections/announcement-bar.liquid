@@ -1,0 +1,81 @@
+{%- liquid
+	assign full_width = section.settings.full_width
+	assign announcement = section.settings.announcement
+	assign show_language_switcher = section.settings.show_language_switcher
+	assign show_currency_switcher = section.settings.show_currency_switcher
+	assign show_social_media = section.settings.show_social_media
+-%}
+{{- 'announcement-bar.css' | asset_url | stylesheet_tag -}}
+<aside class="announcement-bar{% if announcement == blank %} announcement-bar--hidden{%- endif -%}{% if full_width %} announcement-bar--full-width{%- endif %}">
+	<div class="announcement-bar--inner">
+		<div class="announcement-bar--left">
+			{%- liquid
+				if show_social_media
+					render 'social-links', show_label: false
+				endif
+			-%}
+		</div>
+		{%- if announcement != blank -%}
+		<div class="announcement-bar--center rte">
+			{{- announcement -}}
+		</div>
+		{%- endif -%}
+		<div class="announcement-bar--right">
+			<div class="no-js-hidden">
+				{%- render 'localization', id: 'HeaderLocalization', show_language_switcher: show_language_switcher, show_currency_switcher: show_currency_switcher -%}
+			</div>
+		</div>
+	</div>
+</aside>
+
+{% schema %}
+{
+	"name": "Announcement bar",
+	"class": "header-announcement-bar",
+	"settings": [
+		{
+      "type": "checkbox",
+      "id": "full_width",
+      "label": "Make section full width",
+      "default": false
+    },
+		{
+			"type": "richtext",
+			"id": "announcement",
+			"label": "Announcement"
+		},
+		{
+			"type": "header",
+			"content": "Social media"
+		},
+		{
+			"type": "checkbox",
+			"id": "show_social_media",
+			"label": "Show social media",
+			"default": true
+		},
+		{
+			"type": "header",
+			"content": "Language switcher"
+		},
+		{
+			"type": "checkbox",
+			"id": "show_language_switcher",
+			"label": "Enable language switcher",
+			"default": false,
+			"info": "To add a language, go to your [language settings](/admin/settings/languages)."
+		},
+		{
+			"type": "header",
+			"content": "Currency switcher"
+		},
+		{
+			"type": "checkbox",
+			"id": "show_currency_switcher",
+			"label": "Enable currency switcher",
+			"default": true,
+			"info": "To add a country/region, go to your [payment settings](/admin/settings/payments)."
+		}
+	]
+}
+{% endschema %}

@@ -1,0 +1,506 @@
+{
+  "sections": {
+    "breadcrumbs": {
+      "type": "breadcrumbs",
+      "disabled": true,
+      "settings": {}
+    },
+    "image_with_text_overlay_MGaNiq": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "subheading_3mLjMX": {
+          "type": "subheading",
+          "settings": {
+            "text": "About us"
+          }
+        },
+        "heading_PiFAJ7": {
+          "type": "heading",
+          "settings": {
+            "text": "Your Trusted Source for High-Quality Hardware Tools",
+            "heading_size": "h3"
+          }
+        },
+        "text_E6cDAY": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Whether you're a seasoned professional, a DIY enthusiast, or a homeowner tackling weekend projects, we offer a wide range of <strong>high-quality hardware tools<\/strong> to suit every need and skill level. <\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_3mLjMX",
+        "heading_PiFAJ7",
+        "text_E6cDAY"
+      ],
+      "settings": {
+        "desktop_height": "desktop-height-550",
+        "mobile_height": "mobile-height-450",
+        "full_width": true,
+        "content_width": "small",
+        "content_position": "middle-left",
+        "text_alignment": "left",
+        "color_bg": "#ffffff",
+        "color_text": "#ed5821",
+        "overlay_color": "#000000",
+        "overlay_opacity": 10,
+        "disable_top_spacing": true,
+        "disable_bottom_spacing": false
+      }
+    },
+    "rich_text_W3AXDJ": {
+      "type": "rich-text",
+      "blocks": {
+        "subheading_K8RxVU": {
+          "type": "subheading",
+          "settings": {
+            "text": "What we offer"
+          }
+        },
+        "heading_jgbdmq": {
+          "type": "heading",
+          "settings": {
+            "text": "WE’VE GOT YOU COVERED",
+            "size": "h1",
+            "marker_color": "#dafbff"
+          }
+        },
+        "text_FjKXce": {
+          "type": "text",
+          "settings": {
+            "text": "<p>We believe that having the right tools is the key to any successful project, and we strive to offer products that meet the highest standards of performance and reliability.<\/p>",
+            "custom_liquid": "",
+            "size": "text-size-regular"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_K8RxVU",
+        "heading_jgbdmq",
+        "text_FjKXce"
+      ],
+      "settings": {
+        "text_width": "large",
+        "text_position": "center",
+        "text_alignment": "center",
+        "color_bg": "#ffffff",
+        "color_text": "#2e2e2e",
+        "disable_top_spacing": true,
+        "disable_bottom_spacing": true
+      }
+    },
+    "gallery_b8rLyt": {
+      "type": "gallery",
+      "blocks": {
+        "image_dT8pQY": {
+          "type": "image",
+          "settings": {
+            "subheading": "",
+            "title": "Comprehensive Tool Selection",
+            "text": "We carry everything from hammers and wrenches to high-performance drills and saws.",
+            "link_label": "",
+            "link": "",
+            "use_text_button": false,
+            "block_link": ""
+          }
+        },
+        "image_yjnJyq": {
+          "type": "image",
+          "settings": {
+            "subheading": "",
+            "title": "Quality You Can Trust",
+            "text": "We carefully select each product based on its durability, functionality, and value.",
+            "link_label": "",
+            "link": "",
+            "use_text_button": false,
+            "block_link": ""
+          }
+        },
+        "image_zD3UbD": {
+          "type": "image",
+          "settings": {
+            "subheading": "",
+            "title": "Expert Advice and Support",
+            "text": "At Pinnacle, we don’t just sell tools—we provide guidance.",
+            "link_label": "",
+            "link": "",
+            "use_text_button": false,
+            "block_link": ""
+          }
+        },
+        "image_BTgYwA": {
+          "type": "image",
+          "settings": {
+            "subheading": "",
+            "title": "Competitive Pricing & Value",
+            "text": "You can always shop with confidence knowing you’re getting a great deal.",
+            "link_label": "",
+            "link": "",
+            "use_text_button": false,
+            "block_link": ""
+          }
+        },
+        "image_FhaErD": {
+          "type": "image",
+          "settings": {
+            "subheading": "",
+            "title": "Warranty Coverage",
+            "text": "With our comprehensive warranty options, you’re protected long after your purchase.",
+            "link_label": "",
+            "link": "",
+            "use_text_button": false,
+            "block_link": ""
+          }
+        },
+        "image_64Admz": {
+          "type": "image",
+          "settings": {
+            "subheading": "",
+            "title": "Innovation & Performance",
+            "text": "We stay ahead of the curve by stocking innovative tools.",
+            "link_label": "",
+            "link": "",
+            "use_text_button": false,
+            "block_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_dT8pQY",
+        "image_yjnJyq",
+        "image_zD3UbD",
+        "image_BTgYwA",
+        "image_FhaErD",
+        "image_64Admz"
+      ],
+      "settings": {
+        "columns_desktop": 3,
+        "mobile_swipe": true,
+        "image_ratio": "landscape",
+        "content_position": "bottom-left",
+        "text_alignment": "left",
+        "column_spacing": "medium",
+        "heading_size": "h4",
+        "overlay_color": "#000000",
+        "overlay_opacity": 8,
+        "disable_top_spacing": true,
+        "disable_bottom_spacing": false
+      }
+    },
+    "rich_text_FAMa47": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_bNyzzd": {
+          "type": "heading",
+          "settings": {
+            "text": "Our Trusted Brands",
+            "size": "h1",
+            "marker_color": "#fdfbb8"
+          }
+        },
+        "text_eL8zbM": {
+          "type": "text",
+          "settings": {
+            "text": "<p>We partner with the industry’s leading manufacturers to provide only the best tools and equipment.<\/p>",
+            "custom_liquid": "",
+            "size": "text-size-regular"
+          }
+        }
+      },
+      "block_order": [
+        "heading_bNyzzd",
+        "text_eL8zbM"
+      ],
+      "settings": {
+        "text_width": "large",
+        "text_position": "center",
+        "text_alignment": "center",
+        "color_bg": "rgba(0,0,0,0)",
+        "color_text": "#2e2e2e",
+        "disable_top_spacing": true,
+        "disable_bottom_spacing": true
+      }
+    },
+    "multicolumn_7TJj4a": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_Affp4J": {
+          "type": "column",
+          "settings": {
+            "image_full_width": false,
+            "retina": true,
+            "title": "",
+            "text": "<p>When it comes to high-performance tools, Bosch is a brand that stands out for its innovation, reliability, and durability.<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_WqKfUM": {
+          "type": "column",
+          "settings": {
+            "image_full_width": false,
+            "retina": true,
+            "title": "",
+            "text": "<p>Milwaukee tools are engineered to provide power, precision, and longevity—making them ideal for construction.<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_wTk3KJ": {
+          "type": "column",
+          "settings": {
+            "image_full_width": false,
+            "retina": true,
+            "title": "",
+            "text": "<p>DeWalt is a leading brand in the world of power tools, known for its unmatched reliability, durability, and performance.<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_pKBRbN": {
+          "type": "column",
+          "settings": {
+            "image_full_width": false,
+            "retina": true,
+            "title": "",
+            "text": "<p>From <strong>cordless drills<\/strong> to <strong>garden tools<\/strong>, Black+Decker offers a versatile selection of tools that cover a wide range of needs.<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_Affp4J",
+        "column_WqKfUM",
+        "column_wTk3KJ",
+        "column_pKBRbN"
+      ],
+      "settings": {
+        "heading": "",
+        "image_ratio": "adapt",
+        "columns_desktop": 4,
+        "text_alignment": "center",
+        "heading_size": "h5",
+        "disable_top_spacing": true,
+        "disable_bottom_spacing": false
+      }
+    },
+    "testimonials_gLigjX": {
+      "type": "testimonials",
+      "blocks": {
+        "quote_GMdEtE": {
+          "type": "quote",
+          "settings": {
+            "stars": "5",
+            "text": "Excellent power, long battery life, and rugged build. Perfect for both professional contractors and DIYers.",
+            "author": "DeWalt 20V Max Cordless Drill"
+          }
+        },
+        "quote_A9GiWU": {
+          "type": "quote",
+          "settings": {
+            "stars": "4.5",
+            "text": "Lightweight, powerful, and with a long battery life. Perfect for large hedges and trimming jobs.",
+            "author": "Black+Decker LHT2436 Cordless Hedge Trimmer"
+          }
+        },
+        "quote_jD6j3E": {
+          "type": "quote",
+          "settings": {
+            "stars": "4",
+            "text": "Exceptional grip, durable cutting edges, and comfortable handles. Great for electrical work.",
+            "author": "Klein Tools 9-Inch Side Cutting Pliers"
+          }
+        }
+      },
+      "block_order": [
+        "quote_GMdEtE",
+        "quote_A9GiWU",
+        "quote_jD6j3E"
+      ],
+      "settings": {
+        "text_size": "medium",
+        "autoplay": true,
+        "autoplay_length": 5,
+        "color_text": "#259e78",
+        "disable_top_spacing": true,
+        "disable_bottom_spacing": false
+      }
+    },
+    "rich_text_fGqGJQ": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_pEQdpm": {
+          "type": "heading",
+          "settings": {
+            "text": "F.A.Q.",
+            "size": "h1",
+            "marker_color": "#fdfbb8"
+          }
+        },
+        "text_7TN8NK": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>",
+            "custom_liquid": "",
+            "size": "text-size-regular"
+          }
+        }
+      },
+      "block_order": [
+        "heading_pEQdpm",
+        "text_7TN8NK"
+      ],
+      "settings": {
+        "text_width": "medium",
+        "text_position": "center",
+        "text_alignment": "center",
+        "color_bg": "rgba(0,0,0,0)",
+        "color_text": "#252525",
+        "disable_top_spacing": true,
+        "disable_bottom_spacing": true
+      }
+    },
+    "collapsible_content_Paxk3Y": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_tab_bXB3h8": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "What shipping options do you offer?",
+            "open": false,
+            "content": "<p>We're working hard to get your order packed quickly. It usually takes about 1-3 business days for us to pack and ship your order. Express orders placed after 9am PT ship the following business day.<\/p>",
+            "page": "",
+            "custom_liquid": ""
+          }
+        },
+        "collapsible_tab_pnhbUJ": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "How much does shipping cost?",
+            "open": false,
+            "content": "<p>For Front Door Shipping, shipping and processing charges are based on the merchandise total for each delivery address. If available, next day delivery incurs an additional charge.<\/p><p>For Truck Delivery, unlimited flat rate shipping and processing charges are based on the distance from our warehouse to the shipping address, as well as order total.<\/p>",
+            "page": "",
+            "custom_liquid": ""
+          }
+        },
+        "collapsible_tab_R6hCJG": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Do you ship internationally?",
+            "open": false,
+            "content": "<p>Yes, we do offer international shipping to many countries. During the checkout process, customers can select their country, and shipping costs and estimated delivery times will be provided accordingly.<\/p>",
+            "page": "",
+            "custom_liquid": ""
+          }
+        },
+        "collapsible_tab_4zecd8": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "What is your return policy?",
+            "open": false,
+            "content": "<p>We're happy to accept returns of unworn items in their original condition (unwashed, tags attached, shoes in shoe boxes) within 30 days of your order's ship date.In-person returns at any of our stores* or a participating Happy Returns Bar are free. Mail-in returns incur a $5 shipping label fee, which is deducted from your refund once your return has been processed or waived if you opt for a store credit refund. <\/p>",
+            "page": "",
+            "custom_liquid": ""
+          }
+        },
+        "collapsible_tab_Xm7T6k": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "What payment methods do you accept?",
+            "open": false,
+            "content": "<p>You can choose to pay with a Credit Card (Visa, MasterCard, American Express or Discover), PayPal, Affirm or any Williams-Sonoma Brand Gift Card.<\/p>",
+            "page": "",
+            "custom_liquid": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_tab_bXB3h8",
+        "collapsible_tab_pnhbUJ",
+        "collapsible_tab_R6hCJG",
+        "collapsible_tab_4zecd8",
+        "collapsible_tab_Xm7T6k"
+      ],
+      "settings": {
+        "heading": "",
+        "add_border": true,
+        "marker_color": "#fd6262",
+        "disable_top_spacing": true,
+        "disable_bottom_spacing": false
+      }
+    },
+    "map_8ApXJW": {
+      "type": "map",
+      "blocks": {
+        "pin_aJ8TAM": {
+          "type": "pin",
+          "settings": {
+            "pin_retina": true,
+            "pin_lat": "33.9787261",
+            "pin_long": "-118.4197832",
+            "pin_title": "Los Angeles",
+            "pin_desc": "6100 Wilshire Blvd 2nd Floor CA 9004  +1 310 499 7700<br><br><strong>Opening hours<\/strong>\nMonday-Saturday 11am–7pm ET\nSunday 11am–6pm ET"
+          }
+        },
+        "pin_Hr44kx": {
+          "type": "pin",
+          "settings": {
+            "pin_retina": true,
+            "pin_lat": "40.730610",
+            "pin_long": "-73.935242",
+            "pin_title": "New York City",
+            "pin_desc": "6100 Wilshire Blvd 2nd Floor CA 9004  +1 310 499 7700<br><br><strong>Opening hours<\/strong>\nMonday-Saturday 11am–7pm ET\nSunday 11am–6pm ET"
+          }
+        },
+        "pin_qinxNC": {
+          "type": "pin",
+          "settings": {
+            "pin_retina": true,
+            "pin_lat": "37.766270",
+            "pin_long": "-84.852119",
+            "pin_title": "Harrodsburg",
+            "pin_desc": "6100 Wilshire Blvd 2nd Floor CA 9004  +1 310 499 7700<br><br><strong>Opening hours<\/strong>\nMonday-Saturday 11am–7pm ET\nSunday 11am–6pm ET"
+          }
+        }
+      },
+      "block_order": [
+        "pin_aJ8TAM",
+        "pin_Hr44kx",
+        "pin_qinxNC"
+      ],
+      "settings": {
+        "full_width": true,
+        "desktop_height": "desktop-height-450",
+        "mobile_height": "mobile-height-350",
+        "map_type": "roadmap",
+        "map_style_select": "default",
+        "map_zoom": 14,
+        "disable_top_spacing": true,
+        "disable_bottom_spacing": true
+      }
+    },
+    "spacer_xfLHiz": {
+      "type": "spacer",
+      "settings": {
+        "spacer_mobile": 30,
+        "spacer_desktop": 0,
+        "border_separator": false,
+        "border_separator_full": false
+      }
+    }
+  },
+  "order": [
+    "breadcrumbs",
+    "image_with_text_overlay_MGaNiq",
+    "rich_text_W3AXDJ",
+    "gallery_b8rLyt",
+    "rich_text_FAMa47",
+    "multicolumn_7TJj4a",
+    "testimonials_gLigjX",
+    "rich_text_fGqGJQ",
+    "collapsible_content_Paxk3Y",
+    "map_8ApXJW",
+    "spacer_xfLHiz"
+  ]
+}

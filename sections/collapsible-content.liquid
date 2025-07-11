@@ -1,0 +1,171 @@
+{{- 'collapsible-content.css' | asset_url | stylesheet_tag -}}
+{%- liquid
+	assign section_heading = section.settings.heading
+	assign add_border = section.settings.add_border
+	assign marker_color = section.settings.marker_color
+	assign disable_top_spacing = section.settings.disable_top_spacing
+	assign disable_bottom_spacing = section.settings.disable_bottom_spacing
+-%}
+<div class="collapsible-content section-spacing{% if disable_top_spacing %} section-spacing--disable-top{% endif %}{% if disable_bottom_spacing %} section-spacing--disable-bottom{% endif %}">
+	<div class="row">
+		<div class="small-12 columns">
+			<div class="collapsible-content--container">
+				{% render 'section-header', section_heading: section_heading, section_description: section_description, marker_color: marker_color %}
+				<div class="collapsible-content--inner collapsible-content--inner-border-{{ add_border }}{%- if section_heading == blank %} collapsible-content--inner-centered{%- endif -%}">
+					{%- for block in section.blocks -%}
+						{%- if block.settings.heading != blank -%}
+							<collapsible-row class="accordion{% if add_border %} accordion--has-border{%- endif -%}" {{ block.shopify_attributes }}>
+								<details id="Details-{{ block.id }}-{{ section.id }}" {% if block.settings.open %}open{% endif %}>
+									<summary>
+										{{ block.settings.heading | default: block.settings.page.title }}
+										<span>{%- render 'svg-icons' with 'thb-accordion-arrow' -%}</span>
+									</summary>
+									<div class="collapsible__content accordion__content rte" id="Accordion-{{ block.id }}-{{ section.id }}">
+										{%- if block.type == 'specification' -%}
+											{%- render 'product-specification-table', block: block -%}
+										{%- else -%}
+										{{ block.settings.content }}
+										{{ block.settings.page.content }}
+										{{ block.settings.custom_liquid }}
+										{%- endif -%}
+									</div>
+								</details>
+							</collapsible-row>
+						{%- endif -%}
+					{%- endfor -%}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% schema %}
+  {
+    "name": "Collapsible content",
+    "settings": [
+			{
+				"type": "text",
+				"id": "heading",
+				"label": "Heading",
+				"default": "Collapsible content",
+				"info": "Wrap your text between | to add highlight markers. For example: Highlight |marker| will highlight the marker text."
+			},
+			{
+				"type": "checkbox",
+				"id": "add_border",
+				"default": true,
+				"label": "Add border"
+			},
+			{
+				"type": "header",
+				"content": "Colors"
+			},
+			{
+				"type": "color",
+				"id": "marker_color",
+				"label": "Highlight",
+				"default": "#FD6262"
+			},
+			{
+        "type": "header",
+        "content": "Spacing"
+      },
+			{
+				"type": "checkbox",
+				"id": "disable_top_spacing",
+				"default": false,
+				"label": "Remove top spacing"
+			},
+			{
+				"type": "checkbox",
+				"id": "disable_bottom_spacing",
+				"default": false,
+				"label": "Remove bottom spacing"
+			}
+    ],
+    "blocks": [
+			{
+				"type": "collapsible_tab",
+				"name": "Collapsible row",
+				"settings": [
+						{
+						"type": "text",
+						"id": "heading",
+						"default": "Collapsible row",
+						"info": "Include a heading that explains the content.",
+						"label": "Heading"
+					},
+					{
+						"type": "checkbox",
+						"id": "open",
+						"default": false,
+						"label": "Open by default"
+					},
+					{
+						"type": "richtext",
+						"id": "content",
+						"label": "Row content"
+					},
+					{
+						"type": "page",
+						"id": "page",
+						"label": "Row content from page"
+					},
+					{
+						"type": "liquid",
+						"id": "custom_liquid",
+						"label": "Custom liquid",
+						"info": "Add app snippets or other Liquid code to create advanced customizations. For product description, you can use {{ product.description }}"
+					}
+				]
+			},
+			{
+        "type": "specification",
+        "name": "Specifications",
+				"limit": 1,
+        "settings": [
+					{
+						"type": "text",
+						"id": "heading",
+						"default": "Specifications",
+						"label": "Heading"
+					},
+					{
+						"type": "textarea",
+						"id": "content",
+						"label": "Metafields",
+						"info": "Include a list of labels and product metafield keys below, separated by a colon, one per line. Example: Color:custom.color"
+					},
+					{
+						"type": "text",
+						"id": "empty_field_label",
+						"default": "N/A",
+						"label": "Empty field text",
+						"info": "Text to use for empty fields"
+					}
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Collapsible content",
+				"blocks": [
+	        {
+	          "type": "collapsible_tab"
+	        },
+	        {
+	          "type": "collapsible_tab"
+	        },
+	        {
+	          "type": "collapsible_tab"
+	        },
+	        {
+	          "type": "collapsible_tab"
+	        },
+	        {
+	          "type": "collapsible_tab"
+	        }
+	      ]
+      }
+    ]
+  }
+{% endschema %}

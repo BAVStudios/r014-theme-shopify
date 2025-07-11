@@ -1,0 +1,176 @@
+{
+  "sections": {
+    "breadcrumbs": {
+      "type": "breadcrumbs",
+      "settings": {}
+    },
+    "main-product": {
+      "type": "main-product",
+      "blocks": {
+        "vendor_sku_nA797T": {
+          "type": "vendor_sku",
+          "settings": {
+            "show_vendor": true,
+            "show_vendor_link": true,
+            "show_sku": true
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {
+            "uppercase": false,
+            "show_products_rating": true,
+            "show_products_rating_average": true,
+            "show_products_rating_count": true,
+            "show_installments": true
+          }
+        },
+        "955814cd-267a-4315-b47f-77f3976fbf85": {
+          "type": "siblings",
+          "settings": {
+            "color_picker_size": "large",
+            "margin_bottom": 16
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "color_picker": true,
+            "color_picker_size": "large",
+            "color_picker_use_variants": true,
+            "variant_is_disabled": true,
+            "sizing_guide_variant": "",
+            "sizing_guide_text": "",
+            "sizing_guide_icon": "none",
+            "sizing_guide_page": ""
+          }
+        },
+        "inventory_level_EjD4Fn": {
+          "type": "inventory_level",
+          "settings": {
+            "show_inventory_notice": "always",
+            "show_inventory_count": "always",
+            "inventory_notice_pulse": true,
+            "inventory_notice_bar": true,
+            "inventory_notice_threshold": 10,
+            "inventory_notice_base": 200
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_quantity_selector": true,
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        },
+        "related_categories_GMM3h9": {
+          "type": "related_categories",
+          "settings": {
+            "show_below_gallery": false,
+            "heading": "Related categories"
+          }
+        },
+        "4fd23485-293f-46a0-8a4c-34d0e25ea41b": {
+          "type": "share",
+          "settings": {
+            "show_below_gallery": false
+          }
+        }
+      },
+      "block_order": [
+        "vendor_sku_nA797T",
+        "title",
+        "955814cd-267a-4315-b47f-77f3976fbf85",
+        "variant_picker",
+        "inventory_level_EjD4Fn",
+        "buy_buttons",
+        "related_categories_GMM3h9",
+        "4fd23485-293f-46a0-8a4c-34d0e25ea41b"
+      ],
+      "settings": {
+        "enable_sticky_add_to_cart": true,
+        "show_taxes_included": true,
+        "thumbnail_position": "bottom",
+        "product_media_width": "medium",
+        "media_aspect_ratio": "adapt",
+        "display_captions": true,
+        "hide_variants": true,
+        "lightbox": true,
+        "enable_video_looping": false
+      }
+    },
+    "spacer_6mjDPj": {
+      "type": "spacer",
+      "settings": {
+        "spacer_mobile": 35,
+        "spacer_desktop": 80,
+        "border_separator": true,
+        "border_separator_full": false
+      }
+    },
+    "tabbed_content_X7jqUY": {
+      "type": "tabbed-content",
+      "blocks": {
+        "tab_rQfK7A": {
+          "type": "tab",
+          "settings": {
+            "tab_label": "Description",
+            "icon": "none",
+            "text": "",
+            "text_columns": "1"
+          }
+        },
+        "specification_neXYwH": {
+          "type": "specification",
+          "settings": {
+            "tab_label": "Specifications",
+            "icon": "none",
+            "empty_field_label": "N\/A"
+          }
+        },
+        "tab_VU6jzc": {
+          "type": "tab",
+          "settings": {
+            "tab_label": "Assembly & Care",
+            "icon": "none",
+            "text": "",
+            "text_columns": "2"
+          }
+        }
+      },
+      "block_order": [
+        "tab_rQfK7A",
+        "specification_neXYwH",
+        "tab_VU6jzc"
+      ],
+      "settings": {
+        "heading": "",
+        "tab_alignment": "left",
+        "text_alignment": "left",
+        "marker_color": "#fd6262",
+        "disable_top_spacing": true,
+        "disable_bottom_spacing": false
+      }
+    },
+    "product_recommendations_NKiVnX": {
+      "type": "product-recommendations",
+      "settings": {
+        "heading": "You may also like",
+        "description": "<p>Describe your featured collection here<\/p>",
+        "product_limit": 5,
+        "columns_desktop": 5,
+        "disable_top_spacing": false,
+        "disable_bottom_spacing": false
+      }
+    }
+  },
+  "order": [
+    "breadcrumbs",
+    "main-product",
+    "spacer_6mjDPj",
+    "tabbed_content_X7jqUY",
+    "product_recommendations_NKiVnX"
+  ]
+}

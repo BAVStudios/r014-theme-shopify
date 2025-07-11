@@ -1,0 +1,61 @@
+{{- 'breadcrumbs.css' | asset_url | stylesheet_tag -}}
+<div class="row">
+	<div class="small-12 columns">
+		<scroll-shadow>
+			<nav class="breadcrumbs" aria-label="breadcrumbs">
+				<a href="{{ routes.root_url }}">{{ 'sections.breadcrumbs.home' | t }}</a>
+				{% if collection.url %}
+					{% if collection.handle != 'all' %}
+					<i>{%- render 'svg-icons' with 'thb-breadcrumbs' -%}</i>
+					<a href="{{ routes.all_products_collection_url }}">{{ 'sections.breadcrumbs.shop' | t }}</a>
+					{% endif %}
+					<i>{%- render 'svg-icons' with 'thb-breadcrumbs' -%}</i>
+					<a href="{{ collection.url }}">{{ collection.title }}</a>
+				{% endif %}
+				{% if template contains 'cart' %}
+					<i>{%- render 'svg-icons' with 'thb-breadcrumbs' -%}</i>
+					{{ 'sections.breadcrumbs.cart' | t }}
+				{% endif %}
+				{% if template contains 'product' %}
+					<i>{%- render 'svg-icons' with 'thb-breadcrumbs' -%}</i>
+					{{ product.title }}
+				{% endif %}
+				{% if template contains 'blog' %}
+					{% if current_tags %}
+						<i>{%- render 'svg-icons' with 'thb-breadcrumbs' -%}</i>
+						<a href="{{ blog.url }}">{{ blog.title }}</a>
+						<i>{%- render 'svg-icons' with 'thb-breadcrumbs' -%}</i>
+						{{ current_tags }}
+					{% else %}
+						<i>{%- render 'svg-icons' with 'thb-breadcrumbs' -%}</i>
+						{{ blog.title }}
+					{% endif %}
+				{% endif %}
+				{% if template contains 'article' %}
+					<i>{%- render 'svg-icons' with 'thb-breadcrumbs' -%}</i>
+					<a href="{{ blog.url }}" title="{{ blog.title | escape }}">{{ blog.title }}</a>
+					<i>{%- render 'svg-icons' with 'thb-breadcrumbs' -%}</i>
+					{{ article.title }}
+				{% endif %}
+				{% if template contains 'page' %}
+					<i>{%- render 'svg-icons' with 'thb-breadcrumbs' -%}</i>
+					{{ page.title }}
+				{% endif %}
+				{% if template contains 'search' %}
+					<i>{%- render 'svg-icons' with 'thb-breadcrumbs' -%}</i>
+					{{ 'sections.breadcrumbs.search' | t }}
+				{% endif %}
+				{% if template contains 'customers' %}
+					<i>{%- render 'svg-icons' with 'thb-breadcrumbs' -%}</i>
+					{{ 'sections.breadcrumbs.my_account' | t }}
+				{% endif %}
+			</nav>
+		</scroll-shadow>
+	</div>
+</div>
+{% schema %}
+{
+	"name": "Breadcrumbs",
+	"class": "breadcrumbs-section"
+}
+{% endschema %}

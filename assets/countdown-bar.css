@@ -1,0 +1,76 @@
+
+
+
+.countdown-bar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  padding: 10px;
+  position: relative;
+  background: var(--color-bg);
+  color: var(--color-text); }
+  @media only screen and (min-width: 768px) {
+    .countdown-bar {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center; } }
+  .countdown-bar--heading {
+    margin-bottom: 0;
+    color: inherit; }
+  .countdown-bar--content {
+    padding: 12px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; }
+    .countdown-bar--content .text-button {
+      color: var(--color-text); }
+    @media only screen and (min-width: 768px) {
+      .countdown-bar--content {
+        align-items: center;
+        gap: 20px; } }
+    @media only screen and (max-width: 767px) {
+      .countdown-bar--content {
+        justify-content: center;
+        text-align: center; } }
+  .countdown-bar--content, .countdown-bar--timer {
+    position: relative;
+    z-index: 5; }
+  .countdown-bar .countdown-timer {
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    min-height: 80px;
+    padding: 0 15px;
+    background-color: var(--bg-body);
+    color: var(--color-body);
+    border-radius: var(--general-border-radius, 3px); }
+    .countdown-bar .countdown-timer--column {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      justify-content: center;
+      position: relative;
+      padding: 0 10px;
+      min-width: 57px; }
+      .countdown-bar .countdown-timer--column--number {
+        font-size: 1.875rem;
+        line-height: 1; }
+      .countdown-bar .countdown-timer--column--text {
+        font-size: 0.625rem; }
+        @media only screen and (min-width: 768px) {
+          .countdown-bar .countdown-timer--column--text {
+            font-size: 0.75rem; } }
+      .countdown-bar .countdown-timer--column + .countdown-timer--column .countdown-timer--column--number {
+        position: relative; }
+        .countdown-bar .countdown-timer--column + .countdown-timer--column .countdown-timer--column--number:before {
+          content: ":";
+          display: inline-flex;
+          justify-content: center;
+          width: 12px;
+          font-size: 1.25rem;
+          line-height: 1;
+          font-weight: var(--font-body-bold-weight, 600);
+          position: absolute;
+          top: 5px;
+          left: -16px; }

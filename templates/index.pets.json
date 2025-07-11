@@ -1,0 +1,522 @@
+{
+  "sections": {
+    "slideshow_PUiBrX": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_hQ7PQ3": {
+          "type": "slide",
+          "settings": {
+            "video_background": false,
+            "badge_text": "Happiness",
+            "subheading": "",
+            "heading": "Nourishing Pets, One Bowl at a Time",
+            "heading_size": "h1-large",
+            "content": "Each bowl represents more than just a meal—it’s an expression of love, care, and dedication to their well-being.",
+            "description_size": "medium",
+            "content_position": "middle-left",
+            "text_alignment": "left",
+            "content_size": "medium",
+            "color_text": "#f9f9c8",
+            "color_badge_bg": "#f9f9c8",
+            "color_badge_text": "#2c5b95",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "slide_MGaxhG": {
+          "type": "slide",
+          "settings": {
+            "video_background": false,
+            "badge_text": "",
+            "subheading": "Treat Your Dog",
+            "heading": "Healthy, Happy, and Delicious!",
+            "heading_size": "h1-large",
+            "content": "These treats are great for training and quick rewards.",
+            "description_size": "small",
+            "content_position": "top-center",
+            "text_alignment": "center",
+            "content_size": "medium",
+            "color_text": "#fff7ea",
+            "color_badge_bg": "#ffe1df",
+            "color_badge_text": "#652c2c",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "slide_hCHpdw": {
+          "type": "slide",
+          "settings": {
+            "video_background": false,
+            "badge_text": "Purrfectly Styled",
+            "subheading": "",
+            "heading": "Cozy and Comfy for Your Pet!",
+            "heading_size": "h1-large",
+            "content": "From cozy sweaters for winter walks to breathable shirts for summer outings, pet clothing is designed to keep your pets comfortable in every season.",
+            "description_size": "small",
+            "content_position": "middle-right",
+            "text_alignment": "left",
+            "content_size": "medium",
+            "color_text": "#2c5b95",
+            "color_badge_bg": "#ffe1df",
+            "color_badge_text": "#652c2c",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        }
+      },
+      "block_order": [
+        "slide_hQ7PQ3",
+        "slide_MGaxhG",
+        "slide_hCHpdw"
+      ],
+      "settings": {
+        "desktop_height": "desktop-height-550",
+        "mobile_height": "mobile-height-450",
+        "full_width": true,
+        "autoplay": true,
+        "autoplay_length": 5,
+        "transition": "fade",
+        "control_alignment": "center",
+        "disable_top_spacing": true,
+        "disable_bottom_spacing": true
+      }
+    },
+    "promotion_bar_Rihn73": {
+      "type": "promotion-bar",
+      "blocks": {
+        "promotion_RVQkqB": {
+          "type": "promotion",
+          "settings": {
+            "text": "Extra 10% Off Store Pick-Up!",
+            "button_text": "Shop sale",
+            "button_link": ""
+          }
+        },
+        "promotion_RDFYYW": {
+          "type": "promotion",
+          "settings": {
+            "text": "Sign Up for a Credit Card & Get 20% Off",
+            "button_text": "Learn more",
+            "button_link": ""
+          }
+        },
+        "promotion_mHaYiE": {
+          "type": "promotion",
+          "settings": {
+            "text": "Find Pets To Adopt",
+            "button_text": "Find pets",
+            "button_link": ""
+          }
+        },
+        "promotion_eiKieV": {
+          "type": "promotion",
+          "settings": {
+            "text": "Start Earning Rewards",
+            "button_text": "Learn more",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "promotion_RVQkqB",
+        "promotion_RDFYYW",
+        "promotion_mHaYiE",
+        "promotion_eiKieV"
+      ],
+      "settings": {
+        "add_divider": true,
+        "disable_top_spacing": true,
+        "disable_bottom_spacing": true,
+        "color_bg": "#eef3f7",
+        "color_text": "#279a4b"
+      }
+    },
+    "featured_collection_DH3eik": {
+      "type": "featured-collection",
+      "settings": {
+        "heading": "🔥 Most Popular Items",
+        "description": "<p>Our wide range of products ensures your pets are happy, healthy, and stylish, all in one place.</p>",
+        "collection": "all",
+        "display_type": "carousel",
+        "product_limit": 6,
+        "columns_desktop": 5,
+        "show_view_all": true,
+        "mobile_swipe": true,
+        "marker_color": "#fd6262",
+        "disable_top_spacing": false,
+        "disable_bottom_spacing": false
+      }
+    },
+    "promotion_blocks_RyV9j3": {
+      "type": "promotion-blocks",
+      "blocks": {
+        "promotion_bAfxh4": {
+          "type": "promotion",
+          "settings": {
+            "line_1_text": "",
+            "line_2_text": "Salmon Ghost Bites",
+            "description": "<p>Make small salmon-shaped treats using cat-safe salmon pâté or canned salmon. </p>",
+            "button_text": "Buy now - $4.00",
+            "block_link": "",
+            "color_bg": "#f5f7eb",
+            "color_text": "#216e4f"
+          }
+        },
+        "promotion_UBqfaU": {
+          "type": "promotion",
+          "settings": {
+            "line_1_text": "",
+            "line_2_text": "Monster Plush Toys",
+            "description": "<p>Different textures like crinkly arms and squeaky bodies to keep dogs entertained.</p>",
+            "button_text": "Buy now - $6.50",
+            "block_link": "",
+            "color_bg": "#f7f0eb",
+            "color_text": "#7c3c4a"
+          }
+        },
+        "promotion_myKj7D": {
+          "type": "promotion",
+          "settings": {
+            "line_1_text": "",
+            "line_2_text": "Superhero Costume",
+            "description": "<p>Dress your dog as a Halloween superhero like Batman that fit comfortably.</p>",
+            "button_text": "Buy now - $18.20",
+            "block_link": "",
+            "color_bg": "#ebeef7",
+            "color_text": "#21426e"
+          }
+        }
+      },
+      "block_order": [
+        "promotion_bAfxh4",
+        "promotion_UBqfaU",
+        "promotion_myKj7D"
+      ],
+      "settings": {
+        "heading": "🎃 Save This Halloween!",
+        "mobile_swipe": true,
+        "image_ratio": "adapt",
+        "content_orientation": "vertical",
+        "columns_desktop": 3,
+        "image_layout": "image_first",
+        "text_alignment": "text-center",
+        "line_1_size": "h6",
+        "line_2_size": "h3",
+        "disable_top_spacing": true,
+        "disable_bottom_spacing": true
+      }
+    },
+    "spacer_XqRdPt": {
+      "type": "spacer",
+      "settings": {
+        "spacer_mobile": 0,
+        "spacer_desktop": 30,
+        "border_separator": false,
+        "border_separator_full": false
+      }
+    },
+    "product_list_3iFPCG": {
+      "type": "product-list",
+      "blocks": {
+        "collection_mJKHpx": {
+          "type": "collection",
+          "settings": {
+            "heading": "Cat & Dog Foods",
+            "collection": "food"
+          }
+        },
+        "collection_cnHzUH": {
+          "type": "collection",
+          "settings": {
+            "heading": "",
+            "collection": "toys"
+          }
+        },
+        "collection_9Ntq6m": {
+          "type": "collection",
+          "settings": {
+            "heading": "",
+            "collection": "accessories"
+          }
+        },
+        "collection_g8Pnk4": {
+          "type": "collection",
+          "settings": {
+            "heading": "",
+            "collection": "supplies"
+          }
+        }
+      },
+      "block_order": [
+        "collection_mJKHpx",
+        "collection_cnHzUH",
+        "collection_9Ntq6m",
+        "collection_g8Pnk4"
+      ],
+      "settings": {
+        "heading": "",
+        "product_count": 4,
+        "marker_color": "#fdfbb8",
+        "disable_top_spacing": true,
+        "disable_bottom_spacing": true
+      }
+    },
+    "countdown_bar_jpeen7": {
+      "type": "countdown-bar",
+      "settings": {
+        "heading": "Healthy Meals, Happier Pets, Lower Prices!",
+        "button_text": "Shop Sale",
+        "button_link": "",
+        "timer_year": 2024,
+        "timer_month": "12",
+        "timer_day": "01",
+        "timer_hour": "00",
+        "timer_minute": "00",
+        "color_bg": "#815fe9",
+        "color_text": "#ffffff",
+        "disable_top_spacing": false,
+        "disable_bottom_spacing": true
+      }
+    },
+    "collection_list_VWimRD": {
+      "type": "collection-list",
+      "settings": {
+        "heading": "Top Categories",
+        "collection_list": [
+          "accessories",
+          "food",
+          "supplies",
+          "toys",
+          "treats"
+        ],
+        "image_ratio": "adapt",
+        "columns_desktop": 5,
+        "columns_mobile": "3",
+        "mobile_swipe": true,
+        "text_alignment": "text-center",
+        "first_product_image": false,
+        "collection_product_count": true,
+        "marker_color": "#fdfbb8",
+        "disable_top_spacing": false,
+        "disable_bottom_spacing": true
+      }
+    },
+    "image_with_text_overlay_eDnCY7": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "subheading_ekYF9G": {
+          "type": "subheading",
+          "settings": {
+            "text": "PET CARE PLUS"
+          }
+        },
+        "heading_Dyhc94": {
+          "type": "heading",
+          "settings": {
+            "text": "Your Pet's Health Is Our Priority",
+            "heading_size": "h1-large"
+          }
+        },
+        "text_3qApTk": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>Pet Care involves providing your pets with the love, attention, and resources they need to stay healthy, happy, and comfortable. </strong></p>"
+          }
+        },
+        "space_iNLqX7": {
+          "type": "space",
+          "settings": {
+            "height": 13
+          }
+        },
+        "button_NkFnAy": {
+          "type": "button",
+          "settings": {
+            "button_text": "About us",
+            "button_outline": true
+          }
+        }
+      },
+      "block_order": [
+        "subheading_ekYF9G",
+        "heading_Dyhc94",
+        "text_3qApTk",
+        "space_iNLqX7",
+        "button_NkFnAy"
+      ],
+      "settings": {
+        "desktop_height": "desktop-height-550",
+        "mobile_height": "mobile-height-450",
+        "full_width": true,
+        "content_width": "small",
+        "content_position": "middle-right",
+        "text_alignment": "left",
+        "color_bg": "rgba(0,0,0,0)",
+        "color_text": "#ffffff",
+        "overlay_color": "#21426e",
+        "overlay_opacity": 0,
+        "disable_top_spacing": false,
+        "disable_bottom_spacing": false
+      }
+    },
+    "logo_list_9QAF7i": {
+      "type": "logo-list",
+      "blocks": {
+        "logo_QBWTmV": {
+          "type": "logo",
+          "settings": {
+            "link": ""
+          }
+        },
+        "logo_aDLHX3": {
+          "type": "logo",
+          "settings": {
+            "link": ""
+          }
+        },
+        "logo_YGiJUc": {
+          "type": "logo",
+          "settings": {
+            "link": ""
+          }
+        },
+        "logo_AXLMmN": {
+          "type": "logo",
+          "settings": {
+            "link": ""
+          }
+        },
+        "logo_e7jAKb": {
+          "type": "logo",
+          "settings": {
+            "link": ""
+          }
+        },
+        "logo_Phqr3A": {
+          "type": "logo",
+          "settings": {
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "logo_QBWTmV",
+        "logo_aDLHX3",
+        "logo_YGiJUc",
+        "logo_AXLMmN",
+        "logo_e7jAKb",
+        "logo_Phqr3A"
+      ],
+      "custom_css": [],
+      "settings": {
+        "heading": "Featured Brands",
+        "columns": 6,
+        "mobile_swipe": true,
+        "center_align": false,
+        "marker_color": "#fd6262",
+        "disable_top_spacing": true,
+        "disable_bottom_spacing": true
+      }
+    },
+    "rich_text_UCMYFp": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_kdJAUa": {
+          "type": "heading",
+          "settings": {
+            "text": "🍬",
+            "size": "h1",
+            "marker_color": "#fdfbb8"
+          }
+        },
+        "heading_fgbxqM": {
+          "type": "heading",
+          "settings": {
+            "text": "Treat Your Pets and Your Wallet!",
+            "size": "h1",
+            "marker_color": "#fdfbb8"
+          }
+        },
+        "text_RG9wfa": {
+          "type": "text",
+          "settings": {
+            "text": "<p>No tricks here, just incredible treats for your pets and savings you won't want to miss. We’ve got everything your furry friends need to celebrate in style.</p>",
+            "custom_liquid": "",
+            "size": "text-size-regular"
+          }
+        }
+      },
+      "block_order": [
+        "heading_kdJAUa",
+        "heading_fgbxqM",
+        "text_RG9wfa"
+      ],
+      "settings": {
+        "text_width": "large",
+        "text_position": "center",
+        "text_alignment": "center",
+        "color_bg": "rgba(0,0,0,0)",
+        "color_text": "#34216e",
+        "disable_top_spacing": false,
+        "disable_bottom_spacing": true
+      }
+    },
+    "featured_collection_CjtNan": {
+      "type": "featured-collection",
+      "settings": {
+        "heading": "",
+        "description": "",
+        "collection": "food",
+        "display_type": "grid",
+        "product_limit": 8,
+        "columns_desktop": 4,
+        "show_view_all": true,
+        "mobile_swipe": true,
+        "marker_color": "#fd6262",
+        "disable_top_spacing": true,
+        "disable_bottom_spacing": false
+      }
+    },
+    "single_image_nQY474": {
+      "type": "single-image",
+      "settings": {
+        "full_width": false,
+        "image_link": "#",
+        "disable_top_spacing": true,
+        "disable_bottom_spacing": false
+      }
+    },
+    "featured_blog_hd4FkJ": {
+      "type": "featured-blog",
+      "settings": {
+        "heading": "Latest News",
+        "blog": "news",
+        "post_limit": 3,
+        "columns_desktop": 3,
+        "image_ratio": "landscape",
+        "show_date": true,
+        "show_excerpt": true,
+        "show_view_all": true,
+        "marker_color": "#fd6262",
+        "disable_top_spacing": true,
+        "disable_bottom_spacing": false
+      }
+    }
+  },
+  "order": [
+    "slideshow_PUiBrX",
+    "promotion_bar_Rihn73",
+    "featured_collection_DH3eik",
+    "promotion_blocks_RyV9j3",
+    "spacer_XqRdPt",
+    "product_list_3iFPCG",
+    "countdown_bar_jpeen7",
+    "collection_list_VWimRD",
+    "image_with_text_overlay_eDnCY7",
+    "logo_list_9QAF7i",
+    "rich_text_UCMYFp",
+    "featured_collection_CjtNan",
+    "single_image_nQY474",
+    "featured_blog_hd4FkJ"
+  ]
+}

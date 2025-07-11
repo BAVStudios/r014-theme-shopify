@@ -1,0 +1,237 @@
+{{- 'customer-reviews.css' | asset_url | stylesheet_tag -}}
+{%- liquid
+  assign section_heading = section.settings.heading
+  assign section_description = section.settings.description
+  assign columns_desktop = section.settings.columns
+  assign marker_color = section.settings.marker_color
+  assign disable_top_spacing = section.settings.disable_top_spacing
+  assign disable_bottom_spacing = section.settings.disable_bottom_spacing
+
+  assign columns_tablet = columns_desktop | minus: 2 | at_most: 5 | at_least: 3
+-%}
+
+<customer-reviews
+  class="customer-reviews section-spacing-padding{% if disable_top_spacing %} section-spacing--disable-top{% endif %}{% if disable_bottom_spacing %} section-spacing--disable-bottom{% endif %}"
+  style="--desktop-columns: {{ columns_desktop }}; --tablet-columns: {{ columns_tablet }};"
+>
+  <div class="row">
+    <div class="small-12 columns">
+      {%- render 'section-header', section_heading: section_heading, section_description: section_description, marker_color: marker_color -%}
+      <theme-scroll class="theme-scroll" data-overlayscrollbars-initialize>
+				<div class="theme-scroll--inner customer-reviews--inner">
+        {%- for block in section.blocks -%}
+          {%- liquid
+            assign product_handle = block.settings.product_handle
+            assign product_image = block.settings.product_image
+            assign review_product = all_products[product_handle]
+          -%}
+          <div
+            class="customer-reviews--review customer-reviews--review--has-bg"
+            {{ block.shopify_attributes }}
+          >
+{% comment %}
+            {%- if product_handle != blank -%}
+              <div class="customer-reviews--product">
+                {%- if product_image -%}
+                  {%- render 'responsive-image', image: product_image -%}
+                {%- elsif review_product.featured_image -%}
+                  {%- render 'responsive-image', image: review_product.featured_image, sizes: '300x250,600x500' -%}
+                {%- else -%}
+                  <div class="thb-placeholder">
+                    {%- assign index = forloop.index | modulo: 4 | plus: 1 -%}
+						        {{ 'product-apparel-' | append: index | placeholder_svg_tag: 'placeholder_svg_tag' }}
+                  </div>
+                {%- endif -%}
+                <quick-view class="customer-reviews--quick-view" data-product-handle="{{ review_product.handle }}">
+                  {%- render 'svg-icons' with 'thb-add-to-cart' %}
+                  {%- unless review_product == empty -%}
+                    <div class="loading-overlay">
+                      {% render 'svg-icons' with 'thb-loading' %}
+                    </div>
+                  {%- endunless -%}
+                </quick-view>
+              </div>
+            {%- endif -%}
+          {% endcomment %}
+<div class="customer-reviews--product">
+  {%- if product_image -%}
+    {%- render 'responsive-image', image: product_image -%}
+  {%- elsif review_product.featured_image -%}
+    {%- render 'responsive-image', image: review_product.featured_image, sizes: '300x250,600x500' -%}
+  {%- else -%}
+    <div class="thb-placeholder">
+                    {%- assign index = forloop.index | modulo: 4 | plus: 1 -%}
+						        {{ 'product-apparel-' | append: index | placeholder_svg_tag: 'placeholder_svg_tag' }}
+                    </div>
+  {%- endif -%}
+
+  {%- if review_product != blank -%}
+    <quick-view class="customer-reviews--quick-view" data-product-handle="{{ review_product.handle }}">
+      {%- render 'svg-icons' with 'thb-add-to-cart' %}
+      <div class="loading-overlay">
+        {% render 'svg-icons' with 'thb-loading' %}
+      </div>
+    </quick-view>
+  {%- endif -%}
+</div>
+            {% comment %}
+            above is new
+          {% endcomment %}
+            <div class="customer-reviews--content">
+              {%- if block.settings.stars and block.settings.stars != '' -%}
+                <div class="star-rating" style="--star-rating: {{ block.settings.stars }};"></div>
+              {%- endif -%}
+              {%- if block.settings.heading != blank -%}
+                <h6>{{ block.settings.heading }}</h6>
+              {%- endif -%}
+              <p>{{ block.settings.text | newline_to_br }}</p>
+              {%- if block.settings.author != blank -%}
+                <div class="customer-reviews--author">
+                  {%- if block.settings.author_image != blank -%}
+                    {%- render 'responsive-image', image: block.settings.author_image, sizes: '64x64' -%}
+                  {%- endif -%}
+                  <span>{{- block.settings.author -}}</span>
+                </div>
+              {%- endif -%}
+            </div>
+          </div>
+        {%- endfor -%}
+        </div>
+      </theme-scroll>
+    </div>
+  </div>
+</customer-reviews>
+{% schema %}
+{
+  "name": "Customer reviews",
+  "class": "section-customer-reviews",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Customer reviews",
+			"info": "Wrap your text between | to add highlight markers. For example: Highlight |marker| will highlight the marker text."
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "<p>Add a short description for this section</p>"
+    },
+    {
+      "type": "range",
+      "id": "columns",
+      "min": 3,
+      "max": 6,
+      "step": 1,
+      "label": "Number of columns on desktop",
+      "default": 6
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "marker_color",
+      "label": "Highlight",
+      "default": "#FD6262"
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "checkbox",
+      "id": "disable_top_spacing",
+      "default": false,
+      "label": "Remove top spacing"
+    },
+    {
+      "type": "checkbox",
+      "id": "disable_bottom_spacing",
+      "default": false,
+      "label": "Remove bottom spacing"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "Review",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product_handle",
+          "label": "Product"
+        },
+        {
+          "type": "image_picker",
+          "id": "product_image",
+          "label": "Custom product image"
+        },
+        {
+          "type": "select",
+          "id": "stars",
+          "options": [
+            { "value": "", "label": "None" },
+            { "value": "3", "label": "3 out of 5" },
+            { "value": "3.5", "label": "3.5 out of 5" },
+            { "value": "4", "label": "4 out of 5" },
+            { "value": "4.5", "label": "4.5 out of 5" },
+            { "value": "5", "label": "5 out of 5" }
+          ],
+          "default": "",
+          "label": "Star rating"
+        },
+        {
+          "id": "heading",
+          "type": "text",
+          "label": "Heading",
+          "default": "Review heading"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Text",
+          "default": "Add your customer review here to showcase them."
+        },
+        {
+          "type": "header",
+          "content": "Author"
+        },
+        {
+          "id": "author",
+          "type": "text",
+          "label": "Name",
+          "default": "Review author"
+        },
+        {
+          "type": "image_picker",
+          "id": "author_image",
+          "label": "Avatar"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Customer reviews",
+      "blocks": [
+        {
+          "type": "review"
+        },
+        {
+          "type": "review"
+        },
+        {
+          "type": "review"
+        },
+        {
+          "type": "review"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,78 @@
+
+
+.collection-card--image img {
+  transition: all 0.25s cubic-bezier(0.104, 0.204, 0.492, 1); }
+
+
+.collection-list-section {
+  overflow: hidden; }
+
+.collection-grid {
+  --column-gap: 10px;
+  display: grid;
+  row-gap: 20px;
+  column-gap: var(--column-gap);
+  grid-template-columns: repeat(var(--mobile-columns), 1fr); }
+  @media only screen and (min-width: 768px) {
+    .collection-grid {
+      --column-gap: 15px;
+      --mobile-columns: var(--tablet-columns); } }
+  @media only screen and (min-width: 1068px) {
+    .collection-grid {
+      --column-gap: 20px;
+      --mobile-columns: var(--desktop-columns); } }
+  .collection-grid.enable-swipe {
+    grid-auto-flow: column;
+    grid-template-columns: unset;
+    grid-auto-columns: calc((100% - (var(--column-gap) * calc(var(--mobile-columns) - 1))) / var(--mobile-columns)); }
+  .collection-grid--container {
+    scroll-snap-type: x mandatory; }
+
+.collection-card {
+  width: 100%;
+  position: relative;
+  scroll-snap-align: start; }
+  .collection-card--content {
+    font-size: 0.875rem;
+    line-height: 1.2;
+    font-weight: var(--font-body-medium-weight, 500); }
+    @media only screen and (min-width: 768px) {
+      .collection-card--content {
+        font-size: 0.9375rem; } }
+  .collection-card--link {
+    display: inline-flex;
+    margin: 0;
+    height: auto;
+    align-items: center;
+    position: relative;
+    padding: 0 5px; }
+  .collection-card--image {
+    position: relative;
+    height: 0;
+    overflow: hidden;
+    z-index: 5;
+    margin-bottom: 10px; }
+    .collection-card--image--link {
+      display: block; }
+    .collection-card--image img {
+      display: block;
+      will-change: scale; }
+    .collection-card--image img,
+    .collection-card--image .thb-placeholder {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover; }
+    .collection-card--image.media-aspect-square {
+      padding-bottom: 100%; }
+    .collection-card--image.media-aspect-portrait {
+      padding-bottom: 125%; }
+    .collection-card--image.media-aspect-adapt {
+      padding-bottom: var(--var-media-aspect-ratio); }
+  .collection-card:hover img, .collection-card:focus img {
+    transform: scale(1.05); }
+
+.list-collections .pagination--wrapper {
+  margin-top: 40px; }

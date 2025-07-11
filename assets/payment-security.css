@@ -1,0 +1,30 @@
+
+
+
+.product--payment-security {
+  color: var(--block-color, --body-text);
+  border-radius: var(--general-border-radius, 3px);
+  font-size: 0.875rem;
+  margin-bottom: 20px; }
+  .product--payment-security-has-bg {
+    background: rgba(var(--block-color-rgb, --body-text-rgb), 0.05);
+    padding: 15px; }
+    @media only screen and (min-width: 768px) {
+      .product--payment-security-has-bg {
+        padding: 25px 30px; } }
+  .product--payment-security hr {
+    margin-top: 10px;
+    border-color: rgba(var(--block-color-rgb, --body-text-rgb), 0.1); }
+  .product--payment-security-image, .product--payment-security-payment-icons {
+    margin-bottom: 10px; }
+  .product--payment-security-image svg,
+  .product--payment-security-image img {
+    width: var(--block-image-width, 30px);
+    height: auto; }
+  .product--payment-security-payment-icons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; }
+  .product--payment-security > *:last-child {
+    margin-bottom: 0; }
+.product--payment-security-payment-icons img {height: 24px;}

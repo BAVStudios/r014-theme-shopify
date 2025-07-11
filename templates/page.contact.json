@@ -1,0 +1,227 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "1652081672ff9b3c2c": {
+      "type": "map",
+      "blocks": {
+        "pin_bkrQM3": {
+          "type": "pin",
+          "settings": {
+            "pin_retina": true,
+            "pin_lat": "-37.6853164",
+            "pin_long": "144.5641199",
+            "pin_title": "Melton Store",
+            "pin_desc": "<div style=\"line-height: 5px;\">\n<p>Shop R31 32/533 High St,\n<br>Melton West VIC 3337\n<br>Woodgrove Shopping Centre</p>\n<br>\n<table>\n<tr> \n<td style=\"width: 100px;\">Call Us</td>\n<td style=\"text-decoration: underline;\">\n<a href=\"tel:+61387164018\">03 8716 4018</a>\n</td>\n</tr>\n</table>\n<br>\n<br>\n<h6>Opening Hours</h6>\n  <table>\n    <tr>\n<td style=\"width: 100px;\">Mon</td>\n<td>9:30am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Tue</td>\n<td>9:30am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Wed</td>\n<td>9:30am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Thu</td>\n<td>9:30am</td>\n<td>7:00pm</td>\n</tr>\n    <tr>\n<td>Fri</td>\n<td>9:30am</td>\n<td>7:00pm</td>\n</tr>\n    <tr>\n<td>Sat</td>\n<td>9:30am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Sun</td>\n<td>10:00am</td>\n<td>5:00pm</td>\n</tr>\n  </table>\n</div>"
+          }
+        },
+        "pin_w4D8wD": {
+          "type": "pin",
+          "settings": {
+            "pin_retina": true,
+            "pin_lat": "-38.1787837",
+            "pin_long": "144.3515512",
+            "pin_title": "Geelong Store",
+            "pin_desc": "<div style=\"line-height: 5px;\">\n<p>17 Settlement Road,\n<br>Belmont, VIC 3216</p>\n<br>\n<table>\n<tr> \n<td style=\"width: 100px;\">Call Us</td>\n<td style=\"text-decoration: underline;\">\n<a href=\"tel:+61352222645\">03 5222 2645</a>\n</td>\n</tr>\n</table>\n<br>\n<br>\n<h6>Opening Hours</h6>\n  <table>\n    <tr>\n<td style=\"width: 100px;\">Mon</td>\n<td>9:00am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Tue</td>\n<td>9:00am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Wed</td>\n<td>9:00am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Thu</td>\n<td>9:00am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Fri</td>\n<td>9:00am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Sat</td>\n<td>9:00am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Sun</td>\n<td>10:00am</td>\n<td>4:00pm</td>\n</tr>\n  </table>\n</div>"
+          }
+        },
+        "pin_TpJjDC": {
+          "type": "pin",
+          "settings": {
+            "pin_retina": true,
+            "pin_lat": "-37.7620773",
+            "pin_long": "144.7462786",
+            "pin_title": "Caroline Springs Store",
+            "pin_desc": "<div style=\"line-height: 5px;\">\n<p>32 Panamax Rd, \n<br>Caroline Springs VIC 3023</p>\n<br>\n<table>\n<tr> \n<td style=\"width: 100px;\">Call Us</td>\n<td style=\"text-decoration: underline;\">\n<a href=\"tel:+610383907638\">03 8390 7638</a>\n</td>\n</tr>\n</table>\n<br>\n<br>\n<h6>Opening Hours</h6>\n  <table>\n    <tr>\n<td style=\"width: 100px;\">Mon</td>\n<td>9:30am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Tue</td>\n<td>9:30am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Wed</td>\n<td>9:30am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Thu</td>\n<td>9:30am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Fri</td>\n<td>9:30am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Sat</td>\n<td>9:30am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Sun</td>\n<td>10:00am</td>\n<td>5:00pm</td>\n</tr>\n  </table>\n</div>"
+          }
+        },
+        "pin_qfbk39": {
+          "type": "pin",
+          "settings": {
+            "pin_retina": true,
+            "pin_lat": "-37.5352276",
+            "pin_long": "143.822121",
+            "pin_title": "Ballarat Store (Opening Soon)",
+            "pin_desc": "<div style=\"line-height: 5px;\">\n<p>Shop T74 \n<br>Wendouree VIC 3355\n<br>Stockland Wendouree Shopping Centre</p>\n<br>\n<table>\n<tr> \n<td style=\"width: 100px;\">Call Us</td>\n<td style=\"text-decoration: underline;\">\n<a href=\"tel:+61425531841\">0425 531 841</a>\n</td>\n</tr>\n</table>\n<br>\n<br>\n<h6>Opening Hours</h6>\n  <table>\n    <tr>\n<td style=\"width: 100px;\">Mon</td>\n<td>9:00am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Tue</td>\n<td>9:00am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Wed</td>\n<td>9:00am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Thu</td>\n<td>9:00am</td>\n<td>7:00pm</td>\n</tr>\n    <tr>\n<td>Fri</td>\n<td>9:00am</td>\n<td>7:00pm</td>\n</tr>\n    <tr>\n<td>Sat</td>\n<td>9:00am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Sun</td>\n<td>10:00am</td>\n<td>5:00pm</td>\n</tr>\n  </table>\n</div>"
+          }
+        },
+        "pin_pBxGEi": {
+          "type": "pin",
+          "settings": {
+            "pin_retina": true,
+            "pin_lat": "-37.6979785",
+            "pin_long": "144.7754426",
+            "pin_title": "Taylors Lake Store",
+            "pin_desc": "<div style=\"line-height: 5px;\">\n<p>41/399 Melton Hwy,\n<br>Watergardens Shopping Centre\n<br> Taylors Lakes VIC 3038</p>\n<br>\n<table>\n<tr> \n<td style=\"width: 100px;\">Call Us</td>\n<td style=\"text-decoration: underline;\">\n<a href=\"tel:+61425531841\">0425 531 841</a>\n</td>\n</tr>\n</table>\n<br>\n<br>\n<h6>Opening Hours</h6>\n  <table>\n    <tr>\n<td style=\"width: 100px;\">Mon</td>\n<td>9:00am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Tue</td>\n<td>9:00am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Wed</td>\n<td>9:00am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Thu</td>\n<td>9:00am</td>\n<td>7:00pm</td>\n</tr>\n    <tr>\n<td>Fri</td>\n<td>9:00am</td>\n<td>7:00pm</td>\n</tr>\n    <tr>\n<td>Sat</td>\n<td>9:00am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Sun</td>\n<td>10:00am</td>\n<td>5:00pm</td>\n</tr>\n  </table>\n</div>"
+          }
+        }
+      },
+      "block_order": [
+        "pin_bkrQM3",
+        "pin_w4D8wD",
+        "pin_TpJjDC",
+        "pin_qfbk39",
+        "pin_pBxGEi"
+      ],
+      "settings": {
+        "googlemaps_api_key": "AIzaSyCGz6RIRZj-aaPb2BtateCVE-PPNVDRElI",
+        "full_width": true,
+        "desktop_height": "desktop-height-650",
+        "mobile_height": "mobile-height-400",
+        "map_type": "roadmap",
+        "map_style_select": "default",
+        "map_zoom": 14,
+        "disable_top_spacing": true,
+        "disable_bottom_spacing": false
+      }
+    },
+    "gallery_qPyVhT": {
+      "type": "gallery",
+      "blocks": {
+        "image_UyNm4T": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/geelong1-1080x607.webp",
+            "subheading": "",
+            "title": "GEELONG",
+            "text": "17 Settlement Road, Belmont, VIC 3216",
+            "link_label": "",
+            "link": "",
+            "use_text_button": false,
+            "block_link": ""
+          }
+        },
+        "image_TUJa6e": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/meltonWoodgrove_1-1080x607.webp",
+            "subheading": "",
+            "title": "MELTON",
+            "text": "Woodgrove Shopping, \n<br>Shop R31",
+            "link_label": "",
+            "link": "",
+            "use_text_button": true,
+            "block_link": ""
+          }
+        },
+        "image_Vqx8mn": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/carolinespringswarehouse_1-1080x607.webp",
+            "subheading": "",
+            "title": "CAROLINE SPRINGS",
+            "text": "32 Panamax Rd, Caroline Springs VIC 3023",
+            "link_label": "",
+            "link": "",
+            "use_text_button": true,
+            "block_link": ""
+          }
+        },
+        "image_f6WJbk": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/ballarat2-1080x607.webp",
+            "subheading": "",
+            "title": "BALLARAT (Opening Soon)",
+            "text": "Shop T74 Stockland Wendouree Shopping",
+            "link_label": "",
+            "link": "",
+            "use_text_button": false,
+            "block_link": ""
+          }
+        },
+        "image_7eBLPN": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/taylorslake2025-03-17.jpg",
+            "subheading": "",
+            "title": "TAYLORS LAKES",
+            "text": "Watergardens Shopping Centre",
+            "link_label": "",
+            "link": "",
+            "use_text_button": true,
+            "block_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_UyNm4T",
+        "image_TUJa6e",
+        "image_Vqx8mn",
+        "image_f6WJbk",
+        "image_7eBLPN"
+      ],
+      "custom_css": [
+        "p {font-size: 16px;}"
+      ],
+      "name": "Gallery",
+      "settings": {
+        "columns_desktop": 5,
+        "mobile_swipe": false,
+        "image_ratio": "landscape",
+        "content_position": "middle-center",
+        "text_alignment": "center",
+        "column_spacing": "small",
+        "heading_size": "h4",
+        "overlay_color": "#4a0000",
+        "overlay_opacity": 60,
+        "disable_top_spacing": false,
+        "disable_bottom_spacing": false
+      }
+    },
+    "1652268757b7c53383": {
+      "type": "contact-form",
+      "blocks": {
+        "text_Bzx3zG": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "heading": "Heading",
+            "text": "<p>Add your store address or<br/>your store hours</p>"
+          }
+        },
+        "text_dK3pHc": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "heading": "Heading",
+            "text": "<p>Add your store address or<br/>your store hours</p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_Bzx3zG",
+        "text_dK3pHc"
+      ],
+      "settings": {
+        "heading": "Contact form",
+        "description": "",
+        "show_phone_number": true,
+        "disable_top_spacing": false,
+        "disable_bottom_spacing": false
+      }
+    },
+    "spacer_9HUEdi": {
+      "type": "spacer",
+      "settings": {
+        "spacer_mobile": 0,
+        "spacer_desktop": 45,
+        "border_separator": false,
+        "border_separator_full": false
+      }
+    }
+  },
+  "order": [
+    "1652081672ff9b3c2c",
+    "gallery_qPyVhT",
+    "1652268757b7c53383",
+    "spacer_9HUEdi"
+  ]
+}

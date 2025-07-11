@@ -1,0 +1,298 @@
+{
+  "sections": {
+    "breadcrumbs": {
+      "type": "breadcrumbs",
+      "settings": {}
+    },
+    "main-product": {
+      "type": "main-product",
+      "blocks": {
+        "vendor_sku_nA797T": {
+          "type": "vendor_sku",
+          "settings": {
+            "show_vendor": true,
+            "show_vendor_link": true,
+            "show_sku": true
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {
+            "uppercase": false,
+            "show_products_rating": false,
+            "show_products_rating_average": false,
+            "show_products_rating_count": false,
+            "show_installments": true
+          }
+        },
+        "955814cd-267a-4315-b47f-77f3976fbf85": {
+          "type": "siblings",
+          "settings": {
+            "color_picker_size": "large",
+            "margin_bottom": 16
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "color_picker": true,
+            "color_picker_size": "large",
+            "color_picker_use_variants": true,
+            "variant_is_disabled": true,
+            "sizing_guide_variant": "",
+            "sizing_guide_text": "",
+            "sizing_guide_icon": "none",
+            "sizing_guide_page": ""
+          }
+        },
+        "inventory_level_EjD4Fn": {
+          "type": "inventory_level",
+          "settings": {
+            "show_inventory_notice": "always",
+            "show_inventory_count": "always",
+            "inventory_notice_pulse": true,
+            "inventory_notice_bar": true,
+            "inventory_notice_threshold": 10,
+            "inventory_notice_base": 200
+          }
+        },
+        "flash_message_gRwbbJ": {
+          "type": "flash_message",
+          "settings": {
+            "show_below_gallery": false,
+            "icon": "star",
+            "heading": "Heading",
+            "message": "<p>Add your own custom content</p>",
+            "close_button": "close_forever",
+            "color_text": "#1098e2"
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_quantity_selector": true,
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        },
+        "number_count_mTLNQj": {
+          "type": "number_count",
+          "settings": {
+            "show_below_gallery": true,
+            "has_border": false,
+            "block_heading": "",
+            "number_count_1": 103,
+            "number_count_2": 64
+          }
+        },
+        "collapsible_tab_LWUNzq": {
+          "type": "collapsible_tab",
+          "settings": {
+            "show_below_gallery": true,
+            "heading": "About this product",
+            "open": true,
+            "page": "",
+            "custom_liquid": ""
+          }
+        },
+        "specifications_tab_AtpBKe": {
+          "type": "specifications_tab",
+          "settings": {
+            "show_below_gallery": true,
+            "heading": "Product specifications",
+            "open": true,
+            "empty_field_label": "N/A"
+          }
+        },
+        "collapsible_tab_DgHiqz": {
+          "type": "collapsible_tab",
+          "settings": {
+            "show_below_gallery": true,
+            "heading": "Assembly & Care",
+            "open": false,
+            "page": "",
+            "custom_liquid": ""
+          }
+        },
+        "payment_security_XftMr4": {
+          "type": "payment_security",
+          "settings": {
+            "show_below_gallery": true,
+            "has_background": true,
+            "heading": "Payment & Security",
+            "show_payment_icons": true,
+            "security_image_width": 340,
+            "security_heading": "",
+            "security_text": "",
+            "color_text": "#71255f"
+          }
+        },
+        "4fd23485-293f-46a0-8a4c-34d0e25ea41b": {
+          "type": "share",
+          "settings": {
+            "show_below_gallery": false
+          }
+        }
+      },
+      "block_order": [
+        "vendor_sku_nA797T",
+        "title",
+        "955814cd-267a-4315-b47f-77f3976fbf85",
+        "variant_picker",
+        "inventory_level_EjD4Fn",
+        "flash_message_gRwbbJ",
+        "buy_buttons",
+        "number_count_mTLNQj",
+        "collapsible_tab_LWUNzq",
+        "specifications_tab_AtpBKe",
+        "collapsible_tab_DgHiqz",
+        "payment_security_XftMr4",
+        "4fd23485-293f-46a0-8a4c-34d0e25ea41b"
+      ],
+      "settings": {
+        "enable_sticky_add_to_cart": true,
+        "show_taxes_included": true,
+        "thumbnail_position": "bottom",
+        "product_media_width": "large",
+        "media_aspect_ratio": "adapt",
+        "display_captions": true,
+        "hide_variants": true,
+        "lightbox": true,
+        "enable_video_looping": false
+      }
+    },
+    "spacer_6mjDPj": {
+      "type": "spacer",
+      "settings": {
+        "spacer_mobile": 35,
+        "spacer_desktop": 70,
+        "border_separator": true,
+        "border_separator_full": false
+      }
+    },
+    "product_recommendations_NKiVnX": {
+      "type": "product-recommendations",
+      "settings": {
+        "heading": "You may also like",
+        "description": "",
+        "product_limit": 5,
+        "columns_desktop": 5,
+        "disable_top_spacing": true,
+        "disable_bottom_spacing": false
+      }
+    },
+    "media_grid_eMxrHk": {
+      "type": "media-grid",
+      "blocks": {
+        "media_gjgUir": {
+          "type": "media",
+          "settings": {
+            "use_video": false,
+            "video_autoplay": true,
+            "column": 2,
+            "row": 1,
+            "heading_size": "h3",
+            "text": "",
+            "content_position": "top-left",
+            "text_alignment": "left",
+            "badge_text": "",
+            "color_badge_text": "#ffffff",
+            "color_badge_bg": "#e32626",
+            "color_text": "#ffffff",
+            "color_bg": "#f1f1f1",
+            "color_bg_gradient": "",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "media_gBVLyR": {
+          "type": "media",
+          "settings": {
+            "use_video": false,
+            "video_autoplay": true,
+            "column": 2,
+            "row": 2,
+            "heading_size": "h3",
+            "text": "",
+            "content_position": "top-left",
+            "text_alignment": "left",
+            "badge_text": "",
+            "color_badge_text": "#ffffff",
+            "color_badge_bg": "#e32626",
+            "color_text": "#ffffff",
+            "color_bg": "#279a4b",
+            "color_bg_gradient": "",
+            "overlay_color": "#326141",
+            "overlay_opacity": 0
+          }
+        },
+        "media_XDJJik": {
+          "type": "media",
+          "settings": {
+            "use_video": false,
+            "video_autoplay": true,
+            "column": 2,
+            "row": 1,
+            "heading_size": "h3",
+            "text": "",
+            "content_position": "top-left",
+            "text_alignment": "left",
+            "badge_text": "",
+            "color_badge_text": "#ffffff",
+            "color_badge_bg": "#e32626",
+            "color_text": "#ffffff",
+            "color_bg": "#f1f1f1",
+            "color_bg_gradient": "",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        }
+      },
+      "block_order": [
+        "media_gjgUir",
+        "media_gBVLyR",
+        "media_XDJJik"
+      ],
+      "custom_css": [],
+      "settings": {
+        "desktop_height": 280,
+        "mobile_height": 250,
+        "column_spacing": "medium",
+        "mobile_swipe": true,
+        "disable_top_spacing": false,
+        "disable_bottom_spacing": false
+      }
+    },
+    "recently_viewed_products_gjVXNP": {
+      "type": "recently-viewed-products",
+      "settings": {
+        "heading": "Recently viewed products",
+        "description": "<p>Describe your recently viewed products here</p>",
+        "product_limit": 4,
+        "columns_desktop": 5,
+        "marker_color": "#fd6262",
+        "disable_top_spacing": false,
+        "disable_bottom_spacing": false
+      }
+    },
+    "spacer_x87ey9": {
+      "type": "spacer",
+      "settings": {
+        "spacer_mobile": 15,
+        "spacer_desktop": 30,
+        "border_separator": false,
+        "border_separator_full": false
+      }
+    }
+  },
+  "order": [
+    "breadcrumbs",
+    "main-product",
+    "spacer_6mjDPj",
+    "product_recommendations_NKiVnX",
+    "media_grid_eMxrHk",
+    "recently_viewed_products_gjVXNP",
+    "spacer_x87ey9"
+  ]
+}

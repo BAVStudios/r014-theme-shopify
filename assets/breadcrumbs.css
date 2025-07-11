@@ -1,0 +1,30 @@
+
+
+
+.breadcrumbs-section {
+  line-height: 1; }
+  .breadcrumbs-section + .product-section .thb-product-detail {
+    margin-top: 0; }
+  .breadcrumbs-section scroll-shadow {
+    width: 100%; }
+
+.breadcrumbs {
+  font-size: 0.75rem;
+  overflow-x: auto;
+  display: inline-flex;
+  width: 100%;
+  white-space: nowrap;
+  padding: 10px 0;
+  color: rgba(var(--color-body-rgb), 0.6);
+  text-align: left; }
+  @media only screen and (min-width: 768px) {
+    .breadcrumbs {
+      overflow: hidden;
+      padding: 15px 0; } }
+  .breadcrumbs i {
+    display: inline-block;
+    margin: 0 8px; }
+  .breadcrumbs a {
+    text-underline-offset: 3px; }
+    .breadcrumbs a:hover {
+      text-decoration: underline; }

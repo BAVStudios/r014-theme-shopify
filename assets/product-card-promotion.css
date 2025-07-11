@@ -1,0 +1,70 @@
+
+
+
+.product-card-promotion {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-body);
+  color: var(--color-body);
+  position: relative;
+  margin-bottom: 20px;
+  min-height: calc(100% - 20px); }
+  @media only screen and (min-width: 768px) {
+    .product-card-promotion {
+      margin-bottom: 40px;
+      min-height: calc(100% - 40px); } }
+  .product-card-promotion--heading {
+    font-size: 1rem;
+    font-weight: var(--font-body-medium-weight, 500);
+    margin-bottom: 10px;
+    color: var(--color-body); }
+    @media only screen and (min-width: 768px) {
+      .product-card-promotion--heading {
+        font-size: 1.25rem; } }
+  .product-card-promotion p {
+    font-size: 0.875rem;
+    color: inherit;
+    margin-bottom: 10px; }
+  .product-card-promotion--link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10; }
+  .product-card-promotion--content {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex: 1; }
+    @media only screen and (min-width: 768px) {
+      .product-card-promotion--content {
+        padding: 30px; } }
+  .product-card-promotion--button {
+    margin-top: auto; }
+  .product-card-promotion--image {
+    flex: 1; }
+  .product-card-promotion .button {
+    margin-top: 10px; }
+  .product-card-promotion.wide-promotion {
+    min-height: 0; }
+    @media only screen and (min-width: 768px) {
+      .product-card-promotion.wide-promotion {
+        flex-direction: row; } }
+    @media only screen and (min-width: 1068px) {
+      .product-card-promotion.wide-promotion .product-card-promotion--content {
+        padding: 40px; } }
+    @media only screen and (min-width: 1068px) {
+      .product-card-promotion.wide-promotion .product-card-promotion--heading {
+        font-size: 1.5rem; } }
+  @media only screen and (min-width: 768px) {
+    .product-card-promotion--text_first.wide-promotion {
+      flex-direction: row-reverse; } }
+
+[data-layout=list] .hide-on-list {
+  display: none; }
+
+[data-layout=grid] .hide-on-grid {
+  display: none; }

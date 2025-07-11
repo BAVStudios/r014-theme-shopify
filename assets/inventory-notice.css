@@ -1,0 +1,72 @@
+
+
+
+.product-inventory-notice {
+  font-size: 0.75rem;
+  line-height: 1;
+  margin-bottom: 20px;
+  color: var(--color-inventory-instock, #279a4b); }
+  .product-inventory-notice--text {
+    margin-bottom: 11px;
+    font-weight: var(--font-body-medium-weight, 500);
+    display: flex;
+    align-items: center; }
+  .product-inventory-notice--pulse {
+    display: inline-flex;
+    width: 6px;
+    height: 6px;
+    margin: 4px 12px 4px 0px;
+    position: relative;
+    border-radius: 50%;
+    background: var(--color-inventory-instock, #279a4b);
+    vertical-align: middle;
+    border: 1px solid rgba(var(--color-body-rgb), 0.1); }
+    .product-inventory-notice--pulse:after {
+      content: "";
+      position: absolute;
+      top: -6px;
+      left: -6px;
+      width: 16px;
+      height: 16px;
+      border-radius: 8px;
+      background: var(--color-inventory-instock, #279a4b);
+      animation: inventory-pulse 2s ease-out infinite; }
+  .product-inventory-notice--bar {
+    display: block;
+    position: relative;
+    height: 4px;
+    width: 100%;
+    background: var(--color-border);
+    border-radius: 2px; }
+    .product-inventory-notice--bar span {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--color-inventory-instock, #279a4b);
+      transform-origin: top left;
+      border-radius: 2px;
+      animation: inventory-bar 1s ease-out forwards; }
+  .product-inventory-notice--low {
+    color: var(--color-inventory-lowstock, #279a4b); }
+    .product-inventory-notice--low .product-inventory-notice--pulse {
+      background: var(--color-inventory-lowstock, #279a4b); }
+      .product-inventory-notice--low .product-inventory-notice--pulse:after {
+        background: var(--color-inventory-lowstock, #279a4b); }
+    .product-inventory-notice--low .product-inventory-notice--bar span {
+      background: var(--color-inventory-lowstock, #279a4b); }
+
+@keyframes inventory-pulse {
+  0% {
+    opacity: 0.5;
+    transform: scale(0.5); }
+  to {
+    opacity: 0;
+    transform: scale(1); } }
+
+@keyframes inventory-bar {
+  0% {
+    transform: scale(1, 1); }
+  to {
+    transform: scale(calc(var(--inventory-scale)), 1); } }

@@ -1,0 +1,95 @@
+
+
+
+
+.column-spacing--small {
+  --gap: 10px; }
+
+.column-spacing--medium {
+  --gap: 10px; }
+  @media only screen and (min-width: 768px) {
+    .column-spacing--medium {
+      --gap: 20px; } }
+
+.column-spacing--large {
+  --gap: 10px; }
+  @media only screen and (min-width: 768px) {
+    .column-spacing--large {
+      --gap: 30px; } }
+
+.featured-collection-list--inner {
+  display: grid;
+  gap: var(--gap);
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(var(--mobile-swipe-width), 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(var(--mobile-swipe-width), 1fr)); }
+  @media only screen and (min-width: 768px) {
+    .featured-collection-list--inner {
+      --columns-size: var(--column-size-tablet);
+      grid-template-columns: unset;
+      grid-auto-columns: calc((100% - (var(--columns-size) - 1) * var(--gap)) / var(--columns-size)); } }
+  @media only screen and (min-width: 1068px) {
+    .featured-collection-list--inner {
+      --columns-size: var(--column-size-desktop); } }
+
+.featured-collection-list--item {
+  position: relative;
+  scroll-snap-align: center; }
+  .featured-collection-list--item-bg {
+    position: relative;
+    height: 0;
+    padding-bottom: 125%;
+    overflow: hidden; }
+    .featured-collection-list--item-bg:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 30%;
+      min-height: 190px;
+      opacity: 0.5;
+      pointer-events: none;
+      background: linear-gradient(180deg, black 0%, rgba(0, 0, 0, 0) 100%); }
+    .featured-collection-list--item-bg svg,
+    .featured-collection-list--item-bg img {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      object-fit: cover;
+      transition: transform 1s cubic-bezier(0.104, 0.204, 0.492, 1); }
+  .featured-collection-list--item:hover svg,
+  .featured-collection-list--item:hover img {
+    transform: scale(1.05); }
+  .featured-collection-list--item-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 20;
+    display: flex;
+    padding: 15px;
+    flex-direction: column;
+    align-items: start;
+    color: #fff; }
+    @media only screen and (min-width: 1068px) {
+      .featured-collection-list--item-content {
+        padding: 30px; } }
+    .featured-collection-list--item-content .button {
+      margin-top: auto; }
+  .featured-collection-list--item-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 30; }
+  .featured-collection-list--item-heading {
+    color: #fff;
+    margin-bottom: 0; }
+  .featured-collection-list--item-counts {
+    opacity: 0.8;
+    font-size: 0.875rem; }

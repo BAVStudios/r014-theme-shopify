@@ -1,0 +1,12 @@
+<quick-view class="thb-hotspot pin-white{% if product_open %} thb-hotspot--open{%- endif -%}" style="--mobile-left: {{- x_position_mobile | append: '%' -}}; --mobile-top: {{- y_position_mobile | append: '%' -}}; --desktop-left: {{- x_position | append: '%' -}}; --desktop-top: {{- y_position | append: '%' -}};" data-product-handle="{{ hotspot_product.handle }}">
+  <div class="thb-hotspot-content thb-pulsate">
+    <div class="loading-overlay">{%- render 'svg-icons' with 'thb-loading' -%}</div>
+    <div class="thb-hotspot-arrow"></div>
+    <div class="thb-hotspot-bubble">
+      <div class="thb-hotspot-product-content">
+        <div class="thb-hotspot-product-title">{{ hotspot_product.title }}</div>
+        {%- render 'product-price', product: hotspot_product -%}
+      </div>
+    </div>
+  </div>
+</quick-view>

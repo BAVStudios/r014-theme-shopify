@@ -1,0 +1,6 @@
+<a {% if cta_link %} role="link" aria-disabled="true"{% else %} href="{{ cta_link }}"{% endif %} class="mega-menu-cta" style="--cta-color: {{ cta_color }}; --cta-color-rgb: {{ cta_color.rgb | replace: ' ' , ',' }}">
+  <div>
+    <strong>{{ cta_heading }}</strong>
+    {% if cta_content != blank %}<span>{{ cta_content }}</span>{% endif %}
+  </div>
+</a>

@@ -1,0 +1,116 @@
+{{- 'promotion-bar.css' | asset_url | stylesheet_tag -}}
+{%- liquid
+	assign add_divider = section.settings.add_divider
+	assign disable_top_spacing = section.settings.disable_top_spacing
+	assign disable_bottom_spacing = section.settings.disable_bottom_spacing
+
+	assign color_bg = section.settings.color_bg
+	assign color_text = section.settings.color_text
+-%}
+<div class="promotion-bar promotion-bar--divider-{{ add_divider }} section-spacing{% if disable_top_spacing %} section-spacing--disable-top{% endif %}{% if disable_bottom_spacing %} section-spacing--disable-bottom{% endif %}" style="--color-bg: {{ color_bg }}; --color-body: {{ color_text }}; --columns: {{ section.blocks.size }}">
+	<div class="promotion-bar--inner">
+		{%- for block in section.blocks -%}
+			<div class="promotion-bar--item" {{ block.shopify_attributes }}>
+				{% if block.settings.text != blank %}
+					<span>{{ block.settings.text }}</span>
+				{% endif %}
+				{% if block.settings.button_text != blank %}
+					<a href="{{ block.settings.button_link }}" class="text-button">{{ block.settings.button_text }}</a>
+				{% endif %}
+			</div>
+		{%- endfor -%}
+	</div>
+</div>
+
+{% schema %}
+  {
+    "name": "Promotion bar",
+		"class": "section-promotion-bar",
+		"max_blocks": 4,
+    "settings": [
+			{
+				"type": "checkbox",
+				"id": "add_divider",
+				"default": true,
+				"label": "Show dividing lines"
+			},
+			{
+	      "type": "header",
+	      "content": "Spacing"
+	    },
+			{
+				"type": "checkbox",
+				"id": "disable_top_spacing",
+				"default": true,
+				"label": "Remove top spacing"
+			},
+			{
+				"type": "checkbox",
+				"id": "disable_bottom_spacing",
+				"default": true,
+				"label": "Remove bottom spacing"
+			},
+			{
+				"type": "header",
+				"content": "Colors"
+			},
+			{
+				"type": "color",
+				"id": "color_bg",
+				"label": "Background",
+				"default": "#F6F0ED"
+			},
+			{
+				"type": "color",
+				"id": "color_text",
+				"label": "Text",
+				"default": "#252525"
+			}
+    ],
+    "blocks": [
+      {
+        "type": "promotion",
+        "name": "Promotion",
+        "settings": [
+					{
+						"type": "text",
+						"id": "text",
+						"default": "Promotion bar",
+						"label": "Text"
+					},
+					{
+            "id": "button_text",
+            "type": "text",
+            "label": "Button label",
+            "default": "Explore",
+						"info": "Leave the label blank to hide the button."
+          },
+          {
+            "id": "button_link",
+            "type": "url",
+            "label": "Button link"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Promotion bar",
+				"blocks": [
+					{
+						"type": "promotion"
+					},
+					{
+						"type": "promotion"
+					},
+					{
+						"type": "promotion"
+					},
+					{
+						"type": "promotion"
+					}
+				]
+      }
+    ]
+  }
+{% endschema %}

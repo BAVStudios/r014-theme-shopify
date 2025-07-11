@@ -1,0 +1,33 @@
+{%- liquid
+  assign has_promotions = false
+  assign mega_menu_columns = 4
+  if mega_menu_block.settings.promo_1_image or mega_menu_block.settings.promo_2_image or mega_menu_block.settings.promo_3_image or mega_menu_block.settings.promo_4_image
+    assign has_promotions = true
+    assign mega_menu_columns = 3
+  endif
+
+  assign promotions_text_size = mega_menu_block.settings.promotions_text_size
+  assign promotions_text_width = mega_menu_block.settings.promotions_text_width
+-%}
+<div class="sub-menu mega-menu-container" tabindex="-1" style="--mega-menu-columns: {{ mega_menu_columns }}">
+  <div class="mega-menu-container--inner {%- if has_promotions %} mega-menu-container--inner-has-promotions{% endif %}">
+    {% render 'header-mega-menu-columns', link: link %}
+    {% if has_promotions %}
+      {% assign block_settings = mega_menu_block.settings %}
+      <div class="mega-menu-promotions" style="--promotions-text-size: {{ promotions_text_size | append: 'px' }}; --promotions-text-width: {{ promotions_text_width | append: '%' }} ">
+        {%- if block_settings.promo_1_image -%}
+          {% render 'header-full-menu-promotion', promotion_image: block_settings.promo_1_image, promotions_min_height: block_settings.promotions_min_height, text_alignment: block_settings.text_alignment, promotion_link: block_settings.promo_1_link, promotion_heading: block_settings.promo_1_heading, promotion_bg_color: block_settings.promo_1_bg, promotion_text_color: block_settings.promo_1_text, promotions_bg_opacity: block_settings.promo_1_bg_opacity %}
+        {%- endif -%}
+        {%- if block_settings.promo_2_image -%}
+          {% render 'header-full-menu-promotion', promotion_image: block_settings.promo_2_image, promotions_min_height: block_settings.promotions_min_height, text_alignment: block_settings.text_alignment, promotion_link: block_settings.promo_2_link, promotion_heading: block_settings.promo_2_heading, promotion_bg_color: block_settings.promo_2_bg, promotion_text_color: block_settings.promo_2_text, promotions_bg_opacity: block_settings.promo_2_bg_opacity %}
+        {%- endif -%}
+        {%- if block_settings.promo_3_image -%}
+          {% render 'header-full-menu-promotion', promotion_image: block_settings.promo_3_image, promotions_min_height: block_settings.promotions_min_height, text_alignment: block_settings.text_alignment, promotion_link: block_settings.promo_3_link, promotion_heading: block_settings.promo_3_heading, promotion_bg_color: block_settings.promo_3_bg, promotion_text_color: block_settings.promo_3_text, promotions_bg_opacity: block_settings.promo_3_bg_opacity %}
+        {%- endif -%}
+        {%- if block_settings.promo_4_image -%}
+          {% render 'header-full-menu-promotion', promotion_image: block_settings.promo_4_image, promotions_min_height: block_settings.promotions_min_height, text_alignment: block_settings.text_alignment, promotion_link: block_settings.promo_4_link, promotion_heading: block_settings.promo_4_heading, promotion_bg_color: block_settings.promo_4_bg, promotion_text_color: block_settings.promo_4_text, promotions_bg_opacity: block_settings.promo_3_bg_opacity %}
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+  </div>
+</div>

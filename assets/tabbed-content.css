@@ -1,0 +1,65 @@
+
+
+
+.tabbed-content {
+  display: block; }
+  .tabbed-content--scroll {
+    width: 100%;
+    display: block;
+    transform: translateZ(0px); }
+    .tabbed-content--scroll s {
+      z-index: 10; }
+  .tabbed-content--tabs {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 10px;
+    text-align: left;
+    width: 100%;
+    white-space: nowrap;
+    overflow-y: hidden;
+    overflow-x: auto; }
+    .tabbed-content--tabs button {
+      display: inline-flex;
+      align-items: center;
+      font-weight: var(--font-body-medium-weight, 500);
+      padding: 15px;
+      position: relative;
+      z-index: 2;
+      border: 1px solid var(--color-border);
+      border-bottom: 0;
+      border-radius: var(--general-border-radius, 3px) var(--general-border-radius, 3px) 0 0;
+      color: rgba(var(--color-body-rgb), 0.6);
+      background-color: rgba(var(--color-body-rgb), 0.05);
+      margin-bottom: 1px;
+      transition: color 0.25s cubic-bezier(0.104, 0.204, 0.492, 1), background-color 0.25s cubic-bezier(0.104, 0.204, 0.492, 1); }
+      .tabbed-content--tabs button svg {
+        margin-right: 11px;
+        width: 15px;
+        height: auto;
+        fill: rgba(var(--color-body-rgb), 0.6); }
+      .tabbed-content--tabs button.active {
+        margin-bottom: 0;
+        background-color: var(--bg-body);
+        color: rgba(var(--color-body-rgb), 1); }
+        .tabbed-content--tabs button.active svg {
+          fill: rgba(var(--color-body-rgb), 1); }
+        .tabbed-content--tabs button.active span {
+          transform: translateY(-1px); }
+    .tabbed-content--tabs.tabs-center {
+      text-align: center; }
+    .tabbed-content--tabs.tabs-right {
+      text-align: right; }
+  .tabbed-content--content {
+    display: none;
+    margin-top: -1px;
+    border: 1px solid var(--color-border);
+    border-radius: 0 0 var(--general-border-radius, 3px) var(--general-border-radius, 3px);
+    padding: 15px; }
+    @media only screen and (min-width: 768px) {
+      .tabbed-content--content {
+        column-count: var(--columns, 1);
+        padding: 30px; } }
+    .tabbed-content--content.active {
+      display: block; }
+    .tabbed-content--content > *:last-child {
+      margin-bottom: 0; }

@@ -1,0 +1,10 @@
+<div class="product-information--under-gallery sticky-scroller--compare">
+{%- for block in section.blocks -%}
+  {%- liquid
+    unless block.settings.show_below_gallery
+      continue
+    endunless
+  -%}
+  {%- render 'product-information-blocks', product: product, section: section, block: block -%}
+{%- endfor -%}
+</div>

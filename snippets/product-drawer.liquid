@@ -1,0 +1,9 @@
+{%- assign template = template | replace: '.', '-' | handle -%}
+{%- if 'product-quick-view' != template -%}
+<modal-dialog id="Product-Modal" class="product-modal">
+	<div role="dialog" aria-label="{{ heading }}" aria-modal="true" class="product-modal__content" tabindex="-1">
+		<button id="ModalClose-Product-Modal" type="button" class="product-modal__toggle" aria-label="{{ 'accessibility.close' | t }}">{% render 'svg-icons' with 'close' %}</button>
+		<div id="Product-Modal-Content"></div>
+	</div>
+</modal-dialog>
+{%- endif -%}

@@ -1,0 +1,165 @@
+{{- 'testimonials.css' | asset_url | stylesheet_tag -}}
+{%- liquid
+	assign text_size = section.settings.text_size
+	assign pagination = section.settings.pagination
+	assign autoplay = section.settings.autoplay
+	assign color_text = section.settings.color_text
+	assign disable_top_spacing = section.settings.disable_top_spacing
+	assign disable_bottom_spacing = section.settings.disable_bottom_spacing
+
+	if autoplay
+		assign autoplay = section.settings.autoplay_length | times: 1000
+	endif
+
+	assign color_text = section.settings.color_text
+-%}
+<div class="row">
+	<div class="small-12 columns">
+		<div class="testimonials section-spacing{% if disable_top_spacing %} section-spacing--disable-top{% endif %}{% if disable_bottom_spacing %} section-spacing--disable-bottom{% endif %}" style="--color-body-rgb: {{ color_text.rgb | replace: ' ' , ',' }}; --color-body: {{ color_text }};">
+			<div class="testimonials--icon">{% render 'svg-icons' with 'thb-testimonial-quote' -%}</div>
+			<div class="testimonials--inner text-{{ text_size }}">
+				<slide-show class="testimonials--carousel carousel custom-dots" data-autoplay="{{ autoplay }}" data-dots="true" data-align="center" data-dot-style="{{ pagination }}">
+					{%- for block in section.blocks -%}
+						<div class="testimonials--testimonial carousel__slide" {{ block.shopify_attributes }}>
+							<div class="testimonials--testimonial-inner">
+								{%- if block.settings.stars and block.settings.stars != '' -%}
+									<div class="star-rating" style="--star-rating: {{ block.settings.stars }};"></div>
+								{%- endif -%}
+								<p>{{ block.settings.text | newline_to_br }}</p>
+								
+								<div class="testimonials--author">
+									{%- liquid
+										if block.settings.image != blank
+											render 'responsive-image', image: block.settings.image
+										endif
+									-%}
+									{%- if block.settings.author != empty -%}
+										<span>{{- block.settings.author -}}</span>
+									{%- endif -%}
+								</div>
+							</div>
+						</div>
+					{%- endfor -%}
+				</slide-show>
+			</div>
+		</div>
+	</div>
+</div>
+{{ 'slideshow-vendor.js' | asset_url | script_tag }}
+<script src="{{ 'slideshow.js' | asset_url }}" defer></script>
+{% schema %}
+  {
+    "name": "Testimonials",
+		"class": "section-testimonials",
+    "settings": [
+      {
+        "type": "select",
+        "id": "text_size",
+        "label": "Text size",
+        "default": "medium",
+        "options": [
+          { "value": "small", "label": "Small" },
+          { "value": "medium", "label": "Medium" },
+          { "value": "large", "label": "Large" }
+        ]
+      },
+			{
+        "type": "checkbox",
+        "id": "autoplay",
+        "label": "Auto-rotate slides",
+        "default": true
+      },
+			{
+				"type": "range",
+				"id": "autoplay_length",
+				"min": 3,
+				"max": 10,
+				"step": 1,
+				"unit": "s",
+				"label": "Change slides every",
+				"default": 5
+			},
+			{
+	      "type": "header",
+	      "content": "Colors"
+	    },
+			{
+        "type": "color",
+        "id": "color_text",
+        "label": "Text",
+        "default": "#252525"
+      },
+			{
+	      "type": "header",
+	      "content": "Spacing"
+	    },
+			{
+				"type": "checkbox",
+				"id": "disable_top_spacing",
+				"default": false,
+				"label": "Remove top spacing"
+			},
+			{
+				"type": "checkbox",
+				"id": "disable_bottom_spacing",
+				"default": false,
+				"label": "Remove bottom spacing"
+			}
+    ],
+    "blocks": [
+      {
+        "type": "quote",
+        "name": "Testimonial",
+        "settings": [
+					{
+						"type": "select",
+						"id": "stars",
+						"options": [
+							{ "value": "", "label": "None" },
+							{ "value": "3", "label": "3 out of 5" },
+							{ "value": "3.5", "label": "3.5 out of 5" },
+							{ "value": "4", "label": "4 out of 5" },
+							{ "value": "4.5", "label": "4.5 out of 5" },
+							{ "value": "5", "label": "5 out of 5" }
+						],
+						"default": "",
+						"label": "Star rating"
+					},
+          {
+            "type": "textarea",
+            "id": "text",
+            "label": "Text",
+            "default": "Add your customer or client quote here to showcase them."
+          },
+          {
+            "id": "author",
+            "type": "text",
+            "label": "Author",
+						"default": "Testimonial author"
+          },
+					{
+						"type": "image_picker",
+						"id": "image",
+						"label": "Logo"
+					}
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Testimonials",
+				"blocks": [
+	        {
+	          "type": "quote"
+	        },
+	        {
+	          "type": "quote"
+	        },
+	        {
+	          "type": "quote"
+	        }
+	      ]
+      }
+    ]
+  }
+{% endschema %}

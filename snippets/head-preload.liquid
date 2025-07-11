@@ -1,0 +1,28 @@
+{{ 'app.css' | asset_url | preload_tag: as: 'style' }}
+{% if template contains 'product' -%}
+{{ 'product.css' | asset_url | preload_tag: as: 'style' }}
+{% liquid
+	if product.selected_or_first_available_variant.featured_media.preview_image
+		assign product_image = product.selected_or_first_available_variant.featured_media.preview_image
+	elsif product.featured_media
+		assign product_image = product.featured_media.preview_image
+	endif
+
+	if product_image
+		render 'responsive-preload', image: product_image, sizes: '375x,690x,1380x'
+	endif
+-%}
+{%- endif %}
+{{ 'vendor.js' | asset_url | preload_tag: as: 'script' }}
+{{ 'app.js' | asset_url | preload_tag: as: 'script' }}
+{% if template contains 'product' -%}
+{{ 'slideshow-vendor.js' | asset_url | preload_tag: as: 'script' }}
+{{ 'product.js' | asset_url | preload_tag: as: 'script' }}
+{%- endif %}
+
+<script>
+window.lazySizesConfig = window.lazySizesConfig || {};
+window.lazySizesConfig.expand = 250;
+window.lazySizesConfig.loadMode = 1;
+window.lazySizesConfig.loadHidden = false;
+</script>

@@ -1,0 +1,11 @@
+<div class="product-information--inner sticky-scroller--element sticky-scroller--disabled">
+  {%- assign product_form_id = 'product-form-' | append: section.id -%}
+  {%- for block in section.blocks -%}
+    {%- liquid
+      if block.settings.show_below_gallery
+        continue
+      endif
+    -%}
+    {%- render 'product-information-blocks', product: product, section: section, block: block, product_form_id: product_form_id, first_image: first_image, update_url: update_url, pickup: pickup, hide_variants: hide_variants,  -%}
+  {%- endfor -%}
+</div>

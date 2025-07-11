@@ -1,0 +1,82 @@
+{%- liquid
+  assign seo_text = section.settings.seo_text
+	assign seo_text_custom_liquid = section.settings.seo_text_custom_liquid
+	assign seo_text_max_height = section.settings.seo_text_max_height
+	assign seo_text_read_more = section.settings.seo_text_read_more
+	assign seo_text_read_less = section.settings.seo_text_read_less
+
+	assign disable_top_spacing = section.settings.disable_top_spacing
+	assign disable_bottom_spacing = section.settings.disable_bottom_spacing
+-%}
+<div class="section-spacing{% if disable_top_spacing %} section-spacing--disable-top{% endif %}{% if disable_bottom_spacing %} section-spacing--disable-bottom{% endif %}">
+  <div class="row">
+    <div class="small-12 columns">
+      {%- render 'text-max-height', content: seo_text, custom_liquid: seo_text_custom_liquid, read_more: seo_text_read_more, read_less: seo_text_read_less, max_height: seo_text_max_height -%}
+    </div>
+  </div>
+</div>
+{% schema %}
+  {
+    "name": "Text with max height",
+		"class": "section-text-with-max-height",
+    "settings": [
+      {
+				"type": "richtext",
+				"id": "seo_text",
+				"default": "<p>Collection <strong>seo text</strong></p>",
+				"label": "Description"
+			},
+			{
+				"type": "liquid",
+				"id": "seo_text_custom_liquid",
+				"label": "Custom liquid",
+				"info": "Add app snippets or other Liquid code to create advanced customizations. For product description, you can use {{ collection.description }}"
+			},
+			{
+				"type": "text",
+				"id": "seo_text_read_more",
+				"default": "Read more",
+				"label": "Read more label",
+				"info": "Button will be shown when the content exceeds the max height"
+			},
+			{
+				"type": "text",
+				"id": "seo_text_read_less",
+				"default": "Read less",
+				"label": "Read less label",
+				"info": "Button will be shown when the content exceeds the max height"
+			},
+			{
+				"type": "range",
+				"id": "seo_text_max_height",
+				"min": 150,
+				"max": 1000,
+				"step": 50,
+				"label": "Max height",
+				"default": 350,
+				"info": "Displays a read more button after the text height exceeds a certain height."
+			},
+			{
+	      "type": "header",
+	      "content": "Spacing"
+	    },
+			{
+				"type": "checkbox",
+				"id": "disable_top_spacing",
+				"default": false,
+				"label": "Remove top spacing"
+			},
+			{
+				"type": "checkbox",
+				"id": "disable_bottom_spacing",
+				"default": false,
+				"label": "Remove bottom spacing"
+			}
+    ],
+    "presets": [
+      {
+        "name": "Text with max height"
+      }
+    ]
+  }
+{% endschema %}

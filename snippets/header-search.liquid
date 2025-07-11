@@ -1,0 +1,91 @@
+{%- liquid
+  assign filter_search_by = header_settings.filter_search_by
+  assign search_filter_content_first = blank
+  assign search_filter_selected = blank
+  assign select_name = 'filter.p.product_type'
+-%}
+{%- if header_settings.show_search -%}
+  {%- case filter_search_by -%}
+    {%- when 'product_type' -%}
+      {%- capture search_dropdown -%}
+        <option value="">{{ 'sections.header.all' | t }}</option>
+        {%- if shop.types.size == 1 and shop.types[0] == blank -%}
+          <option>No types found</option>
+        {%- elsif shop.types.size > 0 -%}
+          {%- for type in shop.types -%}
+            {%- if type == blank -%}{%- continue -%}{%- endif -%}
+            {%- if type == filter -%}
+              <option value="{{ type | escape }}" selected>{{ type }}</option>
+            {%- else -%}
+              <option value="{{ type | escape }}">{{ type }}</option>
+            {%- endif -%}
+          {%- endfor -%}
+        {%- else -%}
+          <option>No types found</option>
+        {%- endif -%}
+      {%- endcapture -%}
+    {%- when 'tag' -%}
+      {%- assign select_name = 'filter.p.tag' -%}
+      {%- capture search_dropdown -%}
+        <option value="">{{ 'sections.header.all' | t }}</option>
+        {%- if collections.all.all_tags.size > 0 -%}
+          {%- for tag in collections.all.all_tags -%}
+            {%- assign split_tag = tag | split: '_' -%}
+            {%- if split_tag[0] == 'searchfilter' -%}
+              {%- if tag == filter or collection.title == split_tag[1] -%}
+                <option value="{{ tag | escape }}" selected>{{ split_tag[1] }}</option>
+              {%- else -%}
+                <option value="{{ tag | escape }}">{{ split_tag[1] }}</option>
+              {%- endif -%}
+            {%- endif -%}
+          {%- endfor -%}
+        {%- else -%}
+          <option>No tags found</option>
+        {%- endif -%}
+      {%- endcapture -%}
+  {%- endcase -%}
+  <search-form class="searchform">
+    <form role="search" method="get" action="{{ routes.search_url }}">
+      <div class="searchform--form{% unless filter_search_by == 'disabled' %} searchform--form-multi{%- endunless -%}">
+        <label for="header-search-input" class="visually-hidden">{{ 'sections.header.search_for' | t }}</label>
+        <input
+          id="header-search-input"
+          type="search"
+          class="search-field"
+          placeholder="{{ 'sections.header.search_for' | t | escape }}"
+          value="{{ search.terms | replace: '*', '' }}"
+          name="q"
+          autocorrect="off"
+          autocomplete="off"
+          autocapitalize="off"
+          spellcheck="false"
+        >
+        {%- unless filter_search_by == 'disabled' -%}
+        <div class="select">
+          <label for="header-search-select" class="visually-hidden">{{ 'sections.header.search_for' | t }}</label>
+          <select name="{{ select_name }}" id="header-search-select">{{ search_dropdown }}</select>
+          <div class="select-arrow">{%- render 'svg-icons' with 'thb-select' -%}</div>
+        </div>
+        {%- endunless -%}
+        <button type="submit" class="thb-search-submit" aria-label="{{ 'sections.header.search' | t }}">{%- render 'svg-icons' with 'search' -%}</button>
+
+        <div class="thb-predictive-search" inert>
+          <div class="thb-predictive-search--container">
+            {%- if settings.search_menu != blank -%}
+              {%- if settings.search_menu_heading != blank -%}<div class="thb-predictive-search--label">{{ settings.search_menu_heading }}</div>{%- endif -%}
+              <div class="thb-predictive-search--content thb-predictive-search--content-small">
+              {%- for link in settings.search_menu.links -%}
+                <a href="{{ link.url }}" title="{{ link.title | escape }}">{%- render 'svg-icons' with 'search' -%}<span>{{ link.title }}</span></a>
+              {%- endfor -%}
+              </div>
+            {%- endif -%}
+          </div>
+          <span class="loading-overlay">
+            {%- render 'svg-icons' with 'thb-loading' -%}
+          </span>
+        </div>
+      </div>
+      <div class="searchform--click-capture"></div>
+    </form>
+  </search-form>
+{%- endif -%}

@@ -1,0 +1,394 @@
+{{- 'shop-the-look-grid.css' | asset_url | stylesheet_tag -}}
+{%- liquid
+	assign desktop_height = section.settings.desktop_height
+	assign mobile_height = section.settings.mobile_height
+	assign column_spacing = section.settings.column_spacing
+
+	assign disable_top_spacing = section.settings.disable_top_spacing
+	assign disable_bottom_spacing = section.settings.disable_bottom_spacing
+-%}
+<div class="shop-the-look-grid section-spacing{% if disable_top_spacing %} section-spacing--disable-top{% endif %}{% if disable_bottom_spacing %} section-spacing--disable-bottom{% endif %}">
+	<div class="shop-the-look-grid--inner column-spacing--{{ column_spacing }}" style="--desktop-height:{{ desktop_height | append: 'px' }}; --mobile-height:{{ mobile_height | append: 'px' }}">
+		{%- for block in section.blocks -%}
+			{%- liquid
+				assign image = block.settings.image
+				assign image_mobile = block.settings.image_mobile
+
+				assign column = block.settings.column
+				assign row = block.settings.row
+
+				assign column_mobile = column
+				if column > 2
+					assign column_mobile = 2
+				endif
+
+				assign hotspot_product_1 = all_products[block.settings.product_handle_1]
+				assign hotspot_product_2 = all_products[block.settings.product_handle_2]
+				assign hotspot_product_3 = all_products[block.settings.product_handle_3]
+				
+			-%}
+			<shop-the-look class="shop-the-look-grid--item" style="--column-span: {{ column }}; --row-span: {{ row }}; --column-span--mobile: {{ column_mobile }};" {{ block.shopify_attributes }}>
+				<div class="shop-the-look-grid--bg">
+					{%- if image -%}
+						{%- liquid
+							assign class = ''
+							if image_mobile
+								assign class = 'shop-the-look-grid--desktop'
+							endif
+
+							render 'responsive-image', image: image, class: class, sizes: '345x,610x,1280x'
+							-%}
+					{%- else -%}
+						{%- assign index = forloop.index | modulo: 4 | plus: 1 -%}
+						{{ 'product-apparel-' | append: index | placeholder_svg_tag: 'placeholder_svg_tag' }}
+					{%- endif -%}
+					{%- liquid
+						if image_mobile
+							render 'responsive-image', image: image_mobile, class: 'shop-the-look-grid--mobile', sizes: '345x,610x,1280x'
+						endif
+					-%}
+				</div>
+				{%- unless hotspot_product_1 == empty -%}
+					{%- render 'hotspot', hotspot_product: hotspot_product_1, product_open: block.settings.product_open_1, x_position_mobile: block.settings.x_position_mobile_1, y_position_mobile: block.settings.y_position_mobile_1, x_position: block.settings.x_position_1, y_position: block.settings.y_position_1 -%}
+				{%- endunless -%}
+				{%- unless hotspot_product_2 == empty -%}
+					{%- render 'hotspot', hotspot_product: hotspot_product_2, product_open: block.settings.product_open_2, x_position_mobile: block.settings.x_position_mobile_2, y_position_mobile: block.settings.y_position_mobile_2, x_position: block.settings.x_position_2, y_position: block.settings.y_position_2 -%}
+				{%- endunless -%}
+				{%- unless hotspot_product_3 == empty -%}
+					{%- render 'hotspot', hotspot_product: hotspot_product_3, product_open: block.settings.product_open_3, x_position_mobile: block.settings.x_position_mobile_3, y_position_mobile: block.settings.y_position_mobile_3, x_position: block.settings.x_position_3, y_position: block.settings.y_position_3 -%}
+				{%- endunless -%}
+			</shop-the-look>
+		{%- endfor -%}
+	</div>
+</div>
+<script src="{{ 'shop-the-look.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'product.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'modal-dialog.js' | asset_url }}" defer="defer"></script>
+<link rel="stylesheet" href="{{ 'product-modal.css' | asset_url }}" media="print" onload="this.media='all'">
+{% schema %}
+  {
+    "name": "Shop the look grid",
+		"class": "section-shop-the-look-grid",
+    "settings": [
+			{
+        "type": "paragraph",
+				"content": "Learn more about how to set up the [shop the look section](https://documentation.fuelthemes.net/kb/how-to-set-up-shop-the-look-grid-section-in-pinnacle-theme/)"
+      },
+			{
+				"type": "range",
+				"id": "desktop_height",
+				"min": 200,
+				"max": 400,
+				"step": 5,
+				"default": 300,
+				"label": "Desktop row height"
+			},
+			{
+				"type": "range",
+				"id": "mobile_height",
+				"min": 150,
+				"max": 300,
+				"step": 5,
+				"default": 250,
+				"label": "Mobile row height"
+			},
+			{
+	      "type": "select",
+	      "id": "column_spacing",
+	      "options": [
+	        {
+	          "value": "small",
+	          "label": "Small"
+	        },
+					{
+	          "value": "medium",
+	          "label": "Medium"
+	        },
+	        {
+	          "value": "large",
+	          "label": "Large"
+	        }
+	      ],
+	      "default": "medium",
+	      "label": "Column spacing"
+	    },
+			{
+	      "type": "header",
+	      "content": "Spacing"
+	    },
+			{
+				"type": "checkbox",
+				"id": "disable_top_spacing",
+				"default": false,
+				"label": "Remove top spacing"
+			},
+			{
+				"type": "checkbox",
+				"id": "disable_bottom_spacing",
+				"default": false,
+				"label": "Remove bottom spacing"
+			}
+    ],
+    "blocks": [
+      {
+        "type": "media",
+        "name": "Media",
+        "settings": [
+					{
+						"type": "image_picker",
+						"id": "image",
+						"label": "Image",
+						"info": "1250 x 1250 .jpg recommended."
+					},
+					{
+						"type": "image_picker",
+						"id": "image_mobile",
+						"label": "Image",
+						"info": "700 x 700 .jpg recommended."
+					},
+					{
+			      "type": "header",
+			      "content": "Layout"
+			    },
+					{
+						"type": "range",
+						"id": "column",
+						"min": 1,
+						"max": 4,
+						"step": 1,
+						"default": 1,
+						"label": "Column"
+					},
+					{
+						"type": "range",
+						"id": "row",
+						"min": 1,
+						"max": 4,
+						"step": 1,
+						"default": 1,
+						"label": "Row"
+					},
+					{
+			      "type": "header",
+			      "content": "Product 1"
+			    },
+					{
+            "type": "product",
+            "id": "product_handle_1",
+            "label": "Product"
+          },
+					{
+						"type": "checkbox",
+						"id": "product_open_1",
+						"default": false,
+						"label": "Keep product open"
+					},
+					{
+						"type": "range",
+						"id": "x_position_1",
+						"min": 0,
+						"max": 100,
+						"step": 1,
+						"unit": "%",
+						"label": "Horizontal",
+						"default": 20,
+						"info": "Horizontal position of the hot spot"
+					},
+					{
+						"type": "range",
+						"id": "y_position_1",
+						"min": 0,
+						"max": 100,
+						"step": 1,
+						"unit": "%",
+						"label": "Vertical",
+						"default": 20,
+						"info": "Vertical position of the hot spot"
+					},
+					{
+						"type": "range",
+						"id": "x_position_mobile_1",
+						"min": 0,
+						"max": 100,
+						"step": 1,
+						"unit": "%",
+						"label": "Horizontal - Mobile",
+						"default": 20,
+						"info": "Horizontal position of the hot spot on mobile screens"
+					},
+					{
+						"type": "range",
+						"id": "y_position_mobile_1",
+						"min": 0,
+						"max": 100,
+						"step": 1,
+						"unit": "%",
+						"label": "Vertical - Mobile",
+						"default": 20,
+						"info": "Vertical position of the hot spot on mobile screens"
+					},
+					{
+			      "type": "header",
+			      "content": "Product 2"
+			    },
+					{
+            "type": "product",
+            "id": "product_handle_2",
+            "label": "Product"
+          },
+					{
+						"type": "checkbox",
+						"id": "product_open_2",
+						"default": false,
+						"label": "Keep product open"
+					},
+					{
+						"type": "range",
+						"id": "x_position_2",
+						"min": 0,
+						"max": 100,
+						"step": 1,
+						"unit": "%",
+						"label": "Horizontal",
+						"default": 20,
+						"info": "Horizontal position of the hot spot"
+					},
+					{
+						"type": "range",
+						"id": "y_position_2",
+						"min": 0,
+						"max": 100,
+						"step": 1,
+						"unit": "%",
+						"label": "Vertical",
+						"default": 20,
+						"info": "Vertical position of the hot spot"
+					},
+					{
+						"type": "range",
+						"id": "x_position_mobile_2",
+						"min": 0,
+						"max": 100,
+						"step": 1,
+						"unit": "%",
+						"label": "Horizontal - Mobile",
+						"default": 20,
+						"info": "Horizontal position of the hot spot on mobile screens"
+					},
+					{
+						"type": "range",
+						"id": "y_position_mobile_2",
+						"min": 0,
+						"max": 100,
+						"step": 1,
+						"unit": "%",
+						"label": "Vertical - Mobile",
+						"default": 20,
+						"info": "Vertical position of the hot spot on mobile screens"
+					},
+					{
+			      "type": "header",
+			      "content": "Product 3"
+			    },
+					{
+            "type": "product",
+            "id": "product_handle_3",
+            "label": "Product"
+          },
+					{
+						"type": "checkbox",
+						"id": "product_open_3",
+						"default": false,
+						"label": "Keep product open"
+					},
+					{
+						"type": "range",
+						"id": "x_position_3",
+						"min": 0,
+						"max": 100,
+						"step": 1,
+						"unit": "%",
+						"label": "Horizontal",
+						"default": 20,
+						"info": "Horizontal position of the hot spot"
+					},
+					{
+						"type": "range",
+						"id": "y_position_3",
+						"min": 0,
+						"max": 100,
+						"step": 1,
+						"unit": "%",
+						"label": "Vertical",
+						"default": 20,
+						"info": "Vertical position of the hot spot"
+					},
+					{
+						"type": "range",
+						"id": "x_position_mobile_3",
+						"min": 0,
+						"max": 100,
+						"step": 1,
+						"unit": "%",
+						"label": "Horizontal - Mobile",
+						"default": 20,
+						"info": "Horizontal position of the hot spot on mobile screens"
+					},
+					{
+						"type": "range",
+						"id": "y_position_mobile_3",
+						"min": 0,
+						"max": 100,
+						"step": 1,
+						"unit": "%",
+						"label": "Vertical - Mobile",
+						"default": 20,
+						"info": "Vertical position of the hot spot on mobile screens"
+					}
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Shop the look grid",
+				"blocks": [
+					{
+						"type": "media",
+						"settings": {
+							"column": 2,
+							"row": 2
+						}
+					},
+					{
+						"type": "media",
+						"settings": {
+							"column": 1,
+							"row": 1
+						}
+					},
+					{
+						"type": "media",
+						"settings": {
+							"column": 1,
+							"row": 1
+						}
+					},
+					{
+						"type": "media",
+						"settings": {
+							"column": 1,
+							"row": 1
+						}
+					},
+					{
+						"type": "media",
+						"settings": {
+							"column": 1,
+							"row": 1
+						}
+					}
+				]
+      }
+    ]
+  }
+{% endschema %}

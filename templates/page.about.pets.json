@@ -1,0 +1,265 @@
+{
+  "sections": {
+    "breadcrumbs": {
+      "type": "breadcrumbs",
+      "disabled": true,
+      "settings": {}
+    },
+    "main_page_VzPg7i": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "show_page_title": true,
+        "description": "",
+        "show_page_content": false,
+        "page_width": "medium",
+        "page_alignment": "left"
+      }
+    },
+    "image_with_text_overlay_n8wgpg": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "subheading_H8xLKM": {
+          "type": "subheading",
+          "settings": {
+            "text": "Our story"
+          }
+        },
+        "heading_QL9mHp": {
+          "type": "heading",
+          "settings": {
+            "text": "From Pet Lovers to Pet Experts:",
+            "heading_size": "h1-large"
+          }
+        },
+        "text_wCGyWw": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>With every step, we’ve learned, grown, and connected with our community of pet owners, becoming a go-to resource for those who want the very best for their furry family members. </strong></p>"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_H8xLKM",
+        "heading_QL9mHp",
+        "text_wCGyWw"
+      ],
+      "settings": {
+        "desktop_height": "desktop-height-550",
+        "mobile_height": "mobile-height-450",
+        "full_width": true,
+        "content_width": "small",
+        "content_position": "middle-left",
+        "text_alignment": "left",
+        "color_bg": "rgba(0,0,0,0)",
+        "color_text": "#ffffff",
+        "overlay_color": "#000000",
+        "overlay_opacity": 10,
+        "disable_top_spacing": true,
+        "disable_bottom_spacing": false
+      }
+    },
+    "rich_text_W3AXDJ": {
+      "type": "rich-text",
+      "blocks": {
+        "image_D9qCx9": {
+          "type": "image",
+          "settings": {
+            "retina": true
+          }
+        },
+        "heading_jgbdmq": {
+          "type": "heading",
+          "settings": {
+            "text": "Our story began with a simple love for animals.",
+            "size": "h2",
+            "marker_color": "#dafbff"
+          }
+        },
+        "text_FjKXce": {
+          "type": "text",
+          "settings": {
+            "text": "<p>As lifelong pet lovers, we understand that pets are more than just animals—they’re family. That’s why we created a shop dedicated to offering the highest quality food, toys, accessories, and care products for pets of all kinds. </p><p>What started as a small neighborhood store has grown into a trusted resource for pet owners, both local and beyond. Our commitment to customer service, expert advice, and providing safe, healthy products drives everything we do. </p><h5>We believe every pet deserves to live a happy, healthy life, and we’re here to support pet parents every step of the way.</h5>",
+            "custom_liquid": "",
+            "size": "text-size-large"
+          }
+        }
+      },
+      "block_order": [
+        "image_D9qCx9",
+        "heading_jgbdmq",
+        "text_FjKXce"
+      ],
+      "settings": {
+        "text_width": "large",
+        "text_position": "center",
+        "text_alignment": "center",
+        "color_bg": "rgba(0,0,0,0)",
+        "color_text": "#34216e",
+        "disable_top_spacing": true,
+        "disable_bottom_spacing": true
+      }
+    },
+    "media_with_text_F77rDh": {
+      "type": "media-with-text",
+      "blocks": {
+        "heading_Cf363e": {
+          "type": "heading",
+          "settings": {
+            "text": "🐶 🐶 🐶",
+            "heading_size": "h2"
+          }
+        },
+        "heading_hVnMqc": {
+          "type": "heading",
+          "settings": {
+            "text": "A Family of Pet Lovers",
+            "heading_size": "h2"
+          }
+        },
+        "text_eJJWeN": {
+          "type": "text",
+          "settings": {
+            "text": "<p>What started as a small neighborhood store has grown into a trusted resource for pet owners, both local and beyond. Our commitment to customer service, expert advice, and providing safe, healthy products drives everything we do. We believe every pet deserves to live a happy.</p>",
+            "description_size": "large"
+          }
+        }
+      },
+      "block_order": [
+        "heading_Cf363e",
+        "heading_hVnMqc",
+        "text_eJJWeN"
+      ],
+      "settings": {
+        "use_video": false,
+        "video_autoplay": true,
+        "video_controls": true,
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "content_position": "text-left",
+        "text_alignment": "middle",
+        "color_bg": "#ffffff",
+        "color_text": "#34216e",
+        "disable_top_spacing": false,
+        "disable_bottom_spacing": false
+      }
+    },
+    "media_with_text_dGQXhD": {
+      "type": "media-with-text",
+      "blocks": {
+        "heading_reTEMN": {
+          "type": "heading",
+          "settings": {
+            "text": "❤️️ ❤️️ ❤️️",
+            "heading_size": "h2"
+          }
+        },
+        "heading_CxmPUi": {
+          "type": "heading",
+          "settings": {
+            "text": "Founded with Love",
+            "heading_size": "h3"
+          }
+        },
+        "text_VEYVet": {
+          "type": "text",
+          "settings": {
+            "text": "<p>At the heart of our pet shop is a genuine love for animals. From the very beginning, we were inspired by the bond between pets and their owners, and we wanted to create a space where this love could be celebrated. </p>",
+            "description_size": "medium"
+          }
+        }
+      },
+      "block_order": [
+        "heading_reTEMN",
+        "heading_CxmPUi",
+        "text_VEYVet"
+      ],
+      "settings": {
+        "use_video": false,
+        "video_autoplay": true,
+        "video_controls": true,
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "content_position": "text-left",
+        "text_alignment": "middle",
+        "color_bg": "#ffffff",
+        "color_text": "#34216e",
+        "disable_top_spacing": true,
+        "disable_bottom_spacing": true
+      }
+    },
+    "spacer_mgUc4H": {
+      "type": "spacer",
+      "settings": {
+        "spacer_mobile": 50,
+        "spacer_desktop": 100,
+        "border_separator": true,
+        "border_separator_full": false
+      }
+    },
+    "multicolumn_q9YK4P": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_VRxHzK": {
+          "type": "column",
+          "settings": {
+            "image_full_width": false,
+            "retina": true,
+            "title": "Pet Grooming",
+            "text": "<p>Treat your pet to a luxurious grooming experience with our professional pet grooming services. </p>",
+            "link_label": "Learn more",
+            "link": "#"
+          }
+        },
+        "column_8QQWkW": {
+          "type": "column",
+          "settings": {
+            "image_full_width": false,
+            "retina": true,
+            "title": "Veterinary Servies",
+            "text": "<p>We offer comprehensive veterinary services to ensure your pet’s health and well-being at every stage of life.</p>",
+            "link_label": "Learn more",
+            "link": "#"
+          }
+        },
+        "column_37CrrB": {
+          "type": "column",
+          "settings": {
+            "image_full_width": false,
+            "retina": true,
+            "title": "Pet Insurance",
+            "text": "<p>Keep your pet happy and healthy while protecting yourself from surprise expenses.</p>",
+            "link_label": "Learn more",
+            "link": "#"
+          }
+        }
+      },
+      "block_order": [
+        "column_VRxHzK",
+        "column_8QQWkW",
+        "column_37CrrB"
+      ],
+      "settings": {
+        "heading": "Our services",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "text_alignment": "left",
+        "heading_size": "h4",
+        "disable_top_spacing": true,
+        "disable_bottom_spacing": false
+      }
+    }
+  },
+  "order": [
+    "breadcrumbs",
+    "main_page_VzPg7i",
+    "image_with_text_overlay_n8wgpg",
+    "rich_text_W3AXDJ",
+    "media_with_text_F77rDh",
+    "media_with_text_dGQXhD",
+    "spacer_mgUc4H",
+    "multicolumn_q9YK4P"
+  ]
+}

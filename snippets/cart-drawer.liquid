@@ -1,0 +1,328 @@
+{%- if settings.cart_drawer -%}
+  {%- liquid
+    assign free_shipping = settings.free_shipping
+    assign free_shipping_minimum = settings.free_shipping_minimum | times: 100
+    assign total = cart.total_price
+  -%}
+  <cart-drawer
+    class="cart-drawer {%- if cart == empty %} cart-drawer--empty{%- endif -%}"
+    id="Cart-Drawer"
+    tabindex="-1"
+    inert
+  >
+    <div class="cart-drawer--inner">
+      {%- liquid
+        if free_shipping and settings.free_shipping_minimum != blank
+          render 'free-shipping', free_shipping_minimum: free_shipping_minimum, total: total
+        endif
+      -%}
+      <div class="cart-drawer--content">
+        {%- if cart != empty -%}
+          {% for item in cart.items %}
+            {%- liquid
+              # Check if this specific item has custom length property
+              assign is_custom_length = false
+              assign custom_length_value = 0
+
+              for property in item.properties
+                if property.first == 'Length'
+                  assign is_custom_length = true
+                  assign length_string = property.last | remove: 'm' | remove: 'cm'
+                  assign custom_length_value = length_string | times: 1.0
+                  break
+                endif
+              endfor
+            -%}
+
+            <div
+              class="product-cart-item cart-item{% if is_custom_length %} cart-item--custom-length{% endif %}"
+              id="CartDrawerItem-{{ item.index | plus: 1 }}"
+              data-variant-id="{{ item.variant_id }}"
+              data-handle="{{ item.product.handle }}"
+              data-key="{{ item.key }}"
+              data-line="{{ forloop.index }}"
+              {% if is_custom_length %}
+                data-custom-length="true" data-length="{{ custom_length_value }}m"
+              {% endif %}
+            >
+              <div class="product-cart-item-image">
+                {% if item.image %}
+                  {%- render 'responsive-image', image: item.image, sizes: '160x160', priority: 'low' -%}
+                {% else %}
+                  <div class="thb-placeholder" style="width: 96px;">
+                    {{ 'product-1' | placeholder_svg_tag }}
+                  </div>
+                {% endif %}
+                <div class="loading-overlay">
+                  {% render 'svg-icons' with 'thb-loading' %}
+                </div>
+              </div>
+              <div class="product-cart-item-info">
+                <div class="product-cart-item-info-inner">
+                  <a href="{{ item.url }}" title="{{ item.product.title | escape }}" class="cart-product-link">
+                    {{- item.product.title -}}
+                  </a>
+                  <span class="price cart-item__price">
+                    {%- if is_custom_length -%}
+                      {%- comment -%} CUSTOM LENGTH: Show calculated price per meter × length {%- endcomment -%}
+                      {%- assign calculated_price = product.metafields.custom.price_per_meter
+                        | times: custom_length_value
+                        | times: 100
+                      -%}
+                      {%- if item.original_line_price != item.final_line_price -%}
+                        <del
+                          ><span class="amount">{{ calculated_price | money }}</span></del
+                        >
+                        {%- assign discount_ratio = item.final_line_price | divided_by: item.original_line_price -%}
+                        {%- assign discounted_calculated_price = calculated_price | times: discount_ratio -%}
+                        <ins
+                          ><span class="amount">{{ discounted_calculated_price | money }}</span></ins
+                        >
+                      {%- else -%}
+                        <ins
+                          ><span class="amount">{{ calculated_price | money }}</span></ins
+                        >
+                      {%- endif -%}
+                      {%- comment -%} Shows Per Meter Price, without decimals {%- endcomment -%}
+                      {% assign multiplied_price = item.variant.price | times: 100 %}
+                      {% assign formatted_price = multiplied_price | money %}
+                      <small class="custom-length-breakdown">
+                        {{ formatted_price | replace: '.00', '' }} per meter × {{ custom_length_value }}m
+                      </small>
+                    {%- else -%}
+                      {%- comment -%} REGULAR PRODUCTS: Use default Shopify pricing {%- endcomment -%}
+                      {%- if item.original_line_price != item.final_line_price -%}
+                        <del
+                          ><span class="amount">{{ item.original_line_price | money }}</span></del
+                        >
+                        <ins
+                          ><span class="amount">{{ item.final_line_price | money }}</span></ins
+                        >
+                      {%- else -%}
+                        <ins
+                          ><span class="amount">{{ item.original_line_price | money }}</span></ins
+                        >
+                      {%- endif -%}
+                      {%- if item.variant.available and item.unit_price_measurement -%}
+                        <small class="unit-price">
+                          {{ item.variant.unit_price | money }}
+                          <span class="unit-price-separator">/</span>
+                          {%- if item.variant.unit_price_measurement.reference_value != 1 -%}
+                            {{- item.variant.unit_price_measurement.reference_value -}}
+                          {%- endif -%}
+                          {{ item.variant.unit_price_measurement.reference_unit }}
+                        </small>
+                      {%- endif -%}
+                    {%- endif -%}
+                  </span>
+                  {% if item.selling_plan_allocation %}
+                    <div class="properties">
+                      <span class="selling-plan">{{ item.selling_plan_allocation.selling_plan.name }}</span>
+                    </div>
+                  {% endif %}
+                  {% unless item.variant.title contains 'Default' %}
+                    <div class="product-cart-item-options">
+                      {% for option in item.product.options %}
+                        {{ item.variant.options[forloop.index0] -}}
+                        {%- if forloop.last != true %} / {% endif %}
+                      {% endfor %}
+                    </div>
+                  {% endunless %}
+                  <div class="cart-item__properties">
+                    {%- for property in item.properties -%}
+                      {%- assign property_first_char = property.first | slice: 0 -%}
+                      {%- if property.last != blank and property_first_char != '_' -%}
+                        <div class="product-cart-item-options cart-item__property">
+                          <span class="cart-item__property-name">{{- property.first }}:</span>
+                          <span class="cart-item__property-value" data-property="{{ property.first }}">
+                            {%- if property.last contains '/uploads/' -%}
+                              <a href="{{ property.last }}" class="link" target="_blank">
+                                {{ property.last | split: '/' | last }}
+                              </a>
+                            {%- else -%}
+                              {%- if property.first == 'Length' -%}
+                                <strong>{{ property.last }}</strong>
+                              {%- else -%}
+                                {{ property.last }}
+                              {%- endif -%}
+                            {%- endif -%}
+                          </span>
+                        </div>
+                      {%- endif -%}
+                    {%- endfor -%}
+                  </div>
+                  {%- if item.discounts != blank -%}
+                    <ul class="discounts" role="list">
+                      {%- for discount in item.discounts -%}
+                        <li class="discounts__discount">
+                          {%- render 'svg-icons' with 'discount' -%}
+                          {{ discount.title }} (-{{ discount.amount | money }})
+                        </li>
+                      {%- endfor -%}
+                    </ul>
+                  {%- endif -%}
+                </div>
+                <div class="product-cart-item-quantity" style="width: 100%">
+                  {%- if is_custom_length -%}
+                    {%- comment -%} CUSTOM LENGTH: Show length display and hide quantity controls {%- endcomment -%}
+                    <div class="custom-length-quantity">
+                      <span class="custom-length-display">{{ custom_length_value }}</span>
+                      {% comment %} <small>Length</small> {% endcomment %}
+                    </div>
+                  {%- else -%}
+                    {%- comment -%} REGULAR PRODUCTS: Show normal quantity controls {%- endcomment -%}
+                    <quantity-selector class="quantity cart-update small-qty" data-id="{{ item.key | escape }}">
+                      <button
+                        class="minus"
+                        type="button"
+                        aria-label="{{ 'products.product.quantity.decrease' | t: product: item.product.title | escape }}"
+                      >
+                        {% render 'svg-icons' with 'minus' %}
+                      </button>
+                      <input
+                        type="number"
+                        name="updates[]"
+                        id="updates_{{ item.key }}"
+                        value="{{ item.quantity }}"
+                        min="{{ item.variant.quantity_rule.min }}"
+                        {% if item.variant.quantity_rule.max != null %}
+                          max="{{ item.variant.quantity_rule.max }}"
+                        {% elsif item.variant.inventory_management != null and item.variant.inventory_quantity > 0 %}
+                          max="{{ item.variant.inventory_quantity }}"
+                        {% endif %}
+                        step="{{ item.variant.quantity_rule.increment }}"
+                        class="qty"
+                        data-index="{{ item.index | plus: 1 }}"
+                        aria-label="{{ 'products.product.quantity.input_label' | t: product: item.product.title | escape }}"
+                      >
+                      <button
+                        class="plus"
+                        type="button"
+                        aria-label="{{ 'products.product.quantity.increase' | t: product: item.product.title | escape }}"
+                      >
+                        {% render 'svg-icons' with 'plus' %}
+                      </button>
+                    </quantity-selector>
+                  {%- endif -%}
+                  <a
+                    href="{{ routes.cart_change_url }}?line={{ forloop.index }}&amp;quantity=0"
+                    class="remove"
+                    data-index="{{ item.index | plus: 1 }}"
+                  >
+                    {%- render 'svg-icons' with 'trash' -%}
+                  </a>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        {%- else -%}
+          {%- render 'cart-empty' -%}
+        {%- endif -%}
+      </div>
+      {%- if cart != empty -%}
+        <div class="cart-drawer--footer">
+          <div class="cart-drawer--discounts">
+            {%- if cart.cart_level_discount_applications.size > 0 -%}
+              {%- for discount in cart.cart_level_discount_applications -%}
+                <div class="cart-drawer--discount cart-discount">
+                  <div class="cart-drawer--discount-label">{{ discount.title }}</div>
+                  <span class="price">
+                    <span class="amount">
+                      {% if settings.currency_code_enabled %}
+                        -{{ discount.total_allocated_amount | money_with_currency }}
+                      {% else %}
+                        -{{ discount.total_allocated_amount | money }}
+                      {% endif %}
+                    </span>
+                  </span>
+                </div>
+              {%- endfor -%}
+            {%- endif -%}
+            <div class="cart-drawer--discount">
+              <div class="cart-drawer--discount-label">{{ 'sections.cart.subtotal' | t }}</div>
+              <span class="price"
+                ><span class="amount totals__subtotal-value">
+                  {% if settings.currency_code_enabled %}
+                    {{ cart.total_price | money_with_currency }}
+                  {% else %}
+                    {{ cart.total_price | money }}
+                  {% endif %}
+                </span></span
+              >
+            </div>
+          </div>
+
+          <div class="cart-drawer--buttons">
+            {% render 'cart-terms', append: '-Drawer' %}
+            <div class="cart-drawer--buttons-container">
+              {%- if settings.cart_drawer_cart_button -%}
+                <a
+                  href="{{ routes.cart_url }}"
+                  class="button outline"
+                  title="{{ 'general.cart_drawer.view_cart' | t | escape }}"
+                >
+                  {{- 'general.cart_drawer.view_cart' | t -}}
+                </a>
+              {%- endif -%}
+
+              {%- if settings.cart_drawer_checkout_button -%}
+                <form action="{{ routes.cart_url }}" method="post" novalidate>
+                  <button
+                    type="submit"
+                    class="button full checkout-button"
+                    name="checkout"
+                    title="{{ 'general.cart_drawer.checkout' | t | escape }}"
+                  >
+                    {{ 'general.cart_drawer.checkout' | t }}
+                  </button>
+                </form>
+              {%- endif -%}
+            </div>
+          </div>
+        </div>
+      {%- endif -%}
+    </div>
+  </cart-drawer>
+{%- endif -%}
+
+<style>
+  /* Styling only for custom length items */
+  .cart-item--custom-length .custom-length-breakdown {
+    display: block;
+    font-size: 0.85em;
+    color: #666;
+    font-style: italic;
+    margin-top: 2px;
+  }
+
+  .custom-length-quantity {
+    text-align: center;
+    padding: 8px 12px;
+    background: #f5f5f5;
+    border-radius: 4px;
+    display: none;
+  }
+
+  .custom-length-display {
+    font-weight: bold;
+    font-size: 1.1em;
+    display: block;
+  }
+
+  .custom-length-quantity small {
+    color: #666;
+    font-size: 0.8em;
+  }
+
+  .cart-item__property-value[data-property='Length'] {
+    font-weight: bold;
+    color: #333;
+  }
+
+  /* Regular products keep their normal styling */
+  .cart-item:not(.cart-item--custom-length) .quantity {
+    /* Normal quantity controls for non-custom items */
+  }
+</style>
+
+{{ 'custom-length-cart-handler.js' | asset_url | script_tag }}

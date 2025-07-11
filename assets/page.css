@@ -1,0 +1,20 @@
+
+
+
+.page-content-width--small {
+  width: 600px; }
+
+.page-content-width--medium {
+  width: 850px; }
+
+.page-content-width--large {
+  width: 1050px; }
+
+.page-content-align--left {
+  margin-right: auto; }
+
+.page-content-align--center {
+  margin: 0 auto; }
+
+.page-content-align--right {
+  margin-left: auto; }

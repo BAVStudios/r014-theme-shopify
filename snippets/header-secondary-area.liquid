@@ -1,0 +1,185 @@
+{%- liquid
+  if customer
+    assign profile_link = routes.account_url
+    assign profile_text = 'sections.header.my_account' | t
+  else
+    assign profile_link = routes.account_login_url
+    assign profile_text = 'sections.header.login' | t
+  endif
+
+  assign cart_icon = header_settings.cart_icon | default: 'cart'
+-%}
+
+{%- comment -%}
+  Calculate correct cart total including custom length items
+{%- endcomment -%}
+{%- liquid
+  assign calculated_cart_total = 0
+
+  for item in cart.items
+    # Check if this item has custom length
+    assign is_custom_length = false
+    assign custom_length_value = 0
+
+    for property in item.properties
+      if property.first == 'Length'
+        assign is_custom_length = true
+        assign length_string = property.last | remove: 'm' | remove: 'cm'
+        assign custom_length_value = length_string | times: 1.0
+        break
+      endif
+    endfor
+
+    if is_custom_length
+      # Custom length item: price per meter × length
+      assign item_total = item.variant.price | times: custom_length_value
+
+      # Apply discounts if any exist
+      if item.original_line_price != item.final_line_price
+        assign discount_ratio = item.final_line_price | divided_by: item.original_line_price
+        assign item_total = item_total | times: discount_ratio
+      endif
+
+      assign calculated_cart_total = calculated_cart_total | plus: item_total
+    else
+      # Regular item: use Shopify's default line price
+      assign calculated_cart_total = calculated_cart_total | plus: item.final_line_price
+    endif
+  endfor
+-%}
+
+{%- capture total_cart_amount -%}
+({%- if settings.currency_code_enabled %}{{ calculated_cart_total | money_with_currency }}{% else %}{{ calculated_cart_total | money }}{%- endif -%})
+{%- endcapture -%}
+
+<div class="thb-secondary-area thb-header-right thb-secondary-area--amount-{{ header_settings.show_cart_total_amount }} thb-secondary-area--label-{{ header_settings.show_icon_labels }}">
+  <a
+    class="thb-secondary-area--item thb-secondary-search"
+    href="{{ routes.search_url }}"
+    title="{{ 'sections.header.search' | t }}"
+  >
+    {%- render 'svg-icons' with 'search' -%}
+  </a>
+  {%- if shop.customer_accounts_enabled -%}
+    <a
+      class="thb-secondary-area--item thb-secondary-myaccount"
+      href="{{ profile_link | escape }}"
+      title="{{ 'sections.header.my_account' | t }}"
+    >
+      {%- render 'svg-icons' with 'myaccount' -%}
+      {% if header_settings.show_icon_labels -%}
+        <span class="thb-secondary-area--item-text">{{ profile_text }}</span>
+      {%- endif -%}
+    </a>
+  {%- endif -%}
+
+  {% comment %}
+    BAVST2025-03-31
+  {% endcomment %}
+  <a class="thb-secondary-area--item thb-secondary-storelocator" href="/pages/contact" title="Store Locator">
+    {%- render 'svg-icons' with header_settings.store_locator_icon -%}
+    {% if header_settings.show_icon_labels -%}
+      <span class="thb-secondary-area--item-text">Store Locator</span>
+    {% endif -%}
+  </a>
+
+  {%- if template != 'cart' -%}{%- render 'cart-drawer' -%}{%- endif -%}
+  <a class="thb-secondary-area--item thb-secondary-cart" href="{{ routes.cart_url }}" id="cart-drawer-toggle">
+    <span class="thb-secondary-area--item-icon">
+      {% render 'svg-icons' with cart_icon %}
+      <span class="thb-secondary-area--item-count">
+        {%- if cart.item_count > 99 -%}
+          {%- render 'svg-icons' with 'thb-asterisk' -%}
+        {%- else -%}
+          {{ cart.item_count }}
+        {%- endif -%}
+      </span>
+    </span>
+    <span class="thb-secondary-area--item-text">
+      {% if header_settings.show_icon_labels -%}
+        <span class="thb-secondary-area--item-label">{{ 'sections.header.cart' | t }}</span>
+      {% endif -%}
+      <span class="thb-secondary-area--item-amount" id="header-cart-total">{{ total_cart_amount }}</span>
+    </span>
+  </a>
+</div>
+
+{%- comment -%}
+  JavaScript to update header cart total when cart changes
+{%- endcomment -%}
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    function updateHeaderCartTotal() {
+      // Get all cart items from the cart drawer
+      const cartItems = document.querySelectorAll('.cart-item');
+      let newTotal = 0;
+
+      cartItems.forEach((item) => {
+        const isCustomLength = item.classList.contains('cart-item--custom-length');
+
+        if (isCustomLength) {
+          // For custom length items, get the calculated price
+          const calculatedPriceElement = item.querySelector('.cart-item__price .amount');
+          if (calculatedPriceElement) {
+            const priceText = calculatedPriceElement.textContent.replace(/[$,]/g, '');
+            const price = parseFloat(priceText);
+            if (!isNaN(price)) {
+              newTotal += price;
+            }
+          }
+        } else {
+          // For regular items, use the displayed line price
+          const regularPriceElement = item.querySelector('.cart-item__price .amount');
+          if (regularPriceElement) {
+            const priceText = regularPriceElement.textContent.replace(/[$,]/g, '');
+            const price = parseFloat(priceText);
+            if (!isNaN(price)) {
+              newTotal += price;
+            }
+          }
+        }
+      });
+
+      // Update the header cart total
+      const headerCartTotal = document.getElementById('header-cart-total');
+      if (headerCartTotal && newTotal > 0) {
+        const formattedTotal = '$' + newTotal.toFixed(2);
+        headerCartTotal.textContent = '(' + formattedTotal + ')';
+      }
+    }
+
+    // Update header total when cart drawer opens/changes
+    const cartDrawer = document.getElementById('Cart-Drawer');
+    if (cartDrawer) {
+      const observer = new MutationObserver(function (mutations) {
+        mutations.forEach(function (mutation) {
+          if (mutation.type === 'childList' || (mutation.type === 'attributes' && mutation.attributeName === 'class')) {
+            setTimeout(updateHeaderCartTotal, 100);
+          }
+        });
+      });
+
+      observer.observe(cartDrawer, {
+        childList: true,
+        subtree: true,
+        attributes: true,
+      });
+    }
+
+    // Listen for cart update events
+    document.addEventListener('cart:updated', function () {
+      setTimeout(updateHeaderCartTotal, 200);
+    });
+
+    document.addEventListener('cart:item-added', function () {
+      setTimeout(updateHeaderCartTotal, 200);
+    });
+
+    document.addEventListener('cart:item-removed', function () {
+      setTimeout(updateHeaderCartTotal, 200);
+    });
+
+    // Update on page load
+    setTimeout(updateHeaderCartTotal, 500);
+  });
+</script>

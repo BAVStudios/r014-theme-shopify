@@ -1,0 +1,348 @@
+{{- 'promotion-blocks.css' | asset_url | stylesheet_tag -}}
+{%- liquid
+	assign section_heading = section.settings.heading
+	assign section_description = section.settings.description
+	assign mobile_swipe = section.settings.mobile_swipe
+	assign image_ratio = section.settings.image_ratio
+	assign text_alignment = section.settings.text_alignment
+	assign content_orientation = section.settings.content_orientation
+	assign columns_desktop = section.settings.columns_desktop
+	assign image_layout = section.settings.image_layout
+
+	assign line_1_size = section.settings.line_1_size
+	assign line_2_size = section.settings.line_2_size
+
+	assign disable_top_spacing = section.settings.disable_top_spacing
+	assign disable_bottom_spacing = section.settings.disable_bottom_spacing
+
+
+	if content_orientation == 'horizontal'
+		assign columns_desktop = section.settings.columns_desktop | at_most: 2
+	endif
+	assign ratio = 1
+	case image_ratio
+		when 'adapt'
+			assign image_sizes = '350x0,440x0,660x0'
+		when 'square'
+			assign image_sizes = '350x350,440x440,660x660'
+			assign ratio = 1
+		when 'landscape'
+			assign image_sizes = '350x218,440x275,660x415'
+			assign ratio = 1.6
+		when 'portrait'
+			assign image_sizes = '350x438,440x550,660x825'
+			assign ratio = 0.8
+	endcase
+-%}
+<div class="row">
+	<div class="small-12 columns">
+		<div class="promotion-blocks{% if mobile_swipe %} swipe-on-mobile{% endif %} section-spacing{% if disable_top_spacing %} section-spacing--disable-top{% endif %}{% if disable_bottom_spacing %} section-spacing--disable-bottom{% endif %}" style="--column-size: {{ columns_desktop }};">
+			{% render 'section-header', section_heading: section_heading, section_description: section_description %}
+			<theme-scroll class="theme-scroll" data-overlayscrollbars-initialize>
+				<div class="theme-scroll--inner">
+					<div class="promotion-blocks--inner {{ text_alignment }}">
+						{%- for block in section.blocks -%}
+							{%- liquid
+								if image_ratio == 'adapt' and block.settings.image
+									assign ratio = block.settings.image.aspect_ratio
+								endif
+
+								assign color_bg = block.settings.color_bg
+								assign color_text = block.settings.color_text
+								assign button_hover = color_text | color_darken: 7
+
+								assign line_1_text = block.settings.line_1_text
+								assign line_2_text = block.settings.line_2_text
+								assign description = block.settings.description
+							-%}
+							<div class="promotion-blocks--item promotion-blocks--item-{{ content_orientation }} promotion-blocks--item-image-{{ image_layout }}" style="--color-bg: {{ color_bg }}; --color-body: {{ color_text }}; --color-heading: {{ color_text }}; --solid-button-background: {{ color_text }}; --solid-button-label: {{ color_bg }}; --solid-button-background-hover: {{ button_hover }}" {{ block.shopify_attributes }}>
+								{%- if block.settings.image != blank -%}
+								<figure class="promotion-blocks--image">
+									<div class="aspect-ratio aspect-ratio--{{ image_ratio }}" style="--ratio-percent:{{ 1.0 | divided_by: ratio | times: 100.0 }}%;">
+									{%- if block.settings.button_link != blank -%}
+										<a href="{{ block.settings.button_link }}">
+									{%- endif -%}
+									{%- render 'responsive-image', image: block.settings.image, sizes: image_sizes -%}
+									{%- if block.settings.button_link != blank -%}
+										</a>
+									{%- endif -%}
+									</div>
+								</figure>
+								{%- endif -%}
+								<div class="promotion-blocks--text">
+									{% if line_1_text != blank %}
+										<div class="{{ line_1_size }}">{{ line_1_text }}</div>
+									{% endif %}
+									{% if line_2_text != blank %}
+										<div class="{{ line_2_size }}">{{ line_2_text }}</div>
+									{% endif %}
+									{% if description != blank %}
+										<div class="rte">{{ description }}</div>
+									{% endif %}
+									{% if block.settings.button_text != blank %}
+										<div class="promotion-blocks--button">
+											<a href="{{ block.settings.button_link }}" class="button small">{{ block.settings.button_text }}</a>
+										</div>
+									{% endif %}
+								</div>
+								{% if block.settings.block_link != blank %}
+									<a href="{{ block.settings.block_link }}" class="promotion-blocks--link" target="_blank"></a>
+								{% endif %}
+							</div>
+						{%- endfor -%}
+					</div>
+				</div>
+			</theme-scroll>
+		</div>
+	</div>
+</div>
+
+{% schema %}
+  {
+    "name": "Promotion blocks",
+		"class": "section-promotion-blocks",
+    "settings": [
+			{
+				"type": "text",
+				"id": "heading",
+				"label": "Heading",
+				"default": "Promotion blocks",
+				"info": "Wrap your text between | to add highlight markers. For example: Highlight |marker| will highlight the marker text."
+			},
+			{
+	      "type": "checkbox",
+	      "id": "mobile_swipe",
+	      "default": false,
+	      "label": "Enable swipe on mobile"
+	    },
+			{
+	      "type": "select",
+	      "id": "image_ratio",
+	      "options": [
+	        {
+	          "value": "adapt",
+	          "label": "Adapt to image"
+	        },
+	        {
+	          "value": "portrait",
+	          "label": "Portrait"
+	        },
+					{
+	          "value": "landscape",
+	          "label": "Landscape"
+	        },
+	        {
+	          "value": "square",
+	          "label": "Square"
+	        }
+	      ],
+	      "default": "square",
+	      "label": "Image ratio"
+	    },
+			{
+	      "type": "select",
+	      "id": "content_orientation",
+	      "options": [
+	        {
+	          "value": "horizontal",
+	          "label": "Horizontal"
+	        },
+	        {
+	          "value": "vertical",
+	          "label": "Vertical"
+	        }
+	      ],
+	      "default": "vertical",
+	      "label": "Content orientation"
+	    },
+			{
+	      "type": "range",
+	      "id": "columns_desktop",
+	      "min": 2,
+	      "max": 4,
+	      "step": 1,
+	      "default": 4,
+	      "label": "Number of columns on desktop",
+				"info": "Columns are limited to 2 on horizontal orientation"
+	    },
+			{
+	      "type": "select",
+	      "id": "image_layout",
+	      "options": [
+	        {
+	          "value": "image_first",
+	          "label": "Image first"
+	        },
+	        {
+	          "value": "text_first",
+	          "label": "Image second"
+	        }
+	      ],
+	      "default": "image_first",
+	      "label": "Desktop image placement",
+	      "info": "Image first is the default mobile layout."
+	    },
+			{
+				"type": "header",
+				"content": "Style"
+			},
+			{
+				"type": "select",
+				"id": "text_alignment",
+				"label": "Text alignment",
+				"options": [
+					{ "value": "text-center", "label": "Center" },
+					{ "value": "text-left", "label": "Left" },
+					{ "value": "text-right", "label": "Right" }
+				],
+				"default": "text-left"
+			},
+			{
+	      "type": "select",
+	      "id": "line_1_size",
+	      "options": [
+	        {
+						"value": "h3",
+						"label": "Extra Large"
+					},
+					{
+						"value": "h4",
+						"label": "Large"
+					},
+					{
+						"value": "h5",
+						"label": "Medium"
+					},
+					{
+						"value": "h6",
+						"label": "Small"
+					}
+	      ],
+	      "default": "h4",
+	      "label": "Line 1 text size"
+	    },
+			{
+	      "type": "select",
+	      "id": "line_2_size",
+	      "options": [
+	        {
+						"value": "h3",
+						"label": "Extra Large"
+					},
+					{
+						"value": "h4",
+						"label": "Large"
+					},
+					{
+						"value": "h5",
+						"label": "Medium"
+					},
+					{
+						"value": "h6",
+						"label": "Small"
+					}
+	      ],
+	      "default": "h5",
+	      "label": "Line 2 text size"
+	    },
+			{
+	      "type": "header",
+	      "content": "Spacing"
+	    },
+			{
+				"type": "checkbox",
+				"id": "disable_top_spacing",
+				"default": false,
+				"label": "Remove top spacing"
+			},
+			{
+				"type": "checkbox",
+				"id": "disable_bottom_spacing",
+				"default": false,
+				"label": "Remove bottom spacing"
+			}
+    ],
+    "blocks": [
+      {
+        "type": "promotion",
+        "name": "Promotion",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image",
+						"info": "690 x 400 .jpg recommended."
+          },
+					{
+						"type": "text",
+						"id": "line_1_text",
+						"default": "Line 1",
+						"label": "Line 1"
+					},
+					{
+						"type": "text",
+						"id": "line_2_text",
+						"default": "Line 2",
+						"label": "Line 2"
+					},
+					{
+						"type": "richtext",
+						"id": "description",
+						"default": "<p>Promotion description</p>",
+						"label": "Description"
+					},
+					{
+            "id": "button_text",
+            "type": "text",
+            "label": "Button label",
+            "default": "Explore",
+						"info": "Leave the label blank to hide the button."
+          },
+          {
+            "id": "button_link",
+            "type": "url",
+            "label": "Button link"
+          },
+					{
+            "id": "block_link",
+            "type": "url",
+            "label": "Image link",
+						"info": "This will allow you to set a link to whole block."
+          },
+					{
+						"type": "header",
+						"content": "Colors"
+					},
+					{
+						"type": "color",
+						"id": "color_bg",
+						"label": "Background",
+						"default": "#EBF7F7"
+					},
+					{
+						"type": "color",
+						"id": "color_text",
+						"label": "Text",
+						"default": "#2F5E7F"
+					}
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Promotion blocks",
+				"blocks": [
+					{
+						"type": "promotion"
+					},
+					{
+						"type": "promotion"
+					},
+					{
+						"type": "promotion"
+					}
+				]
+      }
+    ]
+  }
+{% endschema %}

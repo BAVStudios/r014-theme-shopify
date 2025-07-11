@@ -1,0 +1,25 @@
+{%- liquid
+  assign has_promotions = false
+  assign mega_menu_columns = 4
+  if mega_menu_block.settings.product_list.count > 0
+    assign has_promotions = true
+    assign mega_menu_columns = 3
+  endif
+  assign heading = mega_menu_block.settings.heading
+-%}
+<div class="sub-menu mega-menu-container" tabindex="-1" style="--mega-menu-columns: {{ mega_menu_columns }}">
+  <div class="mega-menu-container--inner {%- if has_promotions %} mega-menu-container--inner-has-promotions{% endif %}">
+    {% render 'header-mega-menu-columns', link: link %}
+    {% if has_promotions %}
+      {% assign block_settings = mega_menu_block.settings %}
+      <div class="mega-menu-promotions">
+        {% if heading != blank %}<strong class="mega-menu-heading">{{ heading }}</strong>{% endif %}
+        <div class="mega-menu-products">
+          {%- for the_product in block_settings.product_list -%}
+            {% render 'product-card-small', product_small: the_product %}
+          {%- endfor -%}
+        </div>
+      </div>
+    {%- endif -%}
+  </div>
+</div>
