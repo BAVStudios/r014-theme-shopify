@@ -14,9 +14,11 @@
 }
 
 .google-map--location-actions .button {
-  flex: 1 1 0;
   min-width: 0;
   text-align: center;
+  @media (min-width: 768px) {
+    flex: 1 1 0;
+  }
 }
 
 .google-map--call-btn {
