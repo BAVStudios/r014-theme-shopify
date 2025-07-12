@@ -172,7 +172,7 @@
     "collection_list_84HMfe": {
       "type": "collection-list",
       "custom_css": [
-        ".collection-card--content {display: none; }"
+        ".collection-card--content {display: none;}"
       ],
       "settings": {
         "heading": "Rugs Online",
@@ -328,6 +328,9 @@
     },
     "collection_list_pycUnF": {
       "type": "collection-list",
+      "custom_css": [
+        ".collection-card--content {display:none;}"
+      ],
       "settings": {
         "heading": "Shop By Style",
         "collection_list": [
