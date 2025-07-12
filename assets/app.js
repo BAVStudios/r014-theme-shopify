@@ -1043,7 +1043,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 document.addEventListener('DOMContentLoaded', function() {
-  // Map gallery heading to dropdown value
+  // Map gallery heading to dropdown value (update as needed)
   const storeMap = {
     "GEELONG": "#template--24939128848665__1652081672ff9b3c2c-pin_w4D8wD",
     "MELTON": "#template--24939128848665__1652081672ff9b3c2c-pin_bkrQM3",
@@ -1060,9 +1060,15 @@ document.addEventListener('DOMContentLoaded', function() {
       // Remove ' (OPENING SOON)' or similar from the end
       storeName = storeName.replace(/\s*\(OPENING SOON\)$/, '');
       const value = storeMap[storeName];
-      if (!value) return;
+      if (!value) {
+        console.log('No map pin found for store:', storeName);
+        return;
+      }
       const select = document.querySelector('.google-map--select');
-      if (!select) return;
+      if (!select) {
+        console.log('No .google-map--select found');
+        return;
+      }
       select.value = value;
       select.dispatchEvent(new Event('change', { bubbles: true }));
       // Scroll to the Google Maps section
