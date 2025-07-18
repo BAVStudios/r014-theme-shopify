@@ -23,8 +23,8 @@
             "pin_title": "Melton Store",
             "pin_desc": "<div style=\"line-height: 5px;\">\n<p>Shop R31 32/533 High St,\n<br>Melton West VIC 3337\n<br>Woodgrove Shopping Centre</p>\n<br>\n</div>",
             "pin_contact_enabled": true,
-            "pin_contact_link": "tel:+61387164018",
-            "pin_contact_label": "03 8716 4018",
+            "pin_contact_link": "tel:+61425531841",
+            "pin_contact_label": "0425531841",
             "pin_hours_enabled": true,
             "pin_hours": "<br>\n<h6>Opening Hours</h6>\n  <table>\n    <tr>\n<td style=\"width: 100px;\">Mon</td>\n<td>9:30am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Tue</td>\n<td>9:30am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Wed</td>\n<td>9:30am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Thu</td>\n<td>9:30am</td>\n<td>7:00pm</td>\n</tr>\n    <tr>\n<td>Fri</td>\n<td>9:30am</td>\n<td>7:00pm</td>\n</tr>\n    <tr>\n<td>Sat</td>\n<td>9:30am</td>\n<td>5:00pm</td>\n</tr>\n    <tr>\n<td>Sun</td>\n<td>10:00am</td>\n<td>5:00pm</td>\n</tr>\n  </table>"
           }
@@ -130,7 +130,8 @@
             "link_label": "",
             "link": "",
             "use_text_button": false,
-            "block_link": ""
+            "block_link": "",
+            "pin_id": ""
           }
         },
         "image_TUJa6e": {
@@ -143,7 +144,8 @@
             "link_label": "",
             "link": "",
             "use_text_button": true,
-            "block_link": ""
+            "block_link": "",
+            "pin_id": ""
           }
         },
         "image_Vqx8mn": {
@@ -156,7 +158,8 @@
             "link_label": "",
             "link": "",
             "use_text_button": true,
-            "block_link": ""
+            "block_link": "",
+            "pin_id": ""
           }
         },
         "image_f6WJbk": {
@@ -169,7 +172,8 @@
             "link_label": "",
             "link": "",
             "use_text_button": false,
-            "block_link": ""
+            "block_link": "",
+            "pin_id": ""
           }
         },
         "image_7eBLPN": {
@@ -182,7 +186,8 @@
             "link_label": "",
             "link": "",
             "use_text_button": true,
-            "block_link": ""
+            "block_link": "",
+            "pin_id": ""
           }
         }
       },
